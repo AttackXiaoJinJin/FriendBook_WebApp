@@ -22,15 +22,72 @@ ion-navbar{
 .login{
   display: flex;
   /*主轴方向对齐方式，居中*/
-  justify-content: space-around;
+  justify-content: space-between;
   /*侧轴方向对齐方式，居中*/
   line-height: 30px;
   font-size: 28px;
 }
-
+//===============轮播
+ion-slides {
+  display: block;
+  width: 100%;
+  height: 30%;
+}
 .swiper-wrapper{
   height:160px;
 }
+//书籍列表
+.tuijian-txt{
+  display: flex;
+  /*主轴方向对齐方式，居中*/
+  justify-content: space-between;
+  /*侧轴方向对齐方式，居中*/
+  align-items: center;
+}
+
+.book-list{
+  margin-top: 3px;
+  //border: 1px red solid;
+  height: 160px;
+}
+.tuijian-txt{
+  margin-bottom: 3px;
+}
+.tuijian-txt1{
+  margin-left:4px;
+  padding-left:3px;
+  border-left:3px solid red;
+  font-size: 16px;
+  font-weight: 500;
+}
+.tuijian-txt2{
+  font-size: 13px;
+  color: #b4b4b4;
+  padding-right:13px;
+}
+.book{
+  position: relative;
+  //border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  float: left;
+  height: 130px;
+  text-align: center;
+}
+.book:hover{
+  cursor: pointer;
+}
+.book img{
+  display: block;
+  height: 120px;
+  width:100px;
+  margin: 0 10px;
+}
+.book a{
+  font-size: 13px;
+}
+
+
+
 
 //==========================这是文章列表
 .middle-middle-article{
@@ -42,12 +99,13 @@ ion-navbar{
   display: block;
 }
 .thisart{
-  height: 113px;
+  height: 109px;
 }
 
 .art-list{
   position: relative;
   margin-top: 5px;
+  padding-left: 5px;
   height: 142px;
   width: 376px;
   border-bottom: 1px solid #eee;
@@ -77,7 +135,7 @@ a.glyphicon{
   width: 260px;
   font-size: 13px;
   line-height: 15px;
-  margin: 0;
+  margin-top: 6px;
   padding: 0;
   color: #aaa;
 }

@@ -6,18 +6,25 @@
       </ion-row>
   </ion-navbar>
 
+
+</ion-header>
+
+<ion-content>
   <!--轮播图-->
   <ion-slides autoplay="2000" loop="true" (ionSlideDidChange)="slideChanged()" #mySlides>
     <ion-slide *ngFor="let item of imgs" >
       <img src="../../assets/imgs/{{item}}">
     </ion-slide>
   </ion-slides>
-</ion-header>
-
-<ion-content>
   <!--推荐书籍-->
   <div class="book-list">
-
+    <div class="tuijian-txt"><span class="tuijian-txt1">推荐书籍</span><span class="tuijian-txt2">更多书籍
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
+    <div>
+      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
+      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
+      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
+    </div>
   </div>
 
   <!--==============文章-->
@@ -39,14 +46,13 @@
           <p class="showarticle">
             胡兰成在告别时，对张爱玲说：
             你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
-            上海有那么多条道路，我写了二十
           </p>
         </div>
       </div>
         <div class="article-bottom">
           <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
         </div>
     </div>
       <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
@@ -69,14 +75,13 @@
           <p class="showarticle">
             胡兰成在告别时，对张爱玲说：
             你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
-            上海有那么多条道路，我写了二十
           </p>
         </div>
       </div>
         <div class="article-bottom">
           <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
         </div>
     </div>
       <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
@@ -98,15 +103,14 @@
           <!--//显示文章内容，管道stringSlice截取前100个字符-->
           <p class="showarticle">
             胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
-            上海有那么多条道路，我写了二十
+            你怎么长得这样高？ 于是，他们之间的障碍就消除 ﻿﻿﻿ ﻿﻿﻿
           </p>
         </div>
       </div>
         <div class="article-bottom">
           <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
         </div>
     </div>
       <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
