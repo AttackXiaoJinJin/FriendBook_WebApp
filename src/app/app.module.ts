@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {TopicsPage} from "../pages/topics/topics";
 import {PersonCenterPage} from "../pages/person-center/person-center";
+import {ComponentsModule} from "../components/components.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {PersonCenterPage} from "../pages/person-center/person-center";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    // ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

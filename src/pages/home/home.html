@@ -1,9 +1,118 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>首页</ion-title>
+  <ion-navbar color="light">
+      <ion-row>
+        <ion-searchbar col-11 class="ion-search" (ionInput)="getItems($event)"></ion-searchbar>
+        <ion-icon col-1 name="contact" class="login"></ion-icon>
+      </ion-row>
   </ion-navbar>
+
+  <!--轮播图-->
+  <ion-slides autoplay="2000" loop="true" (ionSlideDidChange)="slideChanged()" #mySlides>
+    <ion-slide *ngFor="let item of imgs" >
+      <img src="../../assets/imgs/{{item}}">
+    </ion-slide>
+  </ion-slides>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <!--推荐书籍-->
+  <div class="book-list">
+
+  </div>
+
+  <!--==============文章-->
+  <div class="art-list">
+    <!--文章列表-->
+    <div class="middle-middle-article">
+      <div class="thisart">
+        <div  class="article-top" >
+          <a  class="touxiangimgcss" >
+            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
+          </a>
+          <span class="authorcss">小进进</span>
+          <span class="timecss" col-4>2017-06-19 16:26:04</span>
+          </div>
+
+        <div  class="article-middle" >
+          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
+          <!--//显示文章内容，管道stringSlice截取前100个字符-->
+          <p class="showarticle">
+            胡兰成在告别时，对张爱玲说：
+            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
+            上海有那么多条道路，我写了二十
+          </p>
+        </div>
+      </div>
+        <div class="article-bottom">
+          <span id="myspan"> 世间事</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+        </div>
+    </div>
+      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
+  </div>
+  <div  class="art-list">
+    <!--文章列表-->
+    <div class="middle-middle-article">
+      <div class="thisart">
+        <div  class="article-top" >
+          <a  class="touxiangimgcss" >
+            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
+          </a>
+          <span class="authorcss">小进进</span>
+          <span class="timecss" col-4>2017-06-19 16:26:04</span>
+          </div>
+
+        <div  class="article-middle" >
+          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
+          <!--//显示文章内容，管道stringSlice截取前100个字符-->
+          <p class="showarticle">
+            胡兰成在告别时，对张爱玲说：
+            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
+            上海有那么多条道路，我写了二十
+          </p>
+        </div>
+      </div>
+        <div class="article-bottom">
+          <span id="myspan"> 世间事</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+        </div>
+    </div>
+      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
+  </div>
+  <div  class="art-list">
+    <!--文章列表-->
+    <div class="middle-middle-article">
+      <div class="thisart">
+        <div  class="article-top" >
+          <a  class="touxiangimgcss" >
+            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
+          </a>
+          <span class="authorcss">小进进</span>
+          <span class="timecss" col-4>2017-06-19 16:26:04</span>
+          </div>
+
+        <div  class="article-middle" >
+          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
+          <!--//显示文章内容，管道stringSlice截取前100个字符-->
+          <p class="showarticle">
+            胡兰成在告别时，对张爱玲说：
+            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
+            上海有那么多条道路，我写了二十
+          </p>
+        </div>
+      </div>
+        <div class="article-bottom">
+          <span id="myspan"> 世间事</span>
+          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon>0</span>
+          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon>3</span>
+        </div>
+    </div>
+      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
+  </div>
+
+
+
 
 </ion-content>
