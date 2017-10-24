@@ -7,117 +7,68 @@
   </ion-navbar>
 
 
+  <button (click)="toRegist()">转到注册页面</button>
 </ion-header>
 
 <ion-content>
+  <!--上拉刷新-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
   <!--轮播图-->
   <ion-slides autoplay="2000" loop="true" (ionSlideDidChange)="slideChanged()" #mySlides>
     <ion-slide *ngFor="let item of imgs" >
       <img src="../../assets/imgs/{{item}}">
     </ion-slide>
   </ion-slides>
+  <!--总的一大块-->
+  <!--<ul id="allitems">-->
+  <div id="allitems">
+    <!--<li>-->
+    <div>
   <!--推荐书籍-->
   <div class="book-list">
     <div class="tuijian-txt"><span class="tuijian-txt1">推荐书籍</span><span class="tuijian-txt2">更多书籍
       <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
     <div>
-      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
-      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
-      <div class="book"><img src="../../assets/imgs/book001.jpg" alt=""><a>挪威的森林</a></div>
+      <div class="book" *ngFor="let book of books" ><img src="http://localhost:3001/bookimages/{{book.book_img}}" alt=""><a>{{book.book_name}}</a></div>
     </div>
   </div>
 
   <!--==============文章-->
   <div class="tuijian-txt"><span class="tuijian-txt1">推荐文章</span><span class="tuijian-txt2">更多文章
      <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
-  <div class="art-list">
-
-
+  <div class="art-list" *ngFor="let colart of colarts">
     <!--文章列表-->
     <div class="middle-middle-article">
       <div class="thisart">
         <div  class="article-top" >
           <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
+            <img class="touxiangimg" src="http://localhost:3001/userhead/{{colart.user_head}}" />
           </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
+          <span class="authorcss">{{colart.user_name}}</span>
+          <span class="timecss" col-4>{{colart.article_time}}</span>
           </div>
 
         <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
+          <h6><a class="biaotia">{{colart.article_title}}</a></h6>
           <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
+          <p class="showarticle" [innerHtml]="colart.article_content | stringSlice:60">
           </p>
         </div>
       </div>
         <div class="article-bottom">
-          <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
+          <span class="myspan">{{colart.topic_name}}</span>
+          <span class=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> {{colart.article_com}}</span>
+          <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{colart.article_collect}}</span>
         </div>
     </div>
-      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
-  </div>
-  <div class="art-list">
-    <!--文章列表-->
-    <div class="middle-middle-article">
-      <div class="thisart">
-        <div  class="article-top" >
-          <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
-          </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
-          </div>
-
-        <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
-          <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
-          </p>
-        </div>
-      </div>
-        <div class="article-bottom">
-          <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
-        </div>
-    </div>
-      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
-  </div>
-  <div  class="art-list">
-    <!--文章列表-->
-    <div class="middle-middle-article">
-      <div class="thisart">
-        <div  class="article-top" >
-          <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
-          </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
-          </div>
-
-        <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
-          <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除 ﻿﻿﻿ ﻿﻿﻿
-          </p>
-        </div>
-      </div>
-        <div class="article-bottom">
-          <span id="myspan"> 世间事</span>
-          <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-          <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
-        </div>
-    </div>
-      <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
+      <div><img  class="img" src="http://localhost:3001/articleimages/{{colart.article_img}}"></div>
   </div>
   <!--============================================-->
 <!--推荐话题===========================-->
@@ -125,118 +76,58 @@
     <div class="tuijian-txt"><span class="tuijian-txt1">推荐话题</span><span class="tuijian-txt2">更多话题
       <ion-icon name="ios-arrow-forward-outline"></ion-icon></span>
     </div>
-      <div class="topic">
-        <img class="topicimg" src="../../assets/imgs/topic.jpg" alt="...">
-          <h4 style="cursor: pointer"><b>二次元</b></h4>
-          <!--<span class="topic_content" >勇敢的少年们，一起去征服世界吧！投稿须知本...-->
-          <!--</span>-->
+    <!--==============循环两个话题-->
+      <div class="topic" *ngFor="let topic of topics">
+        <img class="topicimg" src="http://localhost:3001/topicimages/{{topic.topic_img}}" alt="...">
+          <h4 style="cursor: pointer"><b>{{topic.topic_name}}</b></h4>
+          <!--<button class="btn-att">{{atten_if?'取消关注':'+关注'}}</button>-->
           <button class="btn-att">+关注</button>
           <hr>
-          <p class="topic-p">15篇文章 | 145人关注</p>
-      </div>
-    <!--===========第二个-->
-      <div class="topic">
-        <img class="topicimg" src="../../assets/imgs/topic.jpg" alt="...">
-          <h4 style="cursor: pointer"><b>二次元</b></h4>
-          <!--<span class="topic_content" >勇敢的少年们，一起去征服世界吧！投稿须知本...-->
-          <!--</span>-->
-          <button class="btn-att">+关注</button>
-          <hr>
-          <p class="topic-p">15篇文章 | 145人关注</p>
+          <p class="topic-p">{{topic.article_num}}篇文章 | {{topic.attent_num}}人关注</p>
       </div>
   </div>
 <!--============================topic-->
   <!--==============文章-->
   <div class="tuijian-txt"><span class="tuijian-txt1">热门文章</span><span class="tuijian-txt2">更多文章
      <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
-  <div class="art-list">
+  <div class="art-list" *ngFor="let comart of comarts">
     <!--文章列表-->
     <div class="middle-middle-article">
       <div class="thisart">
         <div  class="article-top" >
           <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
+            <img class="touxiangimg" src="http://localhost:3001/userhead/{{comart.user_head}}" />
           </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
+          <span class="authorcss">{{comart.user_name}}</span>
+          <span class="timecss" col-4>{{comart.article_time}}</span>
         </div>
 
         <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
+          <h6><a class="biaotia">{{comart.article_title}}</a></h6>
           <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
+          <p class="showarticle" [innerHtml]="comart.article_content | stringSlice:60">
           </p>
         </div>
       </div>
       <div class="article-bottom">
-        <span id="myspan"> 世间事</span>
-        <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-        <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
+        <span class="myspan">{{comart.topic_name}}</span>
+        <span class=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> {{comart.article_com}}</span>
+        <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{comart.article_collect}}</span>
       </div>
     </div>
-    <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
-  </div>
-  <div class="art-list">
-    <!--文章列表-->
-    <div class="middle-middle-article">
-      <div class="thisart">
-        <div  class="article-top" >
-          <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
-          </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
-        </div>
-
-        <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
-          <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除了。 ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿ ﻿﻿﻿
-          </p>
-        </div>
-      </div>
-      <div class="article-bottom">
-        <span id="myspan"> 世间事</span>
-        <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-        <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
-      </div>
-    </div>
-    <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
-  </div>
-  <div  class="art-list">
-    <!--文章列表-->
-    <div class="middle-middle-article">
-      <div class="thisart">
-        <div  class="article-top" >
-          <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="../../assets/imgs/default_article.jpg" />
-          </a>
-          <span class="authorcss">小进进</span>
-          <span class="timecss" col-4>2017-06-19 16:26:04</span>
-        </div>
-
-        <div  class="article-middle" >
-          <h6><a id="biaotia">常德路：张爱玲和胡兰成的岁月静好在飘絮中</a></h6>
-          <!--//显示文章内容，管道stringSlice截取前100个字符-->
-          <p class="showarticle">
-            胡兰成在告别时，对张爱玲说：
-            你怎么长得这样高？ 于是，他们之间的障碍就消除 ﻿﻿﻿ ﻿﻿﻿
-          </p>
-        </div>
-      </div>
-      <div class="article-bottom">
-        <span id="myspan"> 世间事</span>
-        <span id=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> 0</span>
-        <span id="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> 3</span>
-      </div>
-    </div>
-    <div><img  class="img" src="../../assets/imgs/banner3.jpg"></div>
+    <div><img  class="img" src="http://localhost:3001/articleimages/{{comart.article_img}}"></div>
   </div>
   <!--============================================-->
+    </div>
+  </div>
 
 
+
+  <!--&lt;!&ndash;===============================下拉加载&ndash;&gt;-->
+  <!--<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">-->
+    <!--<ion-infinite-scroll-content-->
+      <!--loadingSpinner="下拉加载"-->
+      <!--loadingText="正在加载，请稍后..."></ion-infinite-scroll-content>-->
+  <!--</ion-infinite-scroll>-->
 </ion-content>
+

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+ion-content {
+  height: 669px !important; }
+
 h4, h5, h6 {
   padding: 0;
   margin: 1.6rem 0 0 0;
@@ -126,7 +129,7 @@ a.glyphicon {
   /*float: left;*/
   /*background-color: antiquewhite;*/ }
 
-#myspan {
+.myspan {
   border: solid 1px red;
   color: red;
   letter-spacing: 1px;
@@ -134,7 +137,7 @@ a.glyphicon {
   font-size: 10px;
   padding-left: 2px; }
 
-#span2 {
+.span2 {
   border: none;
   /*margin-right: 5px;*/
   color: #b4b4b4;
@@ -145,7 +148,7 @@ a.glyphicon {
   text-decoration: none;
   margin: 0 10px; }
 
-#span1 {
+.span1 {
   border: none;
   color: #b4b4b4;
   /*margin: 0 5px;*/ }
@@ -159,7 +162,7 @@ a.glyphicon {
   padding-right: 10px;
   cursor: pointer; }
 
-#biaotia {
+.biaotia {
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -244,22 +247,5 @@ hr {
 
 .topic-p {
   margin-top: -5px; }
-
-ul {
-  padding: 0px;
-  list-style: none;
-  margin: 0; }
-
-ul li {
-  float: left;
-  display: block;
-  padding: 15px 0px 0px 0px; }
-
-ul li a {
-  font-size: 18px; }
-
-ul li a:hover {
-  color: black;
-  text-decoration: none; }
 
 /*# sourceMappingURL=home.css.map */
