@@ -23,6 +23,12 @@ import {PipesModule} from "../pipes/pipes.module";
 import {RegistPage} from "../pages/regist/regist";
 import {UsersService} from "../providers/users.service";
 import { IonicStorageModule } from '@ionic/storage';
+import {NotfindPage} from "../pages/notfind/notfind";
+import {MycollectPage} from "../pages/mycollect/mycollect";
+import {MyarticlePage} from "../pages/myarticle/myarticle";
+import {OrdersService} from "../providers/orders.service";
+import {MyorderPage} from "../pages/myorder/myorder";
+import {ReplyPage} from "../pages/reply/reply";
 
 
 @NgModule({
@@ -35,6 +41,11 @@ import { IonicStorageModule } from '@ionic/storage';
     PersonCenterPage,
     TabsPage,
     RegistPage,
+    NotfindPage,
+    MycollectPage,
+    MyarticlePage,
+    MyorderPage,
+    ReplyPage,
 
   ],
   imports: [
@@ -57,6 +68,12 @@ import { IonicStorageModule } from '@ionic/storage';
     PersonCenterPage,
     TabsPage,
     RegistPage,
+    NotfindPage,
+    MycollectPage,
+    MyarticlePage,
+    MyorderPage,
+    ReplyPage,
+
   ],
   providers: [
     StatusBar,
@@ -66,6 +83,8 @@ import { IonicStorageModule } from '@ionic/storage';
     BooksService,
     ArticlesService,
     UsersService,
+    OrdersService,
+
   ]
 })
 export class AppModule {}

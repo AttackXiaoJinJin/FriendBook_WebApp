@@ -4,6 +4,10 @@ import {TopicsServerProvider} from "../../providers/topics-server";
 import {BooksService} from "../../providers/books.service";
 import {ArticlesService} from "../../providers/articles.service";
  import {RegistPage} from "../regist/regist";
+import {MycollectPage} from "../mycollect/mycollect";
+import {MyarticlePage} from "../myarticle/myarticle";
+import {MyorderPage} from "../myorder/myorder";
+import {ReplyPage} from "../reply/reply";
 
 declare var $:any;
 
@@ -179,12 +183,29 @@ export class HomePage {
     })
   }
 
-  // //注册
+  //注册
   toRegist(){
     let modelPage=this.modalCtrl.create(RegistPage);
-    // modelPage.onDidDismiss(data => {
-    //   console.log(data);
-    // });
+    modelPage.present();
+  }
+  //我的收藏
+  toMyCollect(){
+    let modelPage=this.modalCtrl.create(MycollectPage);
+    modelPage.present();
+  }
+  //我发表的
+  toMyPublish(){
+    let modelPage=this.modalCtrl.create(MyarticlePage);
+    modelPage.present();
+  }
+  //我的订单
+  toMyOrder(){
+    let modelPage=this.modalCtrl.create(MyorderPage);
+    modelPage.present();
+  }
+  //@我的
+  toReply(){
+    let modelPage=this.modalCtrl.create(ReplyPage);
     modelPage.present();
   }
 

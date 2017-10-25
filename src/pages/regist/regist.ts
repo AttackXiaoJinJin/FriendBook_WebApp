@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import {UsersService} from "../../providers/users.service";
 import {HomePage} from "../home/home";
 import {Storage} from "@ionic/storage";
-import {NavController} from "ionic-angular";
+import {ModalController, NavController} from "ionic-angular";
+import {NotfindPage} from "../notfind/notfind";
 
 @Component({
   selector: 'page-regist',
@@ -30,6 +31,7 @@ export class RegistPage{
     private navCtrl: NavController,
     private userSer:UsersService,
     private storage:Storage,
+    public modalCtrl:ModalController,
   ) { }
 
   ionViewDidLoad() {
@@ -129,11 +131,8 @@ export class RegistPage{
             that.userSer.getIdByPhone(that._telephone+'',function (result) {
               if(result.statusCode){
                 //404页面
-                // that.router.navigate(['/**']);
+                that.to404()
               }else{
-                // sessionStorage.setItem('user_id', result[0].user_id);
-                // that.localstorage.set('token',result.token);
-                // that.router.navigate(['/index']);
                 that.storage.ready().then(()=>{
                   that.storage.set('isLogin',true);
                   that.storage.set('user_id',result[0].user_id);
@@ -152,7 +151,7 @@ export class RegistPage{
           default:
             // that.router.navigate(['/**']);
             //404页面
-
+            that.to404()
             break;
         }
       });
@@ -166,16 +165,19 @@ export class RegistPage{
     let that=this;
     //倒计时
     that.countdown();
-    that.userSer.sendmessage(that._telephone+'',function (result) {
+    // that.userSer.sendmessage(that._telephone+'',function (result) {
+    that.userSer.sendmessage(that._telephone+'').then((result)=> {
       if(result.yanzheng){
         that._confirm_code=result.yanzheng;
         // console.log(that._confirm_code);
       }
     });
     //==================sendmessage
+  }
 
-
-
+  to404(){
+    let modelPage=this.modalCtrl.create(NotfindPage);
+    modelPage.present();
   }
 
 

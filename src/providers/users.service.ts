@@ -82,20 +82,20 @@ export class UsersService {
       }
     );
   }
-  getUserArticles(user,callback){
-    this.http.post(this.url+'/userarticle',user).subscribe(
+  getUserArticles(user_id):Promise<any>{
+    return this.http.post(this.url+'/userarticle',{user_id:user_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);
       }
     );
   }
-  showuserput(id,callback){
-    this.http.post(this.url+'/showuserpub',id).subscribe(
+  showuserput(user_id):Promise<any>{
+    return this.http.post(this.url+'/showuserpub',{user_id:user_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);
@@ -123,11 +123,12 @@ export class UsersService {
     )
   }
 
-  sendmessage(tel,callback){
-    this.http.post(this.url+'/sendmessage',{phone:tel}).subscribe(
+  sendmessage(phone):Promise<any>{
+    return this.http.post(this.url+'/sendmessage',{phone:phone}).toPromise().then(
       function (result) {
-        callback(result);
         console.log(JSON.stringify(result)+"验证码")
+        return(result);
+
       },
       function (error) {
         console.log(error.message);
@@ -136,10 +137,10 @@ export class UsersService {
   }
 
   //================获取所评论的书籍的回复
-  getuserbkrecoms(user_id,callback){
-    this.http.post(this.url+'/showuserrecom',{user_id:user_id}).subscribe(
+  getuserbkrecoms(user_id):Promise<any>{
+    return this.http.post(this.url+'/showuserrecom',{user_id:user_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
         // console.log(result);
       },
       function (error) {
@@ -148,10 +149,10 @@ export class UsersService {
     );
   }
   //================书籍上被回复的评论
-  userbkcom(bookcom_id,callback){
-    this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).subscribe(
+  userbkcom(bookcom_id):Promise<any>{
+    return this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
         // console.log(result);
       },
       function (error) {
@@ -161,11 +162,12 @@ export class UsersService {
   }
 
   //================获取所评论的文章的回复
-  getuserartrecoms(user_id,callback){
-    this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).subscribe(
+  getuserartrecoms(user_id):Promise<any>{
+    return this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).toPromise().then(
       function (result) {
-        callback(result);
-        // console.log(result);
+        console.log(result+"这是文章回复");
+        return(result);
+
       },
       function (error) {
         console.log(error.message);
@@ -173,10 +175,10 @@ export class UsersService {
     );
   }
   //================文章上被回复的评论
-  userartcom(articlecom_id,callback){
-    this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).subscribe(
+  userartcom(articlecom_id):Promise<any>{
+    return this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
         // console.log(result);
       },
       function (error) {
