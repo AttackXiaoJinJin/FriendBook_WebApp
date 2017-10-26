@@ -8,6 +8,7 @@ import {MycollectPage} from "../mycollect/mycollect";
 import {MyarticlePage} from "../myarticle/myarticle";
 import {MyorderPage} from "../myorder/myorder";
 import {ReplyPage} from "../reply/reply";
+import {SearchPage} from "../search/search";
 
 declare var $:any;
 
@@ -206,6 +207,11 @@ export class HomePage {
   //@我的
   toReply(){
     let modelPage=this.modalCtrl.create(ReplyPage);
+    modelPage.present();
+  }
+//  -------------------搜索-------------------------------
+  toSearch(){
+    let modelPage=this.modalCtrl.create(SearchPage);
     modelPage.present();
   }
 

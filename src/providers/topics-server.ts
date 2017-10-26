@@ -31,8 +31,17 @@ export class TopicsServerProvider {
       })
   }
 
-
-
+  //------------------搜索话题----------------
+  searchTopic(searchCon,callback){
+    this.http.post(this.url+'/searchtopic',{searchCon:searchCon}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 
 
 

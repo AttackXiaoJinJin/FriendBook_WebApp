@@ -29,6 +29,7 @@ import {MyarticlePage} from "../pages/myarticle/myarticle";
 import {OrdersService} from "../providers/orders.service";
 import {MyorderPage} from "../pages/myorder/myorder";
 import {ReplyPage} from "../pages/reply/reply";
+import {SearchPage} from "../pages/search/search";
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {ReplyPage} from "../pages/reply/reply";
     MyarticlePage,
     MyorderPage,
     ReplyPage,
+    SearchPage
 
   ],
   imports: [
@@ -73,6 +75,7 @@ import {ReplyPage} from "../pages/reply/reply";
     MyarticlePage,
     MyorderPage,
     ReplyPage,
+    SearchPage
 
   ],
   providers: [

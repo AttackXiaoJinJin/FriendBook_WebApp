@@ -10,8 +10,9 @@
   align-items: center;
   flex-direction: column; }
 
-.background > img:hover {
-  cursor: pointer; }
+.logoimg {
+  height: 55px;
+  width: 150px; }
 
 .background h5 {
   color: #000; }
@@ -26,7 +27,7 @@
   margin-top: 10px; }
 
 .form-horizontal {
-  padding-top: 3px; }
+  margin-top: -25px; }
 
 .form-horizontal .form-group {
   margin-right: 0px;

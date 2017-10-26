@@ -1,0 +1,128 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: red;"></ion-icon>
+          <!--<span class="confirmtip">确认订单信息</span>-->
+        </ion-col>
+        <!--<ion-col col-6 style="text-align: right" >-->
+        <!--<ion-icon name="more"></ion-icon>-->
+        <!--</ion-col>-->
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding="">
+  <div padding>
+    <ion-segment [(ngModel)]="search">
+      <ion-segment-button value="books">
+        书籍
+      </ion-segment-button>
+      <ion-segment-button value="articles">
+        文章
+      </ion-segment-button>
+      <ion-segment-button value="topic">
+        话题
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="search">
+    <ion-list *ngSwitchCase="'books'">
+      <!--<div>-->
+        <h1 style="text-align: center;" *ngIf="!_books">抱歉！</h1>
+        <h1 style="text-align: center;" *ngIf="!_books">未找到相关书籍</h1>
+        <div *ngIf="_books">
+          <!--下面是组件----------------------------------------------------------------------->
+          <div class="col-md-6" *ngFor="let book of _books">
+            <div class="booklist_bookitem" >
+              <div class="bookicon">
+                <img src="http://101.132.127.138:3000/bookimages/{{book?.book_img}}" alt="" style="height:150px; width:100px"  (click)="toBookDetail(book?.book_id)">
+              </div>
+              <div class="book_content">
+                <a (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a>
+                <p class="author">作者：{{book?.writer_name}}</p>
+                <p class="author">类型：{{book?.book_tag}}</p>
+                <p class="summary" [innerHtml]="book?.book_content"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!--</div>-->
+    </ion-list>
+    <!-------------------------------------------------------------------------------------------------->
+    <ion-list *ngSwitchCase="'articles'">
+      <h1 style="text-align: center;" *ngIf="!_articles">抱歉！</h1>
+      <h1 style="text-align: center;" *ngIf="!_articles">未找到相关文章</h1>
+      <div *ngIf="_articles">
+
+        <div class="articleItem" >
+          <!--<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>-->
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8>
+                <div class="author">
+                  <a (click)="togetuserid(_articles?.user_id)" class="icon">
+                    <img  src="http://101.132.127.138:3000/userhead/{{_articles?.user_head}}" alt="">
+                  </a>
+                  <a (click)="togetuserid(_articles?.user_id)" class="name">{{_articles?.user_name}}</a>
+                  <span>{{_articles?.article_time}}</span>
+                </div>
+                <a  (click)="toarticle(_articles?.article_id)" class="title">{{_articles?.article_title}}</a>
+                <p  [innerHtml]="_articles?.article_content | stringSlice:50"></p>
+                <div class="meta">
+                  <a>{{_articles?.topic_name}}</a>
+                  <!--<span aria-hidden="true"><i class="fa fa-comment"></i> {{_articles?.article_com?_articles?.article_com:0}}</span>-->
+                  <!--<span aria-hidden="true"><i class="fa fa-heart"></i> {{_articles?.article_collect?_articles?.article_collect:0}}</span>-->
+                  <span class=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> {{_articles?.article_com?_articles?.article_com:0}}</span>
+                  <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{_articles?.article_collect?_articles?.article_collect:0}}</span>
+                </div>
+              </ion-col>
+            <!--</ion-row>-->
+
+          <!--</ion-grid>-->
+
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+          <ion-col col-4>
+          <!--<div class="col-md-4">-->
+            <img src="http://101.132.127.138:3000/articleimages/{{_articles?.article_img}}" alt="" width="100%" height="200px">
+          </ion-col>
+
+          <div style="clear: both"></div>
+          </ion-row>
+          </ion-grid>
+
+        </div>
+
+      </div>
+    </ion-list>
+    <!------------------------------------------------------------->
+    <ion-list *ngSwitchCase="'topic'">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://101.132.127.138:3000/topicimages/{{_topic?.topic_img}}" (click)="toTdetail(_topic?.topic_id)">
+          </ion-thumbnail>
+          <h3>{{_topic?.topic_name}}</h3>
+          <p>{{ _topic?.article_num?_topic?.article_num:0}}篇文章 | {{_topic?.attent_num?_topic?.attent_num:0}}人关注</p>
+          <button class="btn_atten"  item-end (click)="attentopic(_topic?.topic_id)">{{atten_if ? '取消关注' : '+关注'}}</button>
+        </ion-item>
+
+      </ion-list>
+    </ion-list>
+  </div>
+</ion-content>
