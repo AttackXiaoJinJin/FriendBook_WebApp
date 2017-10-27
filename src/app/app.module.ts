@@ -24,16 +24,26 @@ import {ArticleComponent} from "../pages/article/article"
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 // import {HttpModule} from "@angular/http";
-
+import {ComponentsModule} from "../components/components.module";
+import {TopicsServerProvider} from "../providers/topics-server";
+import {ArticlesService} from "../providers/articles.service";
+import {PipesModule} from "../pipes/pipes.module";
+import {RegistPage} from "../pages/regist/regist";
 import {UsersService} from "../providers/users.service";
-import {ArticlesService} from "../providers/articles.service"
+import {NotfindPage} from "../pages/notfind/notfind";
+import {MycollectPage} from "../pages/mycollect/mycollect";
+import {MyarticlePage} from "../pages/myarticle/myarticle";
+import {OrdersService} from "../providers/orders.service";
+import {MyorderPage} from "../pages/myorder/myorder";
+import {ReplyPage} from "../pages/reply/reply";
+import {SearchPage} from "../pages/search/search";
+
+
 import {CommentsService} from "../providers/comments.service"
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms"
 //管道
-import {PipesModule} from "../pipes/pipes.module"
 import {IonicStorageModule} from "@ionic/storage";
-import {ComponentsModule} from "../components/components.module";
 import {RecommentsService} from "../providers/recomments.service";
 import {ArticleCommentComponent} from "../components/artcom/artcom";
 import {ArtrecomComponent} from "../components/artrecom/artrecom";
@@ -61,10 +71,24 @@ import {AddressShowComponent} from "../components/address-show/address-show.comp
     ArticleCommentComponent,
     ArtrecomComponent,
     AddressShowComponent,
+    TabsPage,
+    RegistPage,
+    NotfindPage,
+    MycollectPage,
+    MyarticlePage,
+    MyorderPage,
+    ReplyPage,
+    SearchPage
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
+    HttpModule,
+    PipesModule,
     IonicStorageModule.forRoot(),
     PipesModule,
     HttpClientModule,
@@ -91,6 +115,15 @@ import {AddressShowComponent} from "../components/address-show/address-show.comp
     ArticleComponent,
     // ArticleCommentComponent,
     // ArtrecomComponent,
+    TabsPage,
+    RegistPage,
+    NotfindPage,
+    MycollectPage,
+    MyarticlePage,
+    MyorderPage,
+    ReplyPage,
+    SearchPage
+
   ],
   providers: [
     StatusBar,
@@ -103,6 +136,13 @@ import {AddressShowComponent} from "../components/address-show/address-show.comp
     BooksService,
     ReceiveService,
     GlobalPropertyService,
+
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TopicsServerProvider,
+    BooksService,
+    ArticlesService,
+    UsersService,
+    OrdersService,
 
   ]
 })

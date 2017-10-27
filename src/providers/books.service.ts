@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/http';
+import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class BooksService {
-
   url:string='http://101.132.127.138:3000/books';
   constructor(private http:HttpClient) {
 
@@ -88,6 +89,19 @@ export class BooksService {
     this.http.post(this.url+'/showlove/deletelove',booklove).subscribe(
       function (result) {
         callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+
+  //===================加载3个
+  threebooks(bm,bn):Promise<any>{
+    return this.http.post(this.url+'/threebooks',{bm:bm,bn:bn}).toPromise().then(
+      function (result) {
+        return(result);
       },
       function (error) {
         console.log(error.message);

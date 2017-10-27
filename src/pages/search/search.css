@@ -1,0 +1,42 @@
+/*
+Error: Invalid GBK character "\xE4"
+        on line 2 of search.scss
+
+1: @charset "";
+2: //---------------------书籍------------------
+3: .booklist_bookitem{
+4:   width: 310px;
+5:   height: 160px;
+6:   margin-bottom: 30px;
+7: }
+
+Backtrace:
+search.scss:2
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1048:in `rescue in block in find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1045:in `block in find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each_with_index'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:778:in `rescue in check_sass_encoding'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:774:in `check_sass_encoding'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:444:in `check_encoding!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:400:in `_to_tree'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/bin/scss:13:in `<top (required)>'
+C:/Ruby24-x64/bin/scss:23:in `load'
+C:/Ruby24-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE4\"\A         on line 2 of search.scss\A \A 1: @charset \"\";\A 2: //---------------------书籍------------------\A 3: .booklist_bookitem{\A 4:   width: 310px;\A 5:   height: 160px;\A 6:   margin-bottom: 30px;\A 7: }"; }

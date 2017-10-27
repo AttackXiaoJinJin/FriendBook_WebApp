@@ -1,0 +1,248 @@
+@charset "UTF-8";
+ion-content {
+  height: 669px !important; }
+
+h4, h5, h6 {
+  padding: 0;
+  margin: 1.6rem 0 0 0;
+  color: black; }
+
+.searchbar-input {
+  background-color: white !important; }
+
+.login {
+  display: flex;
+  /*主轴方向对齐方式，居中*/
+  justify-content: space-between;
+  /*侧轴方向对齐方式，居中*/
+  line-height: 30px;
+  font-size: 28px; }
+
+ion-slides {
+  display: block;
+  width: 100%;
+  height: 30%; }
+
+.swiper-wrapper {
+  height: 160px; }
+
+.tuijian-txt {
+  margin-bottom: 10px;
+  display: flex;
+  /*主轴方向对齐方式，居中*/
+  justify-content: space-between;
+  /*侧轴方向对齐方式，居中*/
+  align-items: center; }
+
+.book-list {
+  margin-top: 3px;
+  height: 178px; }
+
+.topic-list {
+  margin-top: 3px;
+  height: 215px; }
+
+.tuijian-txt1 {
+  margin-left: 4px;
+  padding-left: 3px;
+  border-left: 3px solid red;
+  font-size: 16px;
+  font-weight: 500; }
+
+.tuijian-txt2 {
+  font-size: 13px;
+  color: #b4b4b4;
+  padding-right: 34px; }
+
+.book {
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  height: 130px;
+  text-align: center; }
+
+.book:hover {
+  cursor: pointer; }
+
+.book img {
+  display: block;
+  height: 120px;
+  width: 100px;
+  margin: 0 10px; }
+
+.book a {
+  color: #222222;
+  font-size: 13px; }
+
+.middle-middle-article {
+  width: 255px;
+  height: 140px;
+  /*background-color: goldenrod;*/
+  position: relative;
+  float: left;
+  display: block; }
+
+.thisart {
+  height: 109px; }
+
+.art-list {
+  position: relative;
+  margin-top: 5px;
+  padding-left: 5px;
+  height: 141px;
+  width: 376px;
+  border-bottom: 1px solid #eee; }
+
+.article-top {
+  width: 750px;
+  height: 70px;
+  position: relative;
+  /*background-color: darkgray;*/ }
+
+.article-middle {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  left: 0;
+  /* background-color: burlywood; */
+  top: 15px; }
+
+a.glyphicon {
+  margin-right: 5px; }
+
+.article-middle p {
+  display: block;
+  width: 260px;
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 6px;
+  padding: 0;
+  color: #aaa; }
+
+.article-bottom {
+  width: 750px;
+  height: 20px;
+  /*display: block;*/
+  /*float: left;*/
+  /*background-color: antiquewhite;*/ }
+
+.myspan {
+  border: solid 1px red;
+  color: red;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  font-size: 10px;
+  padding-left: 2px; }
+
+.span2 {
+  border: none;
+  /*margin-right: 5px;*/
+  color: #b4b4b4;
+  margin-right: 5px; }
+
+.article-bottom a {
+  color: lightgrey;
+  text-decoration: none;
+  margin: 0 10px; }
+
+.span1 {
+  border: none;
+  color: #b4b4b4;
+  /*margin: 0 5px;*/ }
+
+.img {
+  width: 106px;
+  height: 82px;
+  top: 32px;
+  left: 272px;
+  position: absolute;
+  padding-right: 10px;
+  cursor: pointer; }
+
+.biaotia {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: black; }
+
+.touxiangimg {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+
+.touxiangimgcss {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left; }
+
+.authorcss {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+  color: rgba(34, 34, 34, 0.78); }
+
+.timecss {
+  position: absolute;
+  top: 2px;
+  left: 79px;
+  color: #ccc; }
+
+.topic {
+  position: relative;
+  margin-top: 40px;
+  border: solid 1px #e6e6e6;
+  border-radius: 20px;
+  text-align: center;
+  background: #f8f8f8;
+  height: 131px;
+  width: 40%;
+  float: left;
+  margin-left: 25px; }
+
+.topic:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+
+.topicimg {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: -30px;
+  border-radius: 10px;
+  cursor: pointer; }
+
+.topic_content {
+  position: absolute;
+  top: 58px;
+  left: 1px;
+  height: 42px;
+  width: 100%;
+  overflow: hidden; }
+
+.btn-att {
+  border-radius: 15px;
+  width: 110px;
+  height: 33px;
+  background: green;
+  color: white;
+  margin-top: 10px;
+  border: 0px;
+  outline: 0;
+  position: absolute;
+  left: 20px;
+  bottom: 35px; }
+
+h4 {
+  position: relative;
+  top: -45px; }
+
+hr {
+  margin-top: 0px; }
+
+.topic-p {
+  margin-top: -5px; }
+
+/*# sourceMappingURL=home.css.map */

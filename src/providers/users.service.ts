@@ -165,8 +165,9 @@ export class UsersService {
   getuserartrecoms(user_id):Promise<any>{
     return this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).toPromise().then(
       function (result) {
+        console.log(result+"这是文章回复");
         return(result);
-        // console.log(result);
+
       },
       function (error) {
         console.log(error.message);
