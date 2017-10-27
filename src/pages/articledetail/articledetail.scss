@@ -1,0 +1,322 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+  padding:0;
+}
+
+
+page-articledetail {
+  .top {
+    width: 100%;
+    height: 160px;
+    //border: solid 1px red;
+  }
+  .tittle {
+    font-size: 30px;
+    font-weight: 700;
+    //border: solid 1px red;
+    padding: 5px;
+  }
+  .userhead {
+    width: 42px;
+    height: 42px;
+    //border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  .head {
+    width: 52px;
+    height: 52px;
+    //width: 100%;
+    //height: 100%;
+    //border: 1px solid red;
+    border-radius: 50%;
+
+  }
+  .topleft {
+    float: left;
+    //border: 1px solid red;
+    width: 70%;
+    height: 60px;
+    padding: 5px;
+    display: block;
+    span {
+      color: lightgray;
+    }
+  }
+  .topright {
+    float: right;
+    //margin-right: 5px;
+    width: 30%;
+    height: 60px;
+    //border: 1px solid red;
+    padding: 5px;
+    display: block;
+  }
+  .username {
+    position: absolute;
+    top: 100px;
+    left: 65px;
+    //border: 1px solid red;
+  }
+  .pubtime {
+    //border: 1px solid red;
+    position: absolute;
+    top: 120px;
+    left: 65px;
+    color: lightgray;
+  }
+  //.lovenum{
+  //  color: lightgray;
+  //}
+  .articledetail {
+    //border: 1px solid red;
+    padding: 5px;
+
+  }
+  .share {
+    //border: 1px solid red;
+    //font-size: 25px;
+    float: right;
+    //position: relative;
+    display: block;
+  }
+  .share span{
+      margin: 0 10px;
+      //border: 1px solid red;
+    }
+  .lovenum{
+    font-size: 15px;
+    border: 1px solid red;
+    position: absolute;
+    top: 5px;
+
+  }
+
+  //===========chen
+  //评论框
+  .comment {
+    margin-top: 15px;
+    margin-bottom: 100px;
+  }
+
+  .comment h3 {
+    padding: 10px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e7e7e7;
+
+  }
+
+  .articlecomment {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    outline: 0px !important;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+  }
+
+  button.comment_btn {
+    margin-top: 10px;
+    width: 100px;
+    height: 35px;
+    position: relative;
+    left: calc(95% - 100px);
+    border: 0px;
+    border-radius: 5px;
+    outline: 0px;
+    background: #ea6f5a;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .comment .comment_ul2 {
+
+  }
+  //.comment .comment_ul2 li{
+  //  padding: 20px 0;
+  //  border-top: 1px solid #e7e7e7;
+  //  display: inline-block;
+  //  height: 35px;
+  //  width: 35px;
+  //  margin: 5px -5px;
+  //}
+  //.comment .comment_ul2 .ul2-li img{
+  //  width: 48px;
+  //  border: 1px solid #e7e7e7;
+  //  border-radius: 50%;
+  //  float: left;
+  //}
+  //.comment .comment_ul2 .ul2-li .comment_content{
+  //  margin-left: 55px;
+  //}
+  //.comment .comment_ul2 .ul2-li .comment_content span{
+  //  margin-left: 50px;
+  //  color: #b4b4b4;
+  //}.comment .comment_ul2 .ul2-li .comment_content p a:hover{
+  //   text-decoration: none;
+  // }
+  //.comment .comment_ul2 .ul2-li .comment_content p:last-child{
+  //  margin-bottom: 0;
+  //}
+
+  /*=============================================*/
+  .count {
+    position: relative;
+    font-size: 17px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .count .left {
+    vertical-align: middle;
+  }
+  .count .pull-right {
+    float: right;
+  }
+  .count .pull-right a {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+    display: inline-block;
+  }
+
+  .count .pull-right a:hover {
+    color: #2f2f2f;
+  }
+
+  .sort li {
+    width: 80px;
+  }
+  .sort li a {
+    color: #969696;
+  }
+  .sort li a:hover {
+    color: black;
+    text-decoration: none;
+  }
+
+  /*=======================点击收藏*/
+  .meta-bottom{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top:1px solid #bfbfbf;
+  }
+  /*收藏按钮====================*/
+  .meta-bottom .collect{
+    display: inline-block;
+  }
+  .meta-bottom .collect:hover {
+    background-color: rgba(236,97,73,.05);
+    border-radius: 40px;
+  }
+
+  .meta-bottom .collect .collect_btn {
+    padding: 13px 0 15px;
+    font-size: 0;
+    border: 1px solid #ea6f5a;
+    border-radius: 40px;
+
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    line-height: 1.42857;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /*点击收藏后。。。。。。。。*/
+  .meta-bottom .collect .collect_btn.active {
+    background-color: #ea6f5a
+  }
+
+  .meta-bottom .collect .collect_btn.active .aixin>a {
+    color: #fff;
+  }
+  .meta-bottom .collect .collect_btn.active .aixin_num>a{
+    color: #fff;
+  }
+  .meta-bottom .collect .collect_btn.active .aixin_num{
+    font-size: 18px;
+    border-left: 1px solid white;
+    display: inline-block;
+    padding:0 15px;
+  }
+  /*===========================================*/
+  .meta-bottom .collect .collect_btn .aixin{
+    font-size: 19px;
+    display: inline-block;
+  }
+  .meta-bottom .collect .collect_btn .aixin a{
+    color: #ea6f5a;
+    padding: 18px 15px 18px 30px;
+  }
+  .meta-bottom .collect .collect_btn .aixin a i {
+    margin-right: 5px;
+    font-size: 21px;
+  }
+
+  .iconfont{
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 400!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+  }
+
+
+
+  .meta-bottom .collect .collect_btn .aixin_num{
+    font-size: 18px;
+    border-left: 1px solid rgba(236,97,73,.4);
+    display: inline-block;
+    padding:0 15px;
+  }
+
+
+  .meta-bottom .collect .collect_btn .aixin_num a{
+    /*border-left: 1px solid rgba(236,97,73,.4);*/
+    font-size: 18px;
+    color: #ea6f5a;
+  }
+
+  /*分享按钮=============================*/
+  .meta-bottom .share{
+    float: right;
+    margin-top: 6px;
+  }
+
+  .meta-bottom .share .share-circle{
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .meta-bottom .share .share-circle i{
+    /*margin-top: 10px;*/
+    font-size: 24px;
+    line-height: 2;
+  }
+
+
+
+}
