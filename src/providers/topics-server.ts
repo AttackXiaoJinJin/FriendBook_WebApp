@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http} from '@angular/http';
 import {HttpClient,HttpParams} from "@angular/common/http";
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TopicsServerProvider {
-  url: string = 'http://localhost:3001/topic';
+  url: string = 'http://101.132.127.138:3000/topic';
   constructor(
-    public http: Http,
     private HttpClient:HttpClient
   ) {
     console.log('Hello TopicsServerProvider Provider');
@@ -33,7 +31,8 @@ export class TopicsServerProvider {
 
   //------------------搜索话题----------------
   searchTopic(searchCon,callback){
-    this.http.post(this.url+'/searchtopic',{searchCon:searchCon}).subscribe(
+    // this.http.post(this.url+'/searchtopic',{searchCon:searchCon}).subscribe(
+    this.HttpClient.post(this.url+'/searchtopic',searchCon).subscribe(
       function (result) {
         callback(result);
       },

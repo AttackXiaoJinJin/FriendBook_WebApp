@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class BooksService {
-  url:string='http://localhost:3001/books';
+  url:string='http://101.132.127.138:3000/books';
   constructor(private http:HttpClient) {
 
   }

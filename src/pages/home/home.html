@@ -41,7 +41,7 @@
     <div class="tuijian-txt"><span class="tuijian-txt1">推荐书籍</span><span class="tuijian-txt2">更多书籍
       <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
     <div>
-      <div class="book" *ngFor="let book of books" ><img src="http://localhost:3001/bookimages/{{book.book_img}}" alt=""><a>{{book.book_name}}</a></div>
+      <div class="book" *ngFor="let book of books" ><img src="http://101.132.127.138:3000/bookimages/{{book.book_img}}" alt=""><a>{{book.book_name}}</a></div>
     </div>
   </div>
 
@@ -54,7 +54,7 @@
       <div class="thisart">
         <div  class="article-top" >
           <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="http://localhost:3001/userhead/{{colart.user_head}}" />
+            <img class="touxiangimg" src="http://101.132.127.138:3000/userhead/{{colart.user_head}}" />
           </a>
           <span class="authorcss">{{colart.user_name}}</span>
           <span class="timecss" col-4>{{colart.article_time}}</span>
@@ -73,7 +73,7 @@
           <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{colart.article_collect}}</span>
         </div>
     </div>
-      <div><img  class="img" src="http://localhost:3001/articleimages/{{colart.article_img}}"></div>
+      <div><img  class="img" src="http://101.132.127.138:3000/articleimages/{{colart.article_img}}"></div>
   </div>
   <!--============================================-->
 <!--推荐话题===========================-->
@@ -83,7 +83,7 @@
     </div>
     <!--==============循环两个话题-->
       <div class="topic" *ngFor="let topic of topics">
-        <img class="topicimg" src="http://localhost:3001/topicimages/{{topic.topic_img}}" alt="...">
+        <img class="topicimg" src="http://101.132.127.138:3000/topicimages/{{topic.topic_img}}" alt="...">
           <h4 style="cursor: pointer"><b>{{topic.topic_name}}</b></h4>
           <!--<button class="btn-att">{{atten_if?'取消关注':'+关注'}}</button>-->
           <button class="btn-att">+关注</button>
@@ -101,7 +101,7 @@
       <div class="thisart">
         <div  class="article-top" >
           <a  class="touxiangimgcss" >
-            <img class="touxiangimg" src="http://localhost:3001/userhead/{{comart.user_head}}" />
+            <img class="touxiangimg" src="http://101.132.127.138:3000/userhead/{{comart.user_head}}" />
           </a>
           <span class="authorcss">{{comart.user_name}}</span>
           <span class="timecss" col-4>{{comart.article_time}}</span>
@@ -120,7 +120,7 @@
         <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{comart.article_collect}}</span>
       </div>
     </div>
-    <div><img  class="img" src="http://localhost:3001/articleimages/{{comart.article_img}}"></div>
+    <div><img  class="img" src="http://101.132.127.138:3000/articleimages/{{comart.article_img}}"></div>
   </div>
   <!--============================================-->
     </div>

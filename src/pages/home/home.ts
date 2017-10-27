@@ -92,8 +92,8 @@ export class HomePage {
       }else{
         that.if_topic=true
         that.topics=result
-        console.log(that.topics)
-        console.log(that.topics[0])
+        // console.log(that.topics)
+        // console.log(that.topics[0])
       }
     });
 
@@ -169,7 +169,7 @@ export class HomePage {
 
         // //加载三本书
         this.threebooks()
-        console.log(this.books)
+        // console.log(this.books)
 
         // //  三篇热门文章
         this.threecomart()

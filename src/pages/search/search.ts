@@ -6,7 +6,6 @@ import {ArticlesService} from "../../providers/articles.service";
 import {TopicsServerProvider} from "../../providers/topics-server";
 
 
-
 @IonicPage()
 @Component({
   selector: 'page-search',
@@ -20,6 +19,8 @@ export class SearchPage {
   searchText: any;
   _article: any;
   _topics: any;
+  aaa:any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -34,33 +35,37 @@ export class SearchPage {
     // console.log(this.searchText);
     let str = '{"searchCon":"' + this.searchText + '"}';
     let searchCon = JSON.parse(str);
+
+
     let that = this;
     that.BooksService.searchBook(searchCon, function (result) {
-      console.log(result);
+      // console.log(result);
       if (!result.statusCode) {
         that._books = result[0];
       }
       // console.log(that._topics);
     });
+
   //  -------------------------------文章--------------------------------
     that.ArticlesService.searchArticle(searchCon, function (result) {
-      console.log(result);
+      // console.log(result);
       if (!result.statusCode) {
-        that._articles = result[0][0];
-        console.log(that._articles);
+        that._articles = result[0];
+        // console.log(that._articles);
       }
 
     });
+
   //  ------------------------话题-------------------
-    that.TopicService.searchTopic(this.searchText+'', function (result) {
-      console.log(JSON.stringify((result._body)[0])+"这是话题");
-      console.log(JSON.stringify(result)+"这是话题");
+    that.TopicService.searchTopic(searchCon, function (result) {
       if (!result.statusCode) {
         that._topics = result[0];
       }
-      console.log(JSON.stringify(that._topics)+"这是话题");
+      // console.log(that._topics);
     });
   }
+
+
   back(){
     this.navCtrl.pop();
     // this.navCtrl.push(TabsPage);
