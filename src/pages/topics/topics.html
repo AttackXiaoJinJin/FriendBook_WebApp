@@ -6,13 +6,33 @@
 -->
 <ion-header>
 
+
   <ion-navbar>
-    <ion-title>topics</ion-title>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon style="font-size: 30px;" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </ion-col>
+        <ion-col col-10 style="font-size: 20px;">话题列表</ion-col>
+        <ion-col  col-1  class="action-sheets-basic-page">
+         <span class="list" (click)="presentActionSheet()"><ion-icon  style="font-size: 30px;"name="list" ></ion-icon></span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<span   *ngFor="let topic of topics">
+  <topicitem [_topic]="topic"></topicitem>
+</span>
+  <!--下拉加载-->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

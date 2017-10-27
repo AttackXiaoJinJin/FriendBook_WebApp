@@ -13,6 +13,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {TopicsPage} from "../pages/topics/topics";
 import {PersonCenterPage} from "../pages/person-center/person-center";
 
+//hyc
+import {TopicdetailPage} from "../pages/topicdetail/topicdetail";
+import {TopicitemComponent} from "../components/topicitem/topicitem";
+import {ArticleComponent} from "../components/article/article";
+import {PersondetailPage} from "../pages/persondetail/persondetail"
+//管道
+import {StringSlicePipe} from "./../pipes/string-slice/string-slice"
+//server
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from "@angular/http";
+import { TopicsServerProvider } from '../providers/topics-server';
+import {ArticlesService} from "../providers/articles.service"
+import {UsersService} from "../providers/users.service";
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,11 +36,20 @@ import {PersonCenterPage} from "../pages/person-center/person-center";
     HomePage,
     TopicsPage,
     PersonCenterPage,
-    TabsPage
+    TabsPage,
+    TopicdetailPage,
+    TopicitemComponent,
+    ArticleComponent,
+    PersondetailPage,
+    StringSlicePipe
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    HttpClientModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,12 +59,17 @@ import {PersonCenterPage} from "../pages/person-center/person-center";
     HomePage,
     TopicsPage,
     PersonCenterPage,
-    TabsPage
+    TabsPage,
+    TopicdetailPage,
+    PersondetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TopicsServerProvider,
+    ArticlesService,
+    UsersService
   ]
 })
 export class AppModule {}
