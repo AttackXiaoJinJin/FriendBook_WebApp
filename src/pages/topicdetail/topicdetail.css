@@ -1,0 +1,39 @@
+page-topicdetail .top {
+  height: 170px;
+  width: 100%;
+  padding: 10px;
+  border-bottom: solid 1px gray; }
+page-topicdetail img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px; }
+page-topicdetail .txt {
+  position: relative;
+  left: 100px;
+  bottom: 60px;
+  font-size: 20px; }
+page-topicdetail .topic {
+  height: 100px;
+  display: block; }
+page-topicdetail .right {
+  margin-left: 20px;
+  display: block;
+  outline: 0px;
+  border: 0px; }
+page-topicdetail .btn1 {
+  background: white;
+  color: green;
+  width: 130px;
+  height: 40px;
+  border: 1px solid green;
+  outline: 0px; }
+page-topicdetail .btn2 {
+  margin-left: 40px;
+  width: 130px;
+  height: 40px;
+  background: #009f00;
+  color: white;
+  outline: 0px;
+  border: 0; }
+
+/*# sourceMappingURL=topicdetail.css.map */

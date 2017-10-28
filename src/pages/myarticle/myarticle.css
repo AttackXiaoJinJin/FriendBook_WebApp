@@ -1,0 +1,101 @@
+page-myarticle .middle-middle-article {
+  width: 255px;
+  height: 140px;
+  /*background-color: goldenrod;*/
+  position: relative;
+  float: left;
+  display: block; }
+page-myarticle .thisart {
+  height: 109px; }
+page-myarticle .art-list {
+  position: relative;
+  margin-top: 5px;
+  padding-left: 5px;
+  height: 141px;
+  width: 376px;
+  border-bottom: 1px solid #eee; }
+page-myarticle .article-top {
+  width: 750px;
+  height: 70px;
+  position: relative;
+  /*background-color: darkgray;*/ }
+page-myarticle .article-middle {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  left: 0;
+  /* background-color: burlywood; */
+  top: 15px; }
+page-myarticle a.glyphicon {
+  margin-right: 5px; }
+page-myarticle .article-middle p {
+  display: block;
+  width: 260px;
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 6px;
+  padding: 0;
+  color: #aaa; }
+page-myarticle .article-bottom {
+  width: 750px;
+  height: 20px;
+  /*display: block;*/
+  /*float: left;*/
+  /*background-color: antiquewhite;*/ }
+page-myarticle .myspan {
+  border: solid 1px red;
+  color: red;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  font-size: 10px;
+  padding-left: 2px; }
+page-myarticle .span2 {
+  border: none;
+  /*margin-right: 5px;*/
+  color: #b4b4b4;
+  margin-right: 5px; }
+page-myarticle .article-bottom a {
+  color: lightgrey;
+  text-decoration: none;
+  margin: 0 10px; }
+page-myarticle .span1 {
+  border: none;
+  color: #b4b4b4;
+  /*margin: 0 5px;*/ }
+page-myarticle .img {
+  width: 106px;
+  height: 82px;
+  top: 32px;
+  left: 272px;
+  position: absolute;
+  padding-right: 10px;
+  cursor: pointer; }
+page-myarticle .biaotia {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: black; }
+page-myarticle .touxiangimg {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+page-myarticle .touxiangimgcss {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left; }
+page-myarticle .authorcss {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+  color: rgba(34, 34, 34, 0.78); }
+page-myarticle .timecss {
+  position: absolute;
+  top: 2px;
+  left: 79px;
+  color: #ccc; }
+
+/*# sourceMappingURL=myarticle.css.map */

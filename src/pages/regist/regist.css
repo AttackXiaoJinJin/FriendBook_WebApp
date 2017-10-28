@@ -1,0 +1,84 @@
+page-regist {
+  /**{margin: 0;padding: 0}*/
+  /*body{*/
+  /*overflow: hidden;*/
+  /*}*/
+  /*@media screen and (min-width: 1370px){*/
+  /*.form-horizontal .control-label {*/
+  /*padding-top: 0px;*/
+  /*}*/
+  /*}*/ }
+  page-regist .background {
+    width: 100%;
+    height: 662px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  page-regist .logoimg {
+    height: 55px;
+    width: 150px; }
+  page-regist .background h5 {
+    color: #000; }
+  page-regist .content {
+    width: 400px;
+    height: 525px;
+    background: #fff;
+    /*background: rgba(0,0,0,0.6);*/
+    padding: 0px 50px;
+    border-radius: 5px;
+    margin-top: 10px; }
+  page-regist .form-horizontal {
+    margin-top: -25px; }
+  page-regist .form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+    color: #000; }
+  page-regist .form-horizontal .form-group input {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px black solid;
+    padding-left: 5px; }
+  page-regist #code_confirm {
+    width: 60%;
+    height: 40px; }
+  page-regist .background .content h4 {
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    border-sizing: border-box; }
+  page-regist #btn_regist {
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    margin-bottom: 5px; }
+  page-regist .btn-code {
+    border: 1px solid green;
+    background-color: green;
+    width: 38%;
+    padding: 6px 9px;
+    font-size: 14px;
+    color: white;
+    height: 39px;
+    border-radius: 5%; }
+  page-regist .com-code {
+    width: 60%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: black;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px; }
+  page-regist #gologin {
+    font-size: 16px; }
+  page-regist .redspan {
+    color: red; }
+
+/*# sourceMappingURL=regist.css.map */

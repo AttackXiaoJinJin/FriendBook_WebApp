@@ -1,0 +1,213 @@
+@charset "UTF-8";
+page-home .search_btn {
+  width: 20px;
+  height: 30px;
+  margin-left: -24px;
+  margin-top: -3px; }
+page-home ion-content {
+  height: 669px !important; }
+page-home h4, page-home h5, page-home h6 {
+  padding: 0;
+  margin: 1.6rem 0 0 0;
+  color: black; }
+page-home .searchbar-input {
+  background-color: white !important; }
+page-home .login {
+  display: flex;
+  /*主轴方向对齐方式，居中*/
+  justify-content: space-between;
+  /*侧轴方向对齐方式，居中*/
+  line-height: 30px;
+  font-size: 28px; }
+page-home ion-slides {
+  display: block;
+  width: 100%;
+  height: 30%; }
+page-home .swiper-wrapper {
+  height: 160px; }
+page-home .tuijian-txt {
+  margin-bottom: 10px;
+  display: flex;
+  /*主轴方向对齐方式，居中*/
+  justify-content: space-between;
+  /*侧轴方向对齐方式，居中*/
+  align-items: center; }
+page-home .book-list {
+  margin-top: 3px;
+  height: 178px; }
+page-home .topic-list {
+  margin-top: 3px;
+  height: 215px; }
+page-home .tuijian-txt1 {
+  margin-left: 4px;
+  padding-left: 3px;
+  border-left: 3px solid red;
+  font-size: 16px;
+  font-weight: 500; }
+page-home .tuijian-txt2 {
+  font-size: 13px;
+  color: #b4b4b4;
+  padding-right: 34px; }
+page-home .book {
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  height: 130px;
+  text-align: center; }
+page-home .book:hover {
+  cursor: pointer; }
+page-home .book img {
+  display: block;
+  height: 120px;
+  width: 100px;
+  margin: 0 10px; }
+page-home .book a {
+  color: #222222;
+  font-size: 13px; }
+page-home .middle-middle-article {
+  width: 255px;
+  height: 140px;
+  /*background-color: goldenrod;*/
+  position: relative;
+  float: left;
+  display: block; }
+page-home .thisart {
+  height: 109px; }
+page-home .art-list {
+  position: relative;
+  margin-top: 5px;
+  padding-left: 5px;
+  height: 141px;
+  width: 376px;
+  border-bottom: 1px solid #eee; }
+page-home .article-top {
+  width: 750px;
+  height: 70px;
+  position: relative;
+  /*background-color: darkgray;*/ }
+page-home .article-middle {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  left: 0;
+  /* background-color: burlywood; */
+  top: 15px; }
+page-home a.glyphicon {
+  margin-right: 5px; }
+page-home .article-middle p {
+  display: block;
+  width: 260px;
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 6px;
+  padding: 0;
+  color: #aaa; }
+page-home .article-bottom {
+  width: 750px;
+  height: 20px;
+  /*display: block;*/
+  /*float: left;*/
+  /*background-color: antiquewhite;*/ }
+page-home .myspan {
+  border: solid 1px red;
+  color: red;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  font-size: 10px;
+  padding-left: 2px; }
+page-home .span2 {
+  border: none;
+  /*margin-right: 5px;*/
+  color: #b4b4b4;
+  margin-right: 5px; }
+page-home .article-bottom a {
+  color: lightgrey;
+  text-decoration: none;
+  margin: 0 10px; }
+page-home .span1 {
+  border: none;
+  color: #b4b4b4;
+  /*margin: 0 5px;*/ }
+page-home .img {
+  width: 106px;
+  height: 82px;
+  top: 32px;
+  left: 272px;
+  position: absolute;
+  padding-right: 10px;
+  cursor: pointer; }
+page-home .biaotia {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: black; }
+page-home .touxiangimg {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+page-home .touxiangimgcss {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left; }
+page-home .authorcss {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+  color: rgba(34, 34, 34, 0.78); }
+page-home .timecss {
+  position: absolute;
+  top: -20px;
+  left: 72px;
+  color: #ccc; }
+page-home .topic {
+  position: relative;
+  margin-top: 40px;
+  border: solid 1px #e6e6e6;
+  border-radius: 20px;
+  text-align: center;
+  background: #f8f8f8;
+  height: 131px;
+  width: 40%;
+  float: left;
+  margin-left: 25px; }
+page-home .topic:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+page-home .topicimg {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: -30px;
+  border-radius: 10px;
+  cursor: pointer; }
+page-home .topic_content {
+  position: absolute;
+  top: 58px;
+  left: 1px;
+  height: 42px;
+  width: 100%;
+  overflow: hidden; }
+page-home .btn-att {
+  border-radius: 15px;
+  width: 110px;
+  height: 33px;
+  background: green;
+  color: white;
+  margin-top: 10px;
+  border: 0px;
+  outline: 0;
+  position: absolute;
+  left: 20px;
+  bottom: 35px; }
+page-home h4 {
+  position: relative;
+  top: -45px; }
+page-home hr {
+  margin-top: 0px; }
+page-home .topic-p {
+  margin-top: -5px; }
+
+/*# sourceMappingURL=home.css.map */

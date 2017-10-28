@@ -1,0 +1,75 @@
+page-persondetail .header_name {
+  height: 30px;
+  font-size: 20px;
+  color: black; }
+page-persondetail .other {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+  border-bottom: solid 1px gray; }
+page-persondetail .other img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; }
+page-persondetail .txt {
+  position: relative;
+  left: 100px;
+  bottom: 60px;
+  font-size: 20px; }
+page-persondetail .topic {
+  height: 100px;
+  display: block; }
+page-persondetail .other .bottom {
+  height: 22px;
+  width: 80%;
+  margin-left: 30px;
+  font-size: 16px;
+  color: black;
+  overflow: hidden; }
+page-persondetail .segment-ios .segment-button.segment-activated {
+  background-color: white !important; }
+page-persondetail .segment-ios .segment-button.segment-activated {
+  color: red !important; }
+page-persondetail .self {
+  padding: 12px;
+  width: 100%;
+  height: 190px;
+  border-bottom: 1px solid gray;
+  box-sizing: border-box; }
+page-persondetail .self .self_left {
+  float: left;
+  width: 73%; }
+page-persondetail .self .self_left .name_time {
+  font-size: 18px;
+  color: #9b9b9b; }
+page-persondetail .self .self_left .title {
+  font-size: 15px;
+  color: black; }
+page-persondetail .self .self_left .content {
+  width: 100%;
+  height: 40px;
+  color: #9b9b9b; }
+page-persondetail .self .self_left .bottom > ul {
+  padding: 0; }
+page-persondetail .self .self_left .bottom .type {
+  width: 55px;
+  height: 25px;
+  border: solid 1px red;
+  color: red; }
+page-persondetail .self .self_left .bottom > ul > li {
+  text-align: center;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  margin-right: 4px; }
+page-persondetail .self .self_right {
+  float: right;
+  width: 27%; }
+page-persondetail .self .self_right > img {
+  border-radius: 10px;
+  margin-top: 45px;
+  margin-left: 5px;
+  width: 85px;
+  height: 85px; }
+
+/*# sourceMappingURL=persondetail.css.map */

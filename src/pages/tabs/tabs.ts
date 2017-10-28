@@ -5,6 +5,7 @@ import { PublishPage } from '../publish/publish';
 import { HomePage } from '../home/home';
 import {TopicsPage} from "../topics/topics";
 import {PersonCenterPage} from "../person-center/person-center";
+import {ArticledetailPage} from "../articledetail/articledetail"
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,6 +17,7 @@ export class TabsPage {
   tab3Root = PublishPage;
   tab4Root = TopicsPage;
   tab5Root = PersonCenterPage;
+
 
   constructor() {
 

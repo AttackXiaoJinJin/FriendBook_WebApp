@@ -1,0 +1,13 @@
+<!--<span   *ngFor="let topics of _topics">-->
+  <ion-list>
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src="http://101.132.127.138:3000/topicimages/{{_topic?.topic_img}}" (click)="toTdetail(_topic?.topic_id)">
+    </ion-thumbnail>
+    <h3>{{_topic?.topic_name}}</h3>
+    <p>{{ _topic.article_num?_topic.article_num:0}}篇文章 | {{_topic.attent_num?_topic.attent_num:0}}人关注</p>
+    <button class="btn_atten"  item-end (click)="attentopic(_topic?.topic_id)">{{atten_if ? '取消关注' : '+关注'}}</button>
+  </ion-item>
+
+</ion-list>
+<!--</span>-->

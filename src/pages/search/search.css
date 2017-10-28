@@ -1,0 +1,103 @@
+page-search .booklist_bookitem {
+  width: 310px;
+  height: 160px;
+  margin-bottom: 30px; }
+page-search .bookicon {
+  width: 100px;
+  height: 150px;
+  float: left;
+  box-shadow: 0 1px 4px rgba(40, 40, 40, 0.6); }
+page-search .bookicon:hover {
+  box-shadow: 0 0 6px rgba(40, 40, 40, 0.6);
+  cursor: pointer; }
+page-search .book_content {
+  margin-left: 134px; }
+page-search .book_content a {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  height: 50px;
+  color: #555;
+  overflow: hidden;
+  font-weight: bold; }
+page-search .book_content a:hover {
+  text-decoration: none;
+  color: #ea6f5a !important; }
+page-search .book_content p.author {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+page-search .book_content p {
+  margin-top: 0px;
+  margin-bottom: 10px; }
+page-search .book_content p.summary {
+  font-size: 13px;
+  line-height: 18px;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0px;
+  color: #999; }
+page-search [col-4] {
+  padding: 25px !important; }
+page-search .articleItem {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8; }
+page-search .author .icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px; }
+page-search .author .icon img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 50%; }
+page-search .author .name {
+  color: #000;
+  display: inline-block;
+  padding: 0 5px; }
+page-search .author .name:hover {
+  text-decoration: none; }
+page-search .author span {
+  color: #969696; }
+page-search .author {
+  margin-bottom: 7px; }
+page-search .articleItem .title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5; }
+page-search .articleItem p {
+  color: #333;
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 24px; }
+page-search .meta a {
+  margin-right: 10px;
+  padding: 2px 6px;
+  color: #ea6f5a !important;
+  border: 1px solid #ea6f5a;
+  border-radius: 3px; }
+page-search .meta a:hover {
+  text-decoration: none;
+  background: #fef7f5; }
+page-search .meta span {
+  margin-right: 10px;
+  color: #b4b4b4; }
+page-search .meta span:before {
+  margin-right: 5px; }
+page-search .btn_atten {
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: #4ab93b !important; }
+page-search img {
+  border-radius: 10px; }
+page-search span, page-search .button-inner, page-search .public {
+  width: 100% !important;
+  color: black;
+  font-size: 16px;
+  font-weight: 300; }
+
+/*# sourceMappingURL=search.css.map */

@@ -1,0 +1,107 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>@ 我 的</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content2">
+    <!--上面的选项卡-->
+    <ion-segment [(ngModel)]="replyme">
+      <ion-segment-button value="book">
+        书籍回复
+      </ion-segment-button>
+      <ion-segment-button value="article">
+        文章回复
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!--下面的列表-->
+  <div [ngSwitch]="replyme">
+    <ion-list *ngSwitchCase="'book'">
+      <h1 style="text-align: center;" *ngIf="!bookrecomments">哇哦！</h1>
+      <h1 style="text-align: center;" *ngIf="!bookrecomments">没有收到回复呢</h1>
+      <div *ngIf="bookrecomments">
+        <!--=============================循环-->
+        <div class="col-md-12">
+          <div ngClass="sub_comment_list" *ngFor="let bookrecomment of bookrecomments">
+          <!--提示在哪本书-->
+      <div><h6 class="rh5"><a (click)="togetuserid(bookrecomment?.user_id)">{{bookrecomment?.user_name}}</a>在<a (click)="toBookDetail(bookrecomment?.book_id)">《{{bookrecomment?.book_name}}》</a>中回复了你</h6></div>
+      <!--用户当时的评论-->
+      <div class="comment_content">
+        <!--昵称-->
+        <span style="display: block"><a>我：</a><span class="mycontent" >{{bookrecomment?.bookcom_content |stringSlice:40}}</span></span>
+        <span style="color: #969696;font-size: 13px">
+          <!--评论时间-->
+          {{bookrecomment?.bookcom_time}}
+        </span>
+      </div>
+      <!--回复-->
+      <div class="inner_comment">
+        <div class="sub_comment">
+          <!--回复的用户头像-->
+          <img class="reimg" (click)="togetuserid(bookrecomment?.user_id)" src="http://101.132.127.138:3000/userhead/{{bookrecomment?.user_head}}" alt="">
+          <p><a target="_blank" (click)="togetuserid(bookrecomment?.user_id)">{{bookrecomment?.user_name}}</a>:
+            <span><a target="_blank">@我</a></span>
+
+            {{bookrecomment?.recom_content}}
+          </p>
+          <!--日期==============-->
+          <div class="sub_tool_group">
+            <span class="youtime">{{bookrecomment?.recom_time}}</span>
+          </div>
+        </div>
+      </div>
+          </div>
+          <!--============================-->
+        </div>
+      </div>
+
+    </ion-list>
+
+    <!--//=================================================================================-->
+    <ion-list *ngSwitchCase="'article'">
+      <!--=========================-->
+      <h1 style="text-align: center;" *ngIf="!artrecomments">哇哦！</h1>
+      <h1 style="text-align: center;" *ngIf="!artrecomments">没有收到回复呢</h1>
+      <div *ngIf="artrecomments">
+        <div class="col-md-12">
+      <!--===================-->
+          <div ngClass="sub_comment_list" *ngFor="let artrecomment of artrecomments">
+
+            <div><h6 class="rh5"><a (click)="togetuserid(artrecomment?.user_id)">{{artrecomment?.user_name}}</a>在<a (click)="toArtDetail(artrecomment?.article_id)">《{{artrecomment?.article_title}}》</a>中回复了你</h6></div>
+            <!--用户当时的评论-->
+            <div class="comment_content">
+              <!--昵称-->
+              <span style="display: block"><a>我：</a><span class="mycontent" >{{artrecomment?.articlecom_content |stringSlice:40}}</span></span>
+              <span style="color: #969696;font-size: 13px">
+          <!--评论时间-->
+          {{artrecomment?.articlecom_time}}
+        </span>
+            </div>
+            <!--回复-->
+            <div class="inner_comment">
+              <div class="sub_comment">
+                <!--回复的用户头像-->
+                <img class="reimg" (click)="togetuserid(artrecomment?.user_id)" src="http://101.132.127.138:3000/userhead/{{artrecomment?.user_head}}" alt="">
+                <p><a target="_blank" (click)="togetuserid(artrecomment?.user_id)">{{artrecomment?.user_name}}</a>:
+                  <span><a target="_blank">@我</a></span>
+
+                  {{artrecomment?.recom_content}}
+                </p>
+                <!--日期==============-->
+                <div class="sub_tool_group">
+                  <span class="youtime">{{artrecomment?.recom_time}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--=======================-->
+        </div>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

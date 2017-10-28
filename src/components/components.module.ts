@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommentItemComponent } from './comment-item/comment-item';
-import { ReCommentItemComponent } from './re-comment-item/re-comment-item';
+import { TopicitemComponent } from './topicitem/topicitem';
+import { ArticleCommentComponent } from './artcom/artcom';
+import { ArtrecomComponent } from './artrecom/artrecom';
+import {AddressShowComponent} from "./address-show/address-show.component";
 @NgModule({
-	declarations: [CommentItemComponent,
-    ReCommentItemComponent],
+	declarations: [TopicitemComponent,ArticleCommentComponent,
+    ArtrecomComponent,AddressShowComponent],
 	imports: [],
-	exports: [CommentItemComponent,
-    ReCommentItemComponent]
+	exports: [TopicitemComponent,ArticleCommentComponent,
+    ArtrecomComponent,AddressShowComponent]
 })
 export class ComponentsModule {}

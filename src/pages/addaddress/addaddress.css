@@ -1,0 +1,14 @@
+page-addaddress {
+  position: relative; }
+  page-addaddress .error-message {
+    color: red; }
+  page-addaddress .confirmtip {
+    margin-left: 10px;
+    position: absolute;
+    top: 10px; }
+  page-addaddress .box {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px; }
+
+/*# sourceMappingURL=addaddress.css.map */

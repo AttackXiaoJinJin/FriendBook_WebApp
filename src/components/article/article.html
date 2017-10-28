@@ -1,0 +1,31 @@
+<!-- Generated template for the ArticleComponent component -->
+
+
+<div class="art-list">
+  <!--文章列表-->
+  <div class="middle-middle-article">
+    <div class="thisart">
+      <div  class="article-top" >
+        <a   (click)="togetuserid(_article.user_id)" class="touxiangimgcss" >
+          <img   class="touxiangimg" src="http://101.132.127.138:3000/userhead/{{_article.user_head}}" />
+        </a>
+        <span class="authorcss">{{_article.user_name}} &nbsp;&nbsp; {{_article.article_time}}</span>
+
+      </div>
+
+      <div  class="article-middle" >
+        <h6><a class="biaotia">{{_article.article_title}}</a></h6>
+        <!--//显示文章内容，管道stringSlice截取前100个字符-->
+        <p class="showarticle" [innerHtml]="_article.article_content | stringSlice:60"></p>
+      </div>
+    </div>
+    <div class="article-bottom">
+      <span class="myspan">{{_article.topic_name}}</span>
+      <span class=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> {{_article.article_com?_article.article_com:0}}</span>
+      <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{_article.article_collect?_article.article_collect:0}}</span>
+    </div>
+  </div>
+  <p><img  class="article_img" src="http://101.132.127.138:3000/articleimages/{{_article.article_img}}"></p>
+</div>
+
+

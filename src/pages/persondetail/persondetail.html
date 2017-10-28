@@ -1,0 +1,119 @@
+<!--
+  Generated template for the PersondetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1><span (click)="back()">
+      <ion-icon style="font-size: 30px;" ios="ios-arrow-back" md="md-arrow-back" ></ion-icon>
+
+    </span>
+        </ion-col>
+        <ion-col class="header_name" col-4>{{_porsonal?.user_name}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="other">
+    <div class="topic">
+      <span> <img src="http://101.132.127.138:3000/userhead/{{_porsonal?.user_head}}" alt="..."></span>
+      <div class="txt">
+        <b>{{_porsonal?.user_name}}</b>
+        <br>
+        <span>收藏&nbsp;{{_porsonal?.coll_num?_porsonal?.coll_num:0}}&nbsp;&nbsp;关注&nbsp;{{_porsonal?.att_num?_porsonal?.att_num:0}}
+        &nbsp;&nbsp;喜欢&nbsp;{{_porsonal?.love_num?_porsonal?.love_num:0}}
+        </span>
+      </div>
+    </div>
+
+    <div  (click)="doAlert()" class="bottom">
+        {{_porsonal?.user_introduction}}
+    </div>
+  </div>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="other">
+      <ion-segment-button value="他的文章">
+        他的文章
+      </ion-segment-button>
+      <ion-segment-button value="他的热门">
+        他的热门
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="other">
+    <ion-list *ngSwitchCase="'他的文章'">
+
+        <!--<pagearticle [_article]="pagearticle" *ngFor="let pagearticle of _articles"></pagearticle>-->
+
+         <div class="self" *ngFor="let article of _articles" >
+             <div class="self_left">
+
+               <span class="name_time">{{article?.user_name}}&nbsp;&nbsp;&nbsp;{{article?.article_time}}</span>
+               <br>
+               <br>
+               <span class="title" >{{article?.article_title}}</span>
+               <br>
+               <p class="content" [innerHtml]="article?.article_content | stringSlice:60"></p>
+               <div class="bottom">
+               <ul>
+                 <li>
+                   <div class="type">{{article?.topic_name}}</div></li>
+                 <li><ion-icon name="ios-chatbubbles" style="font-size: 16px;color: #b4b4b4;"></ion-icon> {{article.article_com?article.article_com:0}}</li>
+                 <li><ion-icon name="md-heart" style="font-size: 16px;color: #b4b4b4;"></ion-icon> {{article.article_collect?article.article_collect:0}}</li>
+               </ul>
+
+               </div>
+
+             </div>
+             <div class="self_right">
+               <img src="http://101.132.127.138:3000/articleimages/{{article?.article_img}}" alt="">
+             </div>
+         </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'他的热门'">
+
+        <!--<pagearticle [_article]="pagearticle" *ngFor="let pagearticle of _Hotarticles"></pagearticle>-->
+
+      <div class="self" *ngFor="let article of _Hotarticles" >
+        <div class="self_left">
+
+          <span class="name_time">{{article?.user_name}}&nbsp;&nbsp;&nbsp;{{article?.article_time}}</span>
+          <br>
+          <br>
+          <span class="title" >{{article?.article_title}}</span>
+          <br>
+          <p class="content" [innerHtml]="article?.article_content | stringSlice:60"></p>
+          <div class="bottom">
+            <ul>
+              <li>
+                <div class="type">{{article?.topic_name}}</div></li>
+              <li><ion-icon name="ios-chatbubbles" style="font-size: 16px;color: #b4b4b4;"></ion-icon> {{article.article_com?article.article_com:0}}</li>
+              <li><ion-icon name="md-heart" style="font-size: 16px;color: #b4b4b4;"></ion-icon> {{article.article_collect?article.article_collect:0}}</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="self_right">
+          <img src="http://101.132.127.138:3000/articleimages/{{article?.article_img}}" alt="">
+        </div>
+      </div>
+
+    </ion-list>
+  </div>
+
+
+</ion-content>

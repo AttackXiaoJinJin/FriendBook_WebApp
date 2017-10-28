@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align:center ">我的收藏文章</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="art-list" *ngFor="let colart of colarts">
+    <!--文章列表-->
+    <div class="middle-middle-article">
+      <div class="thisart">
+        <div  class="article-top" >
+          <a  class="touxiangimgcss" >
+            <img class="touxiangimg" src="http://101.132.127.138:3000/userhead/{{colart.user_head}}" />
+          </a>
+          <span class="authorcss">{{colart.user_name}}</span>
+          <span class="timecss" col-4>{{colart.article_time}}</span>
+        </div>
+
+        <div  class="article-middle" >
+          <h6><a class="biaotia">{{colart.article_title}}</a></h6>
+          <!--//显示文章内容，管道stringSlice截取前100个字符-->
+          <p class="showarticle" [innerHtml]="colart.article_content | stringSlice:60">
+          </p>
+        </div>
+      </div>
+      <div class="article-bottom">
+        <span class="myspan">{{colart.topic_name}}</span>
+        <span class=span2 aria-hidden="true"><ion-icon name="ios-chatbubbles" style="font-size: 14px"></ion-icon> {{colart.article_com}}</span>
+        <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{colart.article_collect}}</span>
+      </div>
+    </div>
+    <div><img  class="img" src="http://101.132.127.138:3000/articleimages/{{colart.article_img}}"></div>
+  </div>
+</ion-content>
