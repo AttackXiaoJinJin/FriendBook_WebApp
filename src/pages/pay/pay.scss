@@ -1,0 +1,122 @@
+
+page-pay {
+  *{
+    margin: 0;
+    padding: 0;
+    //border: solid 1px red;
+  }
+.confirmtip{
+  //border: solid 1px red;
+  margin-left: 10px;
+  position: absolute;
+  top: 10px;
+}
+  .addressbc{
+    width: 100%;
+    height: 150px;
+    background-color:rgb(240,240,240);
+    .addresstext{
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+
+    }
+    .addaddress{
+      width: 100%;
+      height: 80px;
+      background-color:white;
+
+    }
+    .newaddress{
+      width: 150px;
+      height: 60px;
+      margin: 20px auto;
+      position: relative;
+    }
+    .ios-add-circle-outline{
+      font-size: 35px;
+      text-align: center;
+      position: absolute;
+      left: 55px;
+    }
+    .newaddresstext{
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+  }
+.buydetail{
+  width: 100%;
+  height: 500px;
+  .boostore{
+    padding: 5px;
+  }
+  .bookdetail{
+   height: 140px;
+    border-bottom: solid 1px rgb(240,240,240);
+    .bookdetail-left{
+      float: left;
+      //padding: 25px;
+      width: 70%;
+      position: relative;
+      .bookname{
+        position: absolute;
+        top: 40px;
+        left: 170px;
+
+      }
+      .booknum{
+        position: absolute;
+        top: 70px;
+        left: 153px;
+        //border: solid 1px red;
+        .num{
+          width: 25px;
+        }
+      }
+    }
+
+    .bookdetail-right{
+      float: right;
+      width: 30%;
+      height:135px ;
+      position: relative;
+      .bookprice{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+    }
+  }
+
+}
+  .pay{
+   img{
+     margin-left: 10px;
+     width:200px;
+     height: 40px;
+   }
+  }
+  .confirm{
+    .confirmleft{
+      width: 100px;
+      height: 50px;
+      float: left;
+      padding: 20px;
+    }
+    .confirmright{
+      width: 100px;
+      height: 50px;
+      float: right;
+    }
+   //float: right;
+    //border: solid 1px red;
+  }
+
+  .bookimg{
+    width: 113px;
+    height: 129px;
+    padding-left: 10px;
+  }
+
+}

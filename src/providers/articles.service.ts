@@ -1,28 +1,43 @@
-import {Injectable} from '@angular/core';
-// 导入http
-import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
+import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/http';
+
+import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ArticlesService {
+
   url: string = 'http://101.132.127.138:3000/article';
 
-  constructor(//构件对象
-              private http: HttpClient) {
+  constructor(private http: HttpClient,) {
 
   }
 
-//=====================下面获取文章详情
-  getArticleDetail(articleId, callback) {
+  getallarticles(): Promise<any> {
+
     let params = new HttpParams().set('myParam', 'myValue');
-    this.http.post(this.url + '/articledetail', {params: params, article_id: articleId}).subscribe(
+    return this.http.post(this.url + '/allarticles', {params: params}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
+
+  }
+  getArticleDetail(articleId):Promise<any> {
+    return this.http.post(this.url + '/articledetail',
+      {article_id: articleId}).toPromise().then(
+      function (result) {
+        console.log(result)
+        return(result);
       },
       function (error) {
         console.log(error.message);
       }
     );
   }
+
 
 
   // ====================下面发表文章
@@ -63,10 +78,11 @@ export class ArticlesService {
   }
 
   //===========显示该文章是否收藏
-  showcollect(user_id,article_id,callback){
-    this.http.post(this.url+'/showcollect',{user_id:user_id,article_id:article_id}).subscribe(
+  showcollect(user_id,article_id){
+    return this.http.post(this.url+'/showcollect',
+      {user_id:user_id,article_id:article_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);
@@ -75,10 +91,10 @@ export class ArticlesService {
   }
 
 //=================点击收藏
-  insertcoll(user_id,article_id,callback){
-    this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).subscribe(
+  insertcoll(user_id,article_id):Promise<any>{
+    return this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);
@@ -87,10 +103,11 @@ export class ArticlesService {
   }
 
   //====================点击取消收藏
-  deletecoll(user_id,article_id,callback){
-    this.http.post(this.url+'/showcollect/deletecollect',{user_id:user_id,article_id:article_id}).subscribe(
+  deletecoll(user_id,article_id):Promise<any>{
+    return this.http.post(this.url+'/showcollect/deletecollect',
+      {user_id:user_id,article_id:article_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);
@@ -99,10 +116,11 @@ export class ArticlesService {
   }
 
   //====================显示收藏数
-  showcollnum(article_id,callback){
-    this.http.post(this.url+'/showcollnum',{article_id:article_id}).subscribe(
+  showcollnum(article_id):Promise<any>{
+    return this.http.post(this.url+'/showcollnum',
+      {article_id:article_id}).toPromise().then(
       function (result) {
-        callback(result);
+        return(result);
       },
       function (error) {
         console.log(error.message);

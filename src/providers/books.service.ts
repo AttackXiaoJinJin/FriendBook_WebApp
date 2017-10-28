@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
+
 @Injectable()
 export class BooksService {
   url:string='http://101.132.127.138:3000/books';
@@ -95,6 +96,7 @@ export class BooksService {
       }
     );
   }
+
 
   //===================加载3个
   // threebooks(bm,bn):Promise<any>{

@@ -1,0 +1,144 @@
+
+<ion-header>
+<ion-navbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: red;"></ion-icon>
+      </ion-col>
+      <ion-col col-6 style="text-align: right" >
+        <ion-icon name="more"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div  class="top">
+
+<div class="tittle">
+  <p>{{article?.article_title}} </p>
+</div>
+    <div class="topleft">
+    <!--<div class="head"></div>-->
+    <!--<img class="userhead" src="../../assets/imgs/5742fab7aa2d.jpg" alt="">-->
+    <img class="userhead" src="http://101.132.127.138:3000/userhead/{{article?.user_head}}" alt="">
+    <p class="username">{{article?.user_name}}</p>
+    <span class="pubtime">{{article?.article_time}}</span>
+    </div>
+
+<!--<div class="topright">-->
+  <!--<button ion-button color="secondary" round>关注</button>-->
+<!--</div>-->
+    <!--======文章详情-->
+  </div>
+  <div class="articledetail">
+  </div>
+  <!--==================-->
+  <!--<div class="share">-->
+    <!--<span><ion-icon ios="ios-heart-outline" md="md-heart-outline"></ion-icon><span class="lovenum">1663</span></span>-->
+    <!--<span><ion-icon ios="md-share" md="md-share"></ion-icon></span>-->
+
+  <!--</div>-->
+
+  <!--收藏、分享-->
+  <div class="meta-bottom">
+    <!--收藏按钮-->
+    <div class="collect">
+      <!--<div class="btn collect_btn" (click)="changeBg()">-->
+      <div ngClass="{{className}}" (click)="changeBg()">
+        <div class="aixin"><a><ion-icon name="md-heart-outline"></ion-icon>{{collectName}}</a></div>
+        <div class="aixin_num"><a>{{collectNum}}</a></div>
+      </div>
+    </div>
+    <!--分享按钮-->
+    <div class="share">
+      <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-origin-title="分享到微信">
+        <i class="fa fa-weixin" aria-hidden="true" style="color:#00bb29;"></i>
+      </a>
+      <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" data-origin-title="分享到微博">
+        <i class="fa fa-weibo" aria-hidden="true" style="color: #e05244;"></i>
+      </a>
+      <!--<a class="share-circle"></a>-->
+    </div>
+  </div>
+  <!--=======================================-->
+
+  <!--<div class="tip">-->
+    <!--<div class="tip_left"><span>评论217</span></div>-->
+    <!--<div class="tip_right">按点赞排序</div>-->
+  <!--</div>-->
+  <!--========================评论-->
+
+
+
+    <!--======================显示评论-->
+    <div class="comment" >
+      <form #articlecommentForm="ngForm" >
+        <textarea placeholder="写下你的评论..." class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
+        <div>
+          <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
+        </div>
+      </form>
+      <div class="count" *ngIf="comments && comments?.length>0">
+        <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
+        <div class="pull-right">
+          <a class="active">点赞最多</a>
+          <a class>收藏最多</a>
+          <a class>最新发布</a>
+        </div>
+      </div>
+      <ul *ngIf="comment_if" class="comment_ul2">
+        <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>
+        <!--==================评论-->
+          <!--<li class="ul2-li" *ngFor="let comment of comments">-->
+            <!--<img  src="http://101.132.127.138:3000/userhead/{{comment?.user_head}}" alt="">-->
+            <!--<div class="comment_content">-->
+        <!--<p><a (click)="togetuserid(comment?.user_id)">{{comment.user_name}}：</a>{{comment.articlecom_content}}</p>-->
+        <!--<p>-->
+          <!--{{comment?.articlecom_time}}-->
+          <!--<span (click)="articlecomlike(this.comment?.articlecom_id,this.comment)" [style.color]="this.like_if?'red':'#b4b4b4'"><ion-icon name="md-thumbs-up" ></ion-icon>&nbsp;({{this.comment.like_num}})</span>-->
+          <!--<a class="art_answer" (click)="showAnswer()">回复</a>-->
+        <!--</p>-->
+    <!--</div>-->
+  <!--==============artrecom 回复-->
+  <!--<ul *ngIf="if_recom">-->
+  <!--<app-artrecom [_recomment]="recomment" [mainname]="_comment?.user_name" [mainid]="_comment?.user_id" *ngFor="let recomment of recomments"></app-artrecom>-->
+  <!--</ul>-->
+  <!--===================-->
+  <!--<div ngClass={{answer}}>-->
+    <!--<form class="new_comment" #artrecomForm="ngForm">-->
+      <!--<textarea placeholder="请写下你的回复..." name="artrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>-->
+    <!--</form>-->
+    <!--<div class="answer_line">-->
+      <!--<button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom()">发送</button>-->
+      <!--<a class="cancel" (click)="closeAnswer()">取消</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--============================-->
+  <!--</li>-->
+
+
+
+      </ul>
+    </div>
+
+  <!--<div class="comment">-->
+    <!--<div class="commentleft">-->
+      <!--<img class="userhead" src="../../assets/imgs/5742fab7aa2d.jpg" alt="">-->
+      <!--<p class="commentusername">一点矫情</p>-->
+      <!--<span class="commenttime">2017-10-11</span>-->
+    <!--</div>-->
+    <!--<div class="commentright">-->
+
+     <!--<span><ion-icon name="ios-text-outline"></ion-icon></span>-->
+      <!--<span><ion-icon name="ios-thumbs-up-outline"></ion-icon>   36</span>-->
+    <!--</div>-->
+    <!--<div class="commentdetail">-->
+      <!--<p>不管是什么习惯只要坚持下来就是好习惯</p>-->
+    <!--</div>-->
+  <!--</div>-->
+</ion-content>
