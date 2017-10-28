@@ -92,8 +92,8 @@ export class UsersService {
       }
     );
   }
-  showuserput(id,callback){
-    this.http.post(this.url+'/showuserpub',id).subscribe(
+  showuserput(user_id,callback){
+    this.http.post(this.url+'/showuserpub',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
       },

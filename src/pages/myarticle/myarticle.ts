@@ -37,13 +37,14 @@ export class MyarticlePage {
 
   //发表文章列表
   myPublish(userId){
+    let that=this
     console.log("aaaaa")
     // this.userSer.showuserput(userId+'').then((result)=> {
     this.userSer.showuserput(userId+'',function(result) {
       console.log(result)
       if(!result.statusCode) {
         console.log(result)
-        this.colarts = result;
+        that.colarts = result;
       }
     });
   }
