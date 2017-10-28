@@ -1,12 +1,8 @@
+
 import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import {PersondetailPage} from "../../pages/persondetail/persondetail"
-/**
- * Generated class for the ArticleComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+
 @Component({
   selector: 'article',
   templateUrl: 'article.html',

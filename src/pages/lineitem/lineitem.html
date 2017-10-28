@@ -1,0 +1,52 @@
+<!--
+  Generated template for the LineitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: red;"></ion-icon>
+          <span class="confirmtip">订单详情</span>
+        </ion-col>
+        <ion-col col-6 style="text-align: right" >
+          <ion-icon name="more"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content >
+
+    <ion-item-group>
+      <!--<ion-item-divider color="light">A</ion-item-divider>-->
+      <ion-item><span>收货人：时文娟</span><span> 18339900533</span></ion-item>
+      <ion-item>江苏省 苏州市 其他区 林泉街567号</ion-item>
+    </ion-item-group>
+  <!--<div class="line"></div>-->
+    <ion-item-group>
+      <ion-item-divider></ion-item-divider>
+      <ion-item item-start>订单号：123456</ion-item>
+      <!--<ion-item></ion-item>-->
+    </ion-item-group>
+  <div class="bookdetail">
+    <div class="bookdetail-left">
+      <img src="../../assets/imgs/s29582535.jpg"style="width:60px;height:80px " >
+      <span class="bookname">一瞬光影</span>
+      <span class="booknum">数量 1</span>
+    </div>
+    <div class="bookdetail-right">
+      <span class="bookprice">￥45</span>
+      <button class="backoney" ion-button color="light" (click)="toReturnmoneyPage()">退款</button>
+    </div>
+  </div>
+
+</ion-content>

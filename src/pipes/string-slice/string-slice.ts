@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StringSlicePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    let len = 40 ;
+
+    // let len = 40 ;
     // if(value && value.length || args) filter
+    let len = args;
     if(value && value.length >= len-3){
       return value.substring(0,len-3)+'...';
     }else{

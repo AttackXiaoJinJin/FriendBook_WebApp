@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+
+import { Http} from '@angular/http';
 import {HttpClient,HttpParams} from "@angular/common/http";
 import 'rxjs/add/operator/toPromise';
 
@@ -11,6 +13,9 @@ export class TopicsServerProvider {
   ) {
     console.log('Hello TopicsServerProvider Provider');
   }
+
+
+  //获取全部话题
 
   getAlltopics():Promise<any>{
 
@@ -42,7 +47,22 @@ export class TopicsServerProvider {
     this.HttpClient.post(this.url + '/topicbyattent', {params: params}).subscribe(
       function (result) {
         callback(result);
+      })
+  }
+  //加载2个话题
+  twotopics(m,n):Promise<any>{
+    return this.HttpClient.post(this.url+'/twotop',{m:m,n:n})
+      .toPromise().then(function (result) {
+        return(result);
+      })
+  }
 
+  //------------------搜索话题----------------
+  searchTopic(searchCon,callback){
+    // this.http.post(this.url+'/searchtopic',{searchCon:searchCon}).subscribe(
+    this.HttpClient.post(this.url+'/searchtopic',searchCon).subscribe(
+      function (result) {
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -142,4 +162,10 @@ export class TopicsServerProvider {
       }
     );
   }
+
+
+
+
+
+
 }

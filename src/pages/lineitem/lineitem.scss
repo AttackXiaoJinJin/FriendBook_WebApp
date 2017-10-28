@@ -1,0 +1,62 @@
+page-lineitem {
+  .confirmtip{
+    //border: solid 1px red;
+    margin-left: 10px;
+    position: absolute;
+    top: 10px;}
+  .line{
+    width: 100%;
+    height: 10px;
+    background-color:rgb(240,240,240);
+    //.left{
+    //  float: left;
+    //}
+    //.right{
+    //  float: right;
+    //}
+  }
+  .bookdetail{
+    height: 140px;
+    border-bottom: solid 1px rgb(240,240,240);
+    .bookdetail-left{
+      float: left;
+      padding: 25px;
+      width: 70%;
+      position: relative;
+      //border: solid 1px red;
+      .bookname{
+        position: absolute;
+        top: 40px;
+        left: 100px;
+      }
+      .booknum{
+        position: absolute;
+        top: 60px;
+        left: 100px;
+      }
+
+    }
+
+    .bookdetail-right{
+      float: right;
+      width: 30%;
+      height:135px ;
+      position: relative;
+      //border: solid 1px red;
+      .bookprice{
+        position: absolute;
+        top: 35px;
+        left: 50px;
+        //border: solid 1px red;
+      }
+      .backoney{
+        position: absolute;
+        top: 60px;
+        left: 35px;
+        //border: solid 1px red;
+      }
+    }
+  }
+
+
+}
