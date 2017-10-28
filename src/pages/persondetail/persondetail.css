@@ -1,88 +1,71 @@
-.header_name {
+page-persondetail .header_name {
   height: 30px;
   font-size: 20px;
   color: black; }
-
-.other {
+page-persondetail .other {
   height: 150px;
   width: 100%;
   padding: 10px;
   border-bottom: solid 1px gray; }
-
-.other img {
+page-persondetail .other img {
   width: 75px;
   height: 75px;
   border-radius: 50%; }
-
-.txt {
+page-persondetail .txt {
   position: relative;
   left: 100px;
   bottom: 60px;
   font-size: 20px; }
-
-.topic {
+page-persondetail .topic {
   height: 100px;
   display: block; }
-
-.other .bottom {
+page-persondetail .other .bottom {
   height: 22px;
   width: 80%;
   margin-left: 30px;
   font-size: 16px;
   color: black;
   overflow: hidden; }
-
-.segment-ios .segment-button.segment-activated {
+page-persondetail .segment-ios .segment-button.segment-activated {
   background-color: white !important; }
-
-.segment-ios .segment-button.segment-activated {
+page-persondetail .segment-ios .segment-button.segment-activated {
   color: red !important; }
-
-.self {
+page-persondetail .self {
   padding: 12px;
   width: 100%;
   height: 190px;
   border-bottom: 1px solid gray;
   box-sizing: border-box; }
-
-.self .self_left {
+page-persondetail .self .self_left {
   float: left;
   width: 73%; }
-
-.self .self_left .name_time {
+page-persondetail .self .self_left .name_time {
   font-size: 18px;
   color: #9b9b9b; }
-
-.self .self_left .title {
+page-persondetail .self .self_left .title {
   font-size: 15px;
   color: black; }
-
-.self .self_left .content {
+page-persondetail .self .self_left .content {
   width: 100%;
   height: 40px;
   color: #9b9b9b; }
-
-.self .self_left .bottom > ul {
+page-persondetail .self .self_left .bottom > ul {
   padding: 0; }
-
-.self .self_left .bottom .type {
+page-persondetail .self .self_left .bottom .type {
   width: 55px;
   height: 25px;
   border: solid 1px red;
   color: red; }
-
-.self .self_left .bottom > ul > li {
+page-persondetail .self .self_left .bottom > ul > li {
   text-align: center;
   display: inline-block;
   width: 60px;
   height: 25px;
   margin-right: 4px; }
-
-.self .self_right {
+page-persondetail .self .self_right {
   float: right;
   width: 27%; }
-
-.self .self_right > img {
+page-persondetail .self .self_right > img {
   border-radius: 10px;
   margin-top: 45px;
   margin-left: 5px;

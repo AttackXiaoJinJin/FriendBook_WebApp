@@ -16,7 +16,7 @@
       <div  class="article-middle" >
         <h6><a class="biaotia">{{_article.article_title}}</a></h6>
         <!--//显示文章内容，管道stringSlice截取前100个字符-->
-        <p class="showarticle" [innerHtml]="_article.article_content | stringSlice"></p>
+        <p class="showarticle" [innerHtml]="_article.article_content | stringSlice:60"></p>
       </div>
     </div>
     <div class="article-bottom">

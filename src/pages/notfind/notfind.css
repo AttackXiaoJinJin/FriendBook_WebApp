@@ -16,22 +16,19 @@
     transform: scale(0.85); }
   100% {
     transform: scale(1); } }
-body {
+page-notfind body {
   background-color: #f7f7f7; }
-
-.container {
+page-notfind .container {
   font-family: 'Varela Round', sans-serif;
   color: #9b9b9b;
   position: relative;
   height: 100vh;
   text-align: center;
   font-size: 16px; }
-
-.container h1 {
+page-notfind .container h1 {
   font-size: 32px;
   margin-top: 32px; }
-
-.boo-wrapper {
+page-notfind .boo-wrapper {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -39,8 +36,7 @@ body {
   transform: translate(-50%, -50%);
   paddig-top: 64px;
   paddig-bottom: 64px; }
-
-.boo {
+page-notfind .boo {
   width: 160px;
   height: 184px;
   background-color: #f7f7f7;
@@ -54,8 +50,7 @@ body {
   position: relative;
   padding-bottom: 32px;
   animation: floating 3s ease-in-out infinite; }
-
-.boo::after {
+page-notfind .boo::after {
   content: '';
   display: block;
   position: absolute;
@@ -67,8 +62,7 @@ body {
   background-size: 32px 32px;
   background-position: left bottom;
   background-image: linear-gradient(-45deg, #f7f7f7 16px, transparent 0), linear-gradient(45deg, #f7f7f7 16px, transparent 0), linear-gradient(-45deg, #9b9b9b 18.82353px, transparent 0), linear-gradient(45deg, #9b9b9b 18.82353px, transparent 0); }
-
-.boo .face {
+page-notfind .boo .face {
   width: 24px;
   height: 3.2px;
   border-radius: 5px;
@@ -77,8 +71,7 @@ body {
   left: 50%;
   bottom: 56px;
   transform: translateX(-50%); }
-
-.boo .face::before, .boo .face::after {
+page-notfind .boo .face::before, page-notfind .boo .face::after {
   content: '';
   display: block;
   width: 6px;
@@ -87,14 +80,11 @@ body {
   border-radius: 50%;
   position: absolute;
   bottom: 40px; }
-
-.boo .face::before {
+page-notfind .boo .face::before {
   left: -24px; }
-
-.boo .face::after {
+page-notfind .boo .face::after {
   right: -24px; }
-
-.shadow {
+page-notfind .shadow {
   width: 128px;
   height: 16px;
   background-color: rgba(234, 234, 234, 0.75);

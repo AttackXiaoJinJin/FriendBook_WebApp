@@ -1,0 +1,17 @@
+.btn_atten {
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: #4ab93b !important; }
+
+img {
+  border-radius: 10px; }
+
+span, .button-inner, .public {
+  width: 100% !important;
+  color: black;
+  font-size: 16px;
+  font-weight: 300; }
+
+/*# sourceMappingURL=topicitem.css.map */

@@ -1,0 +1,96 @@
+page-articledetail .middle-middle-article {
+  width: 255px;
+  height: 140px;
+  /*background-color: goldenrod;*/
+  position: relative;
+  float: left;
+  display: block; }
+page-articledetail .thisart {
+  height: 109px; }
+page-articledetail .art-list {
+  position: relative;
+  margin-top: 5px;
+  padding-left: 5px;
+  height: 141px;
+  width: 376px;
+  border-bottom: 1px solid #eee; }
+page-articledetail .article-top {
+  width: 750px;
+  height: 70px;
+  position: relative;
+  /*background-color: darkgray;*/ }
+page-articledetail .article-middle {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  left: 0;
+  /* background-color: burlywood; */
+  top: 25px; }
+page-articledetail a.glyphicon {
+  margin-right: 5px; }
+page-articledetail .showarticle {
+  width: 100px;
+  height: 100px; }
+page-articledetail .article-bottom {
+  width: 750px;
+  height: 20px;
+  /*display: block;*/
+  /*float: left;*/
+  /*background-color: antiquewhite;*/ }
+page-articledetail .myspan {
+  border: solid 1px red;
+  color: red;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  font-size: 10px;
+  padding-left: 2px; }
+page-articledetail .span2 {
+  border: none;
+  /*margin-right: 5px;*/
+  color: #b4b4b4;
+  margin-right: 5px; }
+page-articledetail .article-bottom a {
+  color: lightgrey;
+  text-decoration: none;
+  margin: 0 10px; }
+page-articledetail .span1 {
+  border: none;
+  color: #b4b4b4;
+  /*margin: 0 5px;*/ }
+page-articledetail art-list .img {
+  width: 85px;
+  height: 85px;
+  top: 32px;
+  left: 265px;
+  position: absolute;
+  padding-right: 10px;
+  cursor: pointer; }
+page-articledetail .biaotia {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: black; }
+page-articledetail .touxiangimg {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+page-articledetail .touxiangimgcss {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left; }
+page-articledetail .authorcss {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+  color: rgba(34, 34, 34, 0.78); }
+page-articledetail .timecss {
+  position: absolute;
+  top: 2px;
+  left: 79px;
+  color: #ccc; }
+
+/*# sourceMappingURL=pagearticle.css.map */

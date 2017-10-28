@@ -4,12 +4,6 @@ import { Platform, ActionSheetController } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
 import {TopicdetailPage} from "../topicdetail/topicdetail";
 
-/**
- * Generated class for the TopicsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -49,7 +43,8 @@ export class TopicsPage {
 
     let str = '{"user_id":'+18+'}';
     let user_id= JSON.parse(str);
-    this.topicSer.getAlltopics().then(function (result) {
+    // this.topicSer.getAlltopics().then(function (result) {
+    this.topicSer.getAlltopics(function (result) {
       that.topics=result[0];
       // console.log(that.topics);
     })

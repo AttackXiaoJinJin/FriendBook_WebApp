@@ -1,0 +1,39 @@
+page-lineitem .confirmtip {
+  margin-left: 10px;
+  position: absolute;
+  top: 10px; }
+page-lineitem .line {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0; }
+page-lineitem .bookdetail {
+  height: 140px;
+  border-bottom: solid 1px #f0f0f0; }
+  page-lineitem .bookdetail .bookdetail-left {
+    float: left;
+    padding: 25px;
+    width: 70%;
+    position: relative; }
+    page-lineitem .bookdetail .bookdetail-left .bookname {
+      position: absolute;
+      top: 40px;
+      left: 100px; }
+    page-lineitem .bookdetail .bookdetail-left .booknum {
+      position: absolute;
+      top: 60px;
+      left: 100px; }
+  page-lineitem .bookdetail .bookdetail-right {
+    float: right;
+    width: 30%;
+    height: 135px;
+    position: relative; }
+    page-lineitem .bookdetail .bookdetail-right .bookprice {
+      position: absolute;
+      top: 35px;
+      left: 50px; }
+    page-lineitem .bookdetail .bookdetail-right .backoney {
+      position: absolute;
+      top: 60px;
+      left: 35px; }
+
+/*# sourceMappingURL=lineitem.css.map */

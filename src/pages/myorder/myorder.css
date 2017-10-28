@@ -1,16 +1,13 @@
-* {
+page-myorder * {
   margin: 0;
   padding: 0; }
-
-.scroll-content {
+page-myorder .scroll-content {
   margin-top: 18px !important; }
-
-table {
+page-myorder table {
   margin-top: 15px;
   border: 1px solid #e8e8e8;
   text-align: center; }
-
-.title {
+page-myorder .title {
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #e8e8e8;
@@ -18,13 +15,11 @@ table {
   padding: 0 10px;
   text-align: left;
   color: #999; }
-
-.title p {
+page-myorder .title p {
   font-size: 13px;
   height: 16px;
   line-height: 16px; }
-
-.content1 {
+page-myorder .content1 {
   width: 375px;
   height: 100px;
   background: #fff;
@@ -32,22 +27,18 @@ table {
   padding: 0px 10px;
   border-radius: 5px;
   margin-top: 10px; }
-
-img {
+page-myorder img {
   height: 89px;
   width: 69px; }
-
-td div {
+page-myorder td div {
   height: 50px;
   line-height: 50px; }
-
-td div span {
+page-myorder td div span {
   height: 50px;
   line-height: 50px;
   font-size: 16px;
   width: 80px; }
-
-.cancel {
+page-myorder .cancel {
   color: #488aff; }
 
 /*# sourceMappingURL=myorder.css.map */
