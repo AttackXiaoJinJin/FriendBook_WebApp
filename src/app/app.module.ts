@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {TopicsServerProvider} from "../providers/topics-server";
 import {BooksService} from "../providers/books.service";
 import {ArticlesService} from "../providers/articles.service";
+import {RecommentsService} from "../providers/recomments.service";
 import {PipesModule} from "../pipes/pipes.module";
 import {RegistPage} from "../pages/regist/regist";
 import {UsersService} from "../providers/users.service";
@@ -87,6 +88,7 @@ import {SearchPage} from "../pages/search/search";
     ArticlesService,
     UsersService,
     OrdersService,
+    RecommentsService
 
   ]
 })

@@ -1,4 +1,11 @@
 @charset "UTF-8";
+page-home{
+  .search_btn{
+    width: 20px;
+    height: 30px;
+    margin-left: -24px;
+    margin-top: -3px
+  }
 ion-content{
   height: 669px !important;
 }
@@ -29,6 +36,7 @@ ion-navbar{
   /*侧轴方向对齐方式，居中*/
   line-height: 30px;
   font-size: 28px;
+  //float: right !important;
 }
 
 //===============轮播
@@ -229,8 +237,9 @@ a.glyphicon{
 }
 .timecss{
   position: absolute;
-  top: 2px;
-  left: 79px;
+  //----修改样式------
+  top: -20px;
+  left: 72px;
   color: #ccc;
 }
 
@@ -311,5 +320,4 @@ margin-top: 0px;
 //  color: black;
 //  text-decoration: none;
 //}
-
-
+}

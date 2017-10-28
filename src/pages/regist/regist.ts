@@ -166,7 +166,8 @@ export class RegistPage{
     //倒计时
     that.countdown();
     // that.userSer.sendmessage(that._telephone+'',function (result) {
-    that.userSer.sendmessage(that._telephone+'').then((result)=> {
+    // that.userSer.sendmessage(that._telephone+'').then((result)=> {
+    that.userSer.sendmessage(that._telephone+'',function(result){
       if(result.yanzheng){
         that._confirm_code=result.yanzheng;
         // console.log(that._confirm_code);

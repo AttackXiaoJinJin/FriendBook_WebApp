@@ -101,6 +101,8 @@
     <!------------------------------------------------------------->
     <ion-list *ngSwitchCase="'topic'">
       <ion-list>
+        <h1 style="text-align: center;" *ngIf="!_topics">抱歉！</h1>
+        <h1 style="text-align: center;" *ngIf="!_topics">未找到相关话题</h1>
         <ion-item  *ngFor="let topic of _topics">
           <ion-thumbnail item-start>
             <img src="http://101.132.127.138:3000/topicimages/{{topic?.topic_img}}" (click)="toTdetail(topic?.topic_id)">

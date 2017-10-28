@@ -82,20 +82,26 @@ export class UsersService {
       }
     );
   }
-  getUserArticles(user_id):Promise<any>{
-    return this.http.post(this.url+'/userarticle',{user_id:user_id}).toPromise().then(
+  // getUserArticles(user_id):Promise<any>{
+  getUserArticles(user_id,callback){
+    // return this.http.post(this.url+'/userarticle',{user_id:user_id}).toPromise().then(
+    this.http.post(this.url+'/userarticle',{user_id:user_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
       }
     );
   }
-  showuserput(user_id):Promise<any>{
-    return this.http.post(this.url+'/showuserpub',{user_id:user_id}).toPromise().then(
+  // showuserput(user_id):Promise<any>{
+  showuserput(user_id,callback){
+    // return this.http.post(this.url+'/showuserpub',{user_id:user_id}).toPromise().then(
+    this.http.post(this.url+'/showuserpub',{user_id:user_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -123,11 +129,14 @@ export class UsersService {
     )
   }
 
-  sendmessage(phone):Promise<any>{
-    return this.http.post(this.url+'/sendmessage',{phone:phone}).toPromise().then(
+  // sendmessage(phone):Promise<any>{
+  sendmessage(phone,callback){
+    // return this.http.post(this.url+'/sendmessage',{phone:phone}).toPromise().then(
+    return this.http.post(this.url+'/sendmessage',{phone:phone}).subscribe(
       function (result) {
         console.log(JSON.stringify(result)+"验证码")
-        return(result);
+        // return(result);
+        callback(result);
 
       },
       function (error) {
@@ -137,10 +146,13 @@ export class UsersService {
   }
 
   //================获取所评论的书籍的回复
-  getuserbkrecoms(user_id):Promise<any>{
-    return this.http.post(this.url+'/showuserrecom',{user_id:user_id}).toPromise().then(
+  // getuserbkrecoms(user_id):Promise<any>{
+  getuserbkrecoms(user_id,callback){
+    // return this.http.post(this.url+'/showuserrecom',{user_id:user_id}).toPromise().then(
+    return this.http.post(this.url+'/showuserrecom',{user_id:user_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
         // console.log(result);
       },
       function (error) {
@@ -149,10 +161,13 @@ export class UsersService {
     );
   }
   //================书籍上被回复的评论
-  userbkcom(bookcom_id):Promise<any>{
-    return this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).toPromise().then(
+  // userbkcom(bookcom_id):Promise<any>{
+  userbkcom(bookcom_id,callback){
+    // return this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).toPromise().then(
+    this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
         // console.log(result);
       },
       function (error) {
@@ -162,11 +177,14 @@ export class UsersService {
   }
 
   //================获取所评论的文章的回复
-  getuserartrecoms(user_id):Promise<any>{
-    return this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).toPromise().then(
+  // getuserartrecoms(user_id):Promise<any>{
+  getuserartrecoms(user_id,callback){
+    // return this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).toPromise().then(
+    this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).subscribe(
       function (result) {
         console.log(result+"这是文章回复");
-        return(result);
+        // return(result);
+        callback(result);
 
       },
       function (error) {
@@ -175,10 +193,13 @@ export class UsersService {
     );
   }
   //================文章上被回复的评论
-  userartcom(articlecom_id):Promise<any>{
-    return this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).toPromise().then(
+  // userartcom(articlecom_id):Promise<any>{
+  userartcom(articlecom_id,callback){
+    // return this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).toPromise().then(
+    this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
         // console.log(result);
       },
       function (error) {

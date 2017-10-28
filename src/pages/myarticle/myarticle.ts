@@ -38,7 +38,8 @@ export class MyarticlePage {
   //发表文章列表
   myPublish(userId){
     console.log("aaaaa")
-    this.userSer.showuserput(userId+'').then((result)=> {
+    // this.userSer.showuserput(userId+'').then((result)=> {
+    this.userSer.showuserput(userId+'',function(result) {
       console.log(result)
       if(!result.statusCode) {
         console.log(result)

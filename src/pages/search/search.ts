@@ -33,13 +33,15 @@ export class SearchPage {
     // console.log('ionViewDidLoad SearchPage');
     this.searchText = "二次元";
     // console.log(this.searchText);
+
+    //把searchCon转换为json数组       搜索内容
     let str = '{"searchCon":"' + this.searchText + '"}';
     let searchCon = JSON.parse(str);
 
 
     let that = this;
     that.BooksService.searchBook(searchCon, function (result) {
-      // console.log(result);
+      console.log(result);
       if (!result.statusCode) {
         that._books = result[0];
       }
