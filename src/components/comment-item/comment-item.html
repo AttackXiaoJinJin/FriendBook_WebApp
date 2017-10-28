@@ -1,0 +1,17 @@
+<!-- Generated template for the CommentItemComponent component -->
+<ion-row class="comment">
+  <ion-col col-2>
+    <img src="http://localhost:3001/userhead/{{_comment?.user_head}}" alt="">
+  </ion-col>
+  <ion-col col-10 class="comment_container">
+    <p class="comment_user">
+      <a href="#">{{_comment?.user_name}}</a>
+      <i class="fa fa-thumbs-o-up fa-lg" (click)="bookcomlike(_comment?.bookcom_id)" [style.color]="like_if?'#ea2029':'#b4b4b4'"> {{like_num}}</i>
+    </p>
+    <p>{{_comment?.bookcom_content}}</p>
+    <p>{{_comment?.bookcom_time}}·<a (click)="reComment(_comment?.bookcom_id)">回复</a></p>
+    <div class="recomments">
+      <re-comment-item [_recomment]="recomment" *ngFor="let recomment of _recomments"></re-comment-item>
+    </div>
+  </ion-col>
+</ion-row>
