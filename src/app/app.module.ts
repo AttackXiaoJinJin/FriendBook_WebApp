@@ -24,6 +24,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 // import {HttpModule} from "@angular/http";
 import {ComponentsModule} from "../components/components.module";
+import {TopicsServerProvider} from "../providers/topics-server";
+import {ArticlesService} from "../providers/articles.service";
+import {RecommentsService} from "../providers/recomments.service";
 import {PipesModule} from "../pipes/pipes.module";
 import {RegistPage} from "../pages/regist/regist";
 import {NotfindPage} from "../pages/notfind/notfind";
@@ -43,22 +46,18 @@ import {PersondetailPage} from "../pages/persondetail/persondetail"
 import {StringSlicePipe} from "./../pipes/string-slice/string-slice"
 //server
 import {HttpModule} from "@angular/http";
-import { TopicsServerProvider } from '../providers/topics-server';
-import {ArticlesService} from "../providers/articles.service"
 import {UsersService} from "../providers/users.service";
-import { IonicStorageModule } from '@ionic/storage';
-
 
 import {CommentsService} from "../providers/comments.service"
 import {FormsModule} from "@angular/forms"
 //管道
-import {RecommentsService} from "../providers/recomments.service";
 import {ArticleCommentComponent} from "../components/artcom/artcom";
 import {ArtrecomComponent} from "../components/artrecom/artrecom";
 import {BooksService} from "../providers/books.service";
 import {ReceiveService} from "../providers/receive.service";
 import {GlobalPropertyService} from "../providers/global-property.service";
 import {AddressShowComponent} from "../components/address-show/address-show.component";
+import {IonicStorageModule} from "@ionic/storage";
 @NgModule({
   declarations: [
     MyApp,
@@ -101,14 +100,9 @@ import {AddressShowComponent} from "../components/address-show/address-show.comp
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    HttpModule,
-    IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
-    HttpClientModule,
     FormsModule,
     HttpModule,
     PipesModule,
-    IonicStorageModule.forRoot(),
     PipesModule,
     HttpClientModule,
     HttpModule,

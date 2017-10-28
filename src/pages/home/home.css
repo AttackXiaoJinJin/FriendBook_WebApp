@@ -1,116 +1,100 @@
 @charset "UTF-8";
-ion-content {
+page-home .search_btn {
+  width: 20px;
+  height: 30px;
+  margin-left: -24px;
+  margin-top: -3px; }
+page-home ion-content {
   height: 669px !important; }
-
-h4, h5, h6 {
+page-home h4, page-home h5, page-home h6 {
   padding: 0;
   margin: 1.6rem 0 0 0;
   color: black; }
-
-.searchbar-input {
+page-home .searchbar-input {
   background-color: white !important; }
-
-.login {
+page-home .login {
   display: flex;
   /*主轴方向对齐方式，居中*/
   justify-content: space-between;
   /*侧轴方向对齐方式，居中*/
   line-height: 30px;
   font-size: 28px; }
-
-ion-slides {
+page-home ion-slides {
   display: block;
   width: 100%;
   height: 30%; }
-
-.swiper-wrapper {
+page-home .swiper-wrapper {
   height: 160px; }
-
-.tuijian-txt {
+page-home .tuijian-txt {
   margin-bottom: 10px;
   display: flex;
   /*主轴方向对齐方式，居中*/
   justify-content: space-between;
   /*侧轴方向对齐方式，居中*/
   align-items: center; }
-
-.book-list {
+page-home .book-list {
   margin-top: 3px;
   height: 178px; }
-
-.topic-list {
+page-home .topic-list {
   margin-top: 3px;
   height: 215px; }
-
-.tuijian-txt1 {
+page-home .tuijian-txt1 {
   margin-left: 4px;
   padding-left: 3px;
   border-left: 3px solid red;
   font-size: 16px;
   font-weight: 500; }
-
-.tuijian-txt2 {
+page-home .tuijian-txt2 {
   font-size: 13px;
   color: #b4b4b4;
   padding-right: 34px; }
-
-.book {
+page-home .book {
   position: relative;
   box-sizing: border-box;
   float: left;
   height: 130px;
   text-align: center; }
-
-.book:hover {
+page-home .book:hover {
   cursor: pointer; }
-
-.book img {
+page-home .book img {
   display: block;
   height: 120px;
   width: 100px;
   margin: 0 10px; }
-
-.book a {
+page-home .book a {
   color: #222222;
   font-size: 13px; }
-
-.middle-middle-article {
+page-home .middle-middle-article {
   width: 255px;
   height: 140px;
   /*background-color: goldenrod;*/
   position: relative;
   float: left;
   display: block; }
-
-.thisart {
+page-home .thisart {
   height: 109px; }
-
-.art-list {
+page-home .art-list {
   position: relative;
   margin-top: 5px;
   padding-left: 5px;
   height: 141px;
   width: 376px;
   border-bottom: 1px solid #eee; }
-
-.article-top {
+page-home .article-top {
   width: 750px;
   height: 70px;
   position: relative;
   /*background-color: darkgray;*/ }
-
-.article-middle {
+page-home .article-middle {
   position: absolute;
   width: 260px;
   height: 120px;
   left: 0;
   /* background-color: burlywood; */
   top: 15px; }
-
-a.glyphicon {
+page-home a.glyphicon {
   margin-right: 5px; }
-
-.article-middle p {
+page-home .article-middle p {
   display: block;
   width: 260px;
   font-size: 13px;
@@ -118,39 +102,33 @@ a.glyphicon {
   margin-top: 6px;
   padding: 0;
   color: #aaa; }
-
-.article-bottom {
+page-home .article-bottom {
   width: 750px;
   height: 20px;
   /*display: block;*/
   /*float: left;*/
   /*background-color: antiquewhite;*/ }
-
-.myspan {
+page-home .myspan {
   border: solid 1px red;
   color: red;
   letter-spacing: 1px;
   margin-right: 15px;
   font-size: 10px;
   padding-left: 2px; }
-
-.span2 {
+page-home .span2 {
   border: none;
   /*margin-right: 5px;*/
   color: #b4b4b4;
   margin-right: 5px; }
-
-.article-bottom a {
+page-home .article-bottom a {
   color: lightgrey;
   text-decoration: none;
   margin: 0 10px; }
-
-.span1 {
+page-home .span1 {
   border: none;
   color: #b4b4b4;
   /*margin: 0 5px;*/ }
-
-.img {
+page-home .img {
   width: 106px;
   height: 82px;
   top: 32px;
@@ -158,40 +136,34 @@ a.glyphicon {
   position: absolute;
   padding-right: 10px;
   cursor: pointer; }
-
-.biaotia {
+page-home .biaotia {
   cursor: pointer;
   width: 100%;
   height: 100%;
   color: black; }
-
-.touxiangimg {
+page-home .touxiangimg {
   cursor: pointer;
   width: 100%;
   height: 100%; }
-
-.touxiangimgcss {
+page-home .touxiangimgcss {
   display: block;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   overflow: hidden;
   float: left; }
-
-.authorcss {
+page-home .authorcss {
   position: absolute;
   top: 5px;
   left: 30px;
   cursor: pointer;
   color: rgba(34, 34, 34, 0.78); }
-
-.timecss {
+page-home .timecss {
   position: absolute;
-  top: 2px;
-  left: 79px;
+  top: -20px;
+  left: 72px;
   color: #ccc; }
-
-.topic {
+page-home .topic {
   position: relative;
   margin-top: 40px;
   border: solid 1px #e6e6e6;
@@ -202,27 +174,23 @@ a.glyphicon {
   width: 40%;
   float: left;
   margin-left: 25px; }
-
-.topic:hover {
+page-home .topic:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
-
-.topicimg {
+page-home .topicimg {
   width: 60px;
   height: 60px;
   position: relative;
   top: -30px;
   border-radius: 10px;
   cursor: pointer; }
-
-.topic_content {
+page-home .topic_content {
   position: absolute;
   top: 58px;
   left: 1px;
   height: 42px;
   width: 100%;
   overflow: hidden; }
-
-.btn-att {
+page-home .btn-att {
   border-radius: 15px;
   width: 110px;
   height: 33px;
@@ -234,15 +202,12 @@ a.glyphicon {
   position: absolute;
   left: 20px;
   bottom: 35px; }
-
-h4 {
+page-home h4 {
   position: relative;
   top: -45px; }
-
-hr {
+page-home hr {
   margin-top: 0px; }
-
-.topic-p {
+page-home .topic-p {
   margin-top: -5px; }
 
 /*# sourceMappingURL=home.css.map */

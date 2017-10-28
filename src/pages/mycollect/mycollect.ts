@@ -41,7 +41,8 @@ export class MycollectPage {
 
   //收藏文章列表
   myCollect(userId){
-  this.userSer.getUserArticles(userId+'').then((result)=> {
+  // this.userSer.getUserArticles(userId+'').then((result)=> {
+  this.userSer.getUserArticles(userId+'',function(result) {
     if(!result.statusCode) {
       this.colarts = result[0];
     }

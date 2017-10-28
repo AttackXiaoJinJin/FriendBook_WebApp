@@ -36,7 +36,8 @@ export class MyorderPage {
   }
   //订单列表
   myOrder(userId){
-  this.OrdersService.showOrder(userId+'').then((result)=> {
+  // this.OrdersService.showOrder(userId+'').then((result)=> {
+  this.OrdersService.showOrder(userId+'',function(result) {
     console.log(result);
     if(!result.statusCode) {
       this._orders = result;

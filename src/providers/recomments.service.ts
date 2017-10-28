@@ -52,12 +52,11 @@ export class RecommentsService {
 
 
   //===============获取显示文章评论回复
-  getartrecoms(articlecom_id):Promise<any>{
-    return this.http.post(this.url+'/showartrecom',
-      {articlecom_id: articlecom_id}).toPromise().then(
+  getartrecoms(articlecom_id,callback){
+    this.http.post(this.url+'/showartrecom',{articlecom_id: articlecom_id}).subscribe(
       function (result) {
-        return(result);
-        // console.log(result);
+        callback(result);
+        console.log(result);
       },
       function (error) {
         console.log(error.message);

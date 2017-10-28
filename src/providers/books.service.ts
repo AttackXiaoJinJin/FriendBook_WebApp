@@ -50,6 +50,7 @@ export class BooksService {
 
 //==============搜索书籍
   searchBook(searchCon,callback){
+    //                            /路由        参数        (要根据后台服务判断需不需要参数)
     this.http.post(this.url+'/searchbook',searchCon).subscribe(
       function (result) {
         callback(result);
@@ -98,10 +99,13 @@ export class BooksService {
 
 
   //===================加载3个
-  threebooks(bm,bn):Promise<any>{
-    return this.http.post(this.url+'/threebooks',{bm:bm,bn:bn}).toPromise().then(
+  // threebooks(bm,bn):Promise<any>{
+  threebooks(bm,bn,callback){
+    // return this.http.post(this.url+'/threebooks',{bm:bm,bn:bn}).toPromise().then(
+    this.http.post(this.url+'/threebooks',{bm:bm,bn:bn}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);

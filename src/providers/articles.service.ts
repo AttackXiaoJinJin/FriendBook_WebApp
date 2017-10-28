@@ -129,10 +129,13 @@ export class ArticlesService {
   }
 
   //==============获取三篇评论最多文章
-  threecomart(acm,acn):Promise<any> {
-    return this.http.post(this.url + '/threecomart', {acm:acm,acn:acn}).toPromise().then(
+  // threecomart(acm,acn):Promise<any> {
+  threecomart(acm,acn,callback){
+    // return this.http.post(this.url + '/threecomart', {acm:acm,acn:acn}).toPromise().then(
+    this.http.post(this.url + '/threecomart', {acm:acm,acn:acn}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -141,10 +144,12 @@ export class ArticlesService {
   }
 
   //==============获取三篇收藏最多文章
-  threecolart(acolm,acoln):Promise<any> {
+  // threecolart(acolm,acoln):Promise<any> {
+  threecolart(acolm,acoln,callback) {
     return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).toPromise().then(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);

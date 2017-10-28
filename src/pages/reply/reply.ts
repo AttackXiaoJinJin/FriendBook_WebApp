@@ -46,7 +46,8 @@ export class ReplyPage {
   //=============书籍回复
   recomment(userId){
     let that=this;
-    that.userSer.getuserbkrecoms(userId+'').then((result)=> {
+    // that.userSer.getuserbkrecoms(userId+'').then((result)=> {
+    that.userSer.getuserbkrecoms(userId+'',function(result) {
       if(!result.statusCode) {
         that.bookrecomments = result;
       }
@@ -58,7 +59,8 @@ export class ReplyPage {
   //============文章回复
   artrecomment(userId){
     let that=this;
-    that.userSer.getuserartrecoms(userId+'').then((result)=> {
+    // that.userSer.getuserartrecoms(userId+'').then((result)=> {
+    that.userSer.getuserartrecoms(userId+'',function(result) {
       console.log(result)
       console.log(result.statusCode)
       if(!result.statusCode) {

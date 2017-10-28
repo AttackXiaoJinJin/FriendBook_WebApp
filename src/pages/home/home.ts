@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {IonicPage, ModalController, NavController, Slides} from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server";
 import {BooksService} from "../../providers/books.service";
+import {RecommentsService} from "../../providers/recomments.service";
 import {ArticlesService} from "../../providers/articles.service";
  import {RegistPage} from "../regist/regist";
 import {MycollectPage} from "../mycollect/mycollect";
@@ -45,12 +46,14 @@ export class HomePage {
   //是否关注
   attent_if:boolean=false
   allitems:any=[]
+  _search:any;
 
   constructor(
     public navCtrl: NavController,
     private tp: TopicsServerProvider,
     private bp:BooksService,
     private ap:ArticlesService,
+    private recommentSer:RecommentsService,
     public modalCtrl:ModalController,
     ) {
 
@@ -86,7 +89,8 @@ export class HomePage {
   //加载两个话题
   twotopics(){
     let that=this
-    this.tp.twotopics(this.start+'',this.n+'').then((result)=> {
+    // this.tp.twotopics(this.start+'',this.n+'').then((result)=> {
+    this.tp.twotopics(this.start+'',this.n+'',function(result) {
       if(result.statusCode==76){
         that.if_topic=false
       }else{
@@ -104,7 +108,8 @@ export class HomePage {
   //加载3本书
   threebooks(){
     let that=this
-    this.bp.threebooks(this.bstart+'',this.bn+'').then((result)=> {
+    // this.bp.threebooks(this.bstart+'',this.bn+'').then((result)=> {
+    this.bp.threebooks(this.bstart+'',this.bn+'',function(result) {
       if(result.statusCode==130){
         that.if_book=false
       }else{
@@ -122,7 +127,8 @@ export class HomePage {
   //加载三个文章,3篇推荐文章
   threecomart(){
     let that=this
-    this.ap.threecomart(this.acstart+'',this.acn+'').then((result)=> {
+    // this.ap.threecomart(this.acstart+'',this.acn+'').then((result)=> {
+    this.ap.threecomart(this.acstart+'',this.acn+'',function(result){
       if(result.statusCode==131){
         that.if_book=false
       }else{
@@ -130,7 +136,8 @@ export class HomePage {
         that.comarts=result
       }
     });
-    this.ap.threecolart(this.acstart+'',this.acn+'').then((result)=> {
+    // this.ap.threecolart(this.acstart+'',this.acn+'').then((result)=> {
+    this.ap.threecolart(this.acstart+'',this.acn+'',function (result) {
       if(result.statusCode==131){
         that.if_book=false
       }else{
@@ -210,10 +217,22 @@ export class HomePage {
     modelPage.present();
   }
 //  -------------------搜索-------------------------------
+// toSearch(){
+//   if(this._search){
+//     if(window.location.href.indexOf('search')!=-1){
+//       window.location.href=window.location.href.substring(0,window.location.href.indexOf('search')+6)+"/"+this._search;
+//       // console.log(window.location.href.substring(0,window.location.href.indexOf('search')+6));
+//     }else{
+//       this.router.navigate(['/search',this._search]);
+//       this._search="";
+//     }
+//   }
+// }
   toSearch(){
     let modelPage=this.modalCtrl.create(SearchPage);
     modelPage.present();
   }
+
 
 
 

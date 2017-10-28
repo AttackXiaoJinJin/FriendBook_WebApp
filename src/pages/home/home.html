@@ -2,7 +2,8 @@
   <ion-navbar color="light">
       <ion-row>
         <ion-searchbar col-11 class="ion-search" (ionInput)="getItems($event)"></ion-searchbar>
-        <ion-icon col-1 name="contact" class="login"></ion-icon>
+        <ion-icon col-1 name="contact" class="login" (click)="toSearch()"></ion-icon>
+
       </ion-row>
   </ion-navbar>
 

@@ -31,10 +31,13 @@ export class OrdersService {
       }
     );
   }
-  showOrder(user_id):Promise<any>{
-    return this.http.post(this.url+'/showorder',{user_id:user_id}).toPromise().then(
+  // showOrder(user_id):Promise<any>{
+  showOrder(user_id,callback){
+    // return this.http.post(this.url+'/showorder',{user_id:user_id}).toPromise().then(
+    this.http.post(this.url+'/showorder',{user_id:user_id}).subscribe(
       function (result) {
-        return(result);
+        // return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);

@@ -139,7 +139,7 @@ export class UsersService {
     this.http.post(this.url+'/showuserrecom',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
-        // console.log(result);
+        // return(result);
       },
       function (error) {
         console.log(error.message);
