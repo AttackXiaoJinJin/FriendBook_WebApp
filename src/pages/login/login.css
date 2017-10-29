@@ -1,0 +1,9 @@
+page-login .login-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 3em;
+  margin-top: 1em; }
+page-login .error-message {
+  color: red; }
+
+/*# sourceMappingURL=login.css.map */

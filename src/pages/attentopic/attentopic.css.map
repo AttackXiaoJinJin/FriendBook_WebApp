@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,sBAAM;EACJ,MAAM,EAAE,gCAA+B;EACvC,YAAY,EAAE,OAAO;EACrB,yBAAE;IACA,WAAW,EAAE,GAAG",
+"sources": ["attentopic.scss"],
+"names": [],
+"file": "attentopic.css"
+}

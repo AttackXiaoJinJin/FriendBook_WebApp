@@ -1,0 +1,21 @@
+page-address-add .lists {
+  margin: -16px -16px 20px -16px !important;
+  border-color: #f2f2f2; }
+page-address-add button {
+  border-radius: 5px !important; }
+page-address-add span {
+  display: inline-block;
+  width: 80px; }
+page-address-add input {
+  border: 0;
+  outline: 0; }
+page-address-add .city .label-ios {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-right: 0px !important; }
+page-address-add textarea {
+  width: 100%;
+  border: 0;
+  resize: none; }
+
+/*# sourceMappingURL=address-add.css.map */

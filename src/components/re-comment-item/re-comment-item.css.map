@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,iBAAC;EACC,OAAO,EAAE,SAAS;EAClB,MAAM,EAAE,GAAG;EACX,mBAAC;IACC,eAAe,EAAE,IAAI",
+"sources": ["re-comment-item.scss"],
+"names": [],
+"file": "re-comment-item.css"
+}
