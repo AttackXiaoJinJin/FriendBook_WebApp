@@ -4,10 +4,10 @@ import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/
 
 @Injectable()
 export class ArticlesService {
-  url: string = 'http://localhost:3001/article';
 
-  constructor(//构件对象
-              private http: HttpClient) {
+  url: string = 'http://101.132.127.138:3000/article';
+
+  constructor(private http: HttpClient,) {
 
   }
 
@@ -109,6 +109,7 @@ export class ArticlesService {
       }
     );
   }
+
   //==============获取三篇评论最多文章
   // threecomart(acm,acn):Promise<any> {
   threecomart(acm,acn,callback){
@@ -127,7 +128,8 @@ export class ArticlesService {
   //==============获取三篇收藏最多文章
   // threecolart(acolm,acoln):Promise<any> {
   threecolart(acolm,acoln,callback) {
-    return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).toPromise().then(
+    // return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).toPromise().then(
+    return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).subscribe(
       function (result) {
         // return(result);
         callback(result);
@@ -137,6 +139,7 @@ export class ArticlesService {
       }
     );
   }
+
 
 
 }

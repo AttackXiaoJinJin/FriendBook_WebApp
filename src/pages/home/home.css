@@ -47,7 +47,7 @@ page-home .tuijian-txt1 {
 page-home .tuijian-txt2 {
   font-size: 13px;
   color: #b4b4b4;
-  padding-right: 34px; }
+  padding-left: 169px; }
 page-home .book {
   position: relative;
   box-sizing: border-box;
@@ -160,8 +160,8 @@ page-home .authorcss {
   color: rgba(34, 34, 34, 0.78); }
 page-home .timecss {
   position: absolute;
-  top: -20px;
-  left: 72px;
+  top: 2px;
+  left: 107px;
   color: #ccc; }
 page-home .topic {
   position: relative;
