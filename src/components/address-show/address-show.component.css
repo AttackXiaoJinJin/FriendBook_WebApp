@@ -7,8 +7,7 @@ app-address-show .content {
   margin-bottom: 20px;
   padding: 15px 20px;
   position: relative;
-  color: #333;
-  cursor: pointer; }
+  color: #333; }
 app-address-show .checked {
   height: 150px;
   width: 270px;

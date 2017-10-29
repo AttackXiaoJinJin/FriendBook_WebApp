@@ -11,6 +11,7 @@ import {MyorderPage} from "../myorder/myorder";
 import {ReplyPage} from "../reply/reply";
 import {SearchPage} from "../search/search";
 
+
 declare var $:any;
 
 @Component({
@@ -237,7 +238,9 @@ export class HomePage {
     }
   }
 
-
+  moreTopics(){
+    this.navCtrl.parent.select(3)
+  }
 
 
 

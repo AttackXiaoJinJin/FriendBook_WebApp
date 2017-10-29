@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform, ViewController} from 'ionic-angular';
 import {UsersService} from "../../providers/users.service";
-
+import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-reply',
@@ -21,24 +21,23 @@ export class ReplyPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public userSer:UsersService,
-              platform: Platform
+              public platform: Platform,
+              private storage:Storage,
+              public viewCtrl: ViewController,
 
               ) {
     this.isAndroid = platform.is('android');
   }
 
   ionViewDidLoad() {
-    //判断登录
-    // if(!this.storage.get('user_id')){
-    //     this.toLogin()
-    // }else{
-    //   this.userId=this.storage.get('user_id')
-    // }
-    this.userId=6
-    //这本书的回复,评论
-    this.recomment(this.userId)
-    this.artrecomment(this.userId)
-
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        this.userId = val;
+        //这本书的回复,评论
+        this.recomment(this.userId);
+        this.artrecomment(this.userId);
+      })
+    });
   }
 
 
@@ -70,4 +69,8 @@ export class ReplyPage {
     });
   }
 
+
+  back(){
+    this.viewCtrl.dismiss();
+  }
 }

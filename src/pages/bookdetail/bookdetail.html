@@ -1,0 +1,67 @@
+<!--
+  Generated template for the BookdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header (click)="blurComment($event)">
+
+  <ion-navbar>
+    <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: #488aff;"></ion-icon>
+    <ion-title>bookdetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding (click)="blurComment($event)">
+
+  <ion-row>
+    <ion-col col-5>
+      <img src="http://101.132.127.138:3000/bookimages/{{_book?.book_img}}" alt="">
+    </ion-col>
+    <ion-col col-6 style="margin-left: 20px">
+      <h1>{{_book?.book_name}}</h1>
+      <p class="introduce">作者: {{_book?.writer_name}}</p>
+      <p class="introduce">副标题: {{_book?.book_subhead}}</p>
+      <p class="introduce">出版年份: {{_book?.book_year}}</p>
+      <p class="introduce">类型: {{_book?.book_tag}}</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="content_introduce">
+    <h3>内容简介</h3>
+    <p [innerHtml]="_book?.book_content"></p>
+  </ion-row>
+
+  <ion-row class="beauty" *ngIf="beauty_if">
+    <h3>美言佳句</h3>
+    <ion-slides pager>
+      <ion-slide class="beauty_item" *ngFor="let beauty of _beautys">
+        <p class="sentence_content" [innerHtml]="beauty?.beauty_content"></p>
+        <p class="sentence_from">——{{beauty?.writer_name}}《{{beauty?.book_name}}》</p>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+
+
+  <ng-container *ngFor="let comment of _comments">
+    <comment-item [_comment]="comment" (recomment)="ReComment($event)"></comment-item>
+  </ng-container>
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <form [formGroup]="commentForm">
+      <input [formControl]="_com_centent" id="comment_input" type="text" placeholder="写评论..." (focus)="focusComment($event.target)" [(ngModel)]="_bookcomment">
+    </form>
+    <i *ngIf="!focus_input" [class]="love_if?'fa fa-heart love_color':'fa fa-heart-o'" (click)="lovebook()" [style.color]="love_if?'#488aff':'#000'"></i>
+    <button class="buy" *ngIf="!focus_input">￥ {{_book?.book_price}}</button>
+    <button class="comment_btn" *ngIf="focus_input" (click)="comment()" [disabled]="!commentForm.valid">评&nbsp;&nbsp;论</button>
+  </ion-toolbar>
+</ion-footer>
+
+

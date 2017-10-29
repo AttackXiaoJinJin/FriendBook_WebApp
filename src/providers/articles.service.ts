@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+// 导入http
+import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
 
-import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/http';
-
-import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ArticlesService {
 
@@ -12,25 +11,12 @@ export class ArticlesService {
 
   }
 
-  getallarticles(): Promise<any> {
-
+//=====================下面获取文章详情
+  getArticleDetail(articleId, callback) {
     let params = new HttpParams().set('myParam', 'myValue');
-    return this.http.post(this.url + '/allarticles', {params: params}).toPromise().then(
+    this.http.post(this.url + '/articledetail', {params: params, article_id: articleId}).subscribe(
       function (result) {
-        return(result);
-      },
-      function (error) {
-        console.log(error.message);
-      }
-    )
-
-  }
-  getArticleDetail(articleId):Promise<any> {
-    return this.http.post(this.url + '/articledetail',
-      {article_id: articleId}).toPromise().then(
-      function (result) {
-        console.log(result)
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -77,11 +63,10 @@ export class ArticlesService {
   }
 
   //===========显示该文章是否收藏
-  showcollect(user_id,article_id){
-    return this.http.post(this.url+'/showcollect',
-      {user_id:user_id,article_id:article_id}).toPromise().then(
+  showcollect(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect',{user_id:user_id,article_id:article_id}).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -90,10 +75,10 @@ export class ArticlesService {
   }
 
 //=================点击收藏
-  insertcoll(user_id,article_id):Promise<any>{
-    return this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).toPromise().then(
+  insertcoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -102,12 +87,10 @@ export class ArticlesService {
   }
 
   //====================点击取消收藏
-  deletecoll(user_id,article_id):Promise<any>{
-    return this.http.post(this.url+'/showcollect/deletecollect',
-      {user_id:user_id,article_id:article_id}).toPromise().then(
+  deletecoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/deletecollect',{user_id:user_id,article_id:article_id}).subscribe(
       function (result) {
-        return(result);
-
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -116,11 +99,10 @@ export class ArticlesService {
   }
 
   //====================显示收藏数
-  showcollnum(article_id):Promise<any>{
-    return this.http.post(this.url+'/showcollnum',
-      {article_id:article_id}).toPromise().then(
+  showcollnum(article_id,callback){
+    this.http.post(this.url+'/showcollnum',{article_id:article_id}).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -146,7 +128,8 @@ export class ArticlesService {
   //==============获取三篇收藏最多文章
   // threecolart(acolm,acoln):Promise<any> {
   threecolart(acolm,acoln,callback) {
-    return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).toPromise().then(
+    // return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).toPromise().then(
+    return this.http.post(this.url + '/threecolart', {acolm:acolm,acoln:acoln}).subscribe(
       function (result) {
         // return(result);
         callback(result);
