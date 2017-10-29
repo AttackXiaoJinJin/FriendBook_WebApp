@@ -7,7 +7,6 @@ import 'rxjs/add/operator/toPromise';
 export class BooksService {
   url:string='http://101.132.127.138:3000/books';
   constructor(private http:HttpClient) {
-
   }
 
   //===================获取评论最多书籍

@@ -5,5 +5,8 @@ page-login .login-title {
   margin-top: 1em; }
 page-login .error-message {
   color: red; }
+page-login .back {
+  font-size: 30px !important;
+  color: red; }
 
 /*# sourceMappingURL=login.css.map */

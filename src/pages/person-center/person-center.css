@@ -33,5 +33,16 @@ page-person-center .icon {
 page-person-center .lists {
   margin: 10px -16px !important;
   border-color: #f2f2f2; }
+page-person-center .login {
+  position: absolute;
+  left: 64px;
+  top: 65px;
+  font-size: 21px; }
+page-person-center .regist {
+  position: absolute;
+  left: 175px;
+  top: 65px;
+  /* border: 1px white solid; */
+  font-size: 21px; }
 
 /*# sourceMappingURL=person-center.css.map */

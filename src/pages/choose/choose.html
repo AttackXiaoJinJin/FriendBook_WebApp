@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-icon name="arrow-back" (click)="back()" class="back"></ion-icon>
+    <ion-title>发表文章</ion-title>
+    <span class="tishi" (click)="publishArticle()">{{tishi}}</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+<!--先选封面-->
+  <div class="select_back">
+    <form id="upload_form" #uploadForm="ngForm" enctype="multipart/form-data">
+      <p class="art_img">请选择文章封面</p>
+      <input type="file" id="newUpload" (change)="getIamge($event.target.files)" accept="image/jpg,image/jpeg,image/png">
+      <div id="preview"></div>
+    </form>
+    <!--<div class="btn_pub"><button (click)="publishArticle()" class="btn">{{tishi}}</button></div>-->
+  </div>
+<!--再选话题-->
+  <div class="select_topic">
+    <label>请选择话题</label>
+    <!--(change)="getTopicId($event.target.value)"-->
+    <select (change)="getTopicId($event.target)" id="select_topic">
+      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;" >{{topic.topic_name}}</option>
+    </select>
+  </div>
+</ion-content>

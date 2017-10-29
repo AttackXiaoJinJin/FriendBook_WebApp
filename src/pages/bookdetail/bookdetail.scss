@@ -1,88 +1,87 @@
 page-bookdetail {
+  h1{
+    min-height: 62px;
+    width:185px;
+  }
+  .introduce{
+    font-size: 16px;
+  }
+  //内容简介
+  .content_introduce{
+    h3{
+      width: 100%;
+      display: block;
+      padding: 5px;
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 0px;
+    }
+    p{
+      line-height: 22px;
+      max-height: 110px;
+      overflow: hidden;
+      padding: 0px 9px;
+    }
+  }
 
+  //美句
+  .beauty{
+    margin-top: 20px;
+    h3{
+      width: 100%;
+      display: block;
+      padding: 5px;
+    }
+    .beauty_item{
+      width: 100%;
+      height: 180px;
+      border: 1px solid #ccc;
+      .sentence_content{
+        text-align: left;
+        line-height: 25px;
+        font-size: 16px;
+        padding: 0 13px;
+      }
+      .sentence_from{
+        font-size: 16px;
+        text-align: right;
+        padding: 0px 5px;
+      }
+    }
+  }
 }
+.toolbar-content-ios{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 16px;
+   input{
+     width: 260px;
+     height: 30px;
+     outline: 0;
+     box-sizing: border-box;
+     border: 1px solid #8d8d8d;
+     border-radius: 15px;
+     padding: 0 15px;
+   }
+   i{
+     font-size: 20px;
+   }
+   .buy,.comment_btn{
+     min-width: 62px;
+     background-color: #488aff;
+     color: #fff;
+     height: 30px;
+     outline: 0;
+     border-radius: 5px;
+   }
+ }
+
 ion-navbar{
   button{
     display: none!important;
   }
 }
-h1{
-  min-height: 62px;
-  width:185px;
-}
-.introduce{
-  font-size: 16px;
-}
 
-.toolbar-content-ios{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  input{
-    width: 260px;
-    height: 30px;
-    outline: 0;
-    box-sizing: border-box;
-    border: 1px solid #8d8d8d;
-    border-radius: 15px;
-    padding: 0 15px;
-  }
-  i{
-    font-size: 20px;
-  }
-  .buy,.comment_btn{
-    min-width: 62px;
-    background-color: #488aff;
-    color: #fff;
-    height: 30px;
-    outline: 0;
-    border-radius: 5px;
-  }
-}
-
-//内容简介
-.content_introduce{
-  h3{
-    width: 100%;
-    display: block;
-    padding: 5px;
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 0px;
-  }
-  p{
-    line-height: 22px;
-    max-height: 110px;
-    overflow: hidden;
-    padding: 0px 9px;
-  }
-}
-
-//美句
-.beauty{
-  margin-top: 20px;
-  h3{
-    width: 100%;
-    display: block;
-    padding: 5px;
-  }
-  .beauty_item{
-    width: 100%;
-    height: 180px;
-    border: 1px solid #ccc;
-    .sentence_content{
-      text-align: left;
-      line-height: 25px;
-      font-size: 16px;
-      padding: 0 13px;
-    }
-    .sentence_from{
-      font-size: 16px;
-      text-align: right;
-      padding: 0px 5px;
-    }
-  }
-}
 
 
 

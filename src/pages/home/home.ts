@@ -10,6 +10,14 @@ import {MyarticlePage} from "../myarticle/myarticle";
 import {MyorderPage} from "../myorder/myorder";
 import {ReplyPage} from "../reply/reply";
 import {SearchPage} from "../search/search";
+import {LoginPage} from "../login/login";
+import {PersonCenterPage} from "../person-center/person-center"
+import { Storage } from '@ionic/storage';
+import {TopicsPage} from "../topics/topics";
+import {BooksPage} from "../books/books";
+import {BookdetailPage} from "../bookdetail/bookdetail";
+import {ArticledetailPage} from "../articledetail/articledetail";
+import {TopicdetailPage} from "../topicdetail/topicdetail"
 
 
 declare var $:any;
@@ -48,6 +56,8 @@ export class HomePage {
   attent_if:boolean=false
   allitems:any=[]
   _search:any;
+  user_id:any;
+
 
   constructor(
     public navCtrl: NavController,
@@ -56,6 +66,7 @@ export class HomePage {
     private ap:ArticlesService,
     private recommentSer:RecommentsService,
     public modalCtrl:ModalController,
+    private storage:Storage,
     ) {
 
   }
@@ -191,7 +202,31 @@ export class HomePage {
       }, 2000);
     })
   }
-
+  //登录
+//   this.storage.ready().then(() => {
+//   this.storage.get('user_id').then((val) => {
+//   if(val){
+//     this.user_id = val;
+//     this.getBaseInformation(val);
+//   }else{
+//   const modelPage=this.modalCtrl.create(LoginPage);
+//   modelPage.present();
+// }
+// })
+// })
+  toLogin(){
+  this.storage.ready().then(()=>{
+  this.storage.get('user_id').then((val) => {
+    if(val){
+      const modelPage=this.modalCtrl.create(PersonCenterPage);
+      modelPage.present();
+    }else{
+      const modelPage=this.modalCtrl.create(LoginPage);
+      modelPage.present();
+    }
+    })
+})
+  }
   //注册
   toRegist(){
     let modelPage=this.modalCtrl.create(RegistPage);
@@ -241,7 +276,22 @@ export class HomePage {
   moreTopics(){
     this.navCtrl.parent.select(3)
   }
+  toMoreBooks(){
+   this.navCtrl.parent.select(1)
 
+  }
 
-
+  toBookDetail(book_id){
+    const modelPage=this.modalCtrl.create(BookdetailPage,{"book_id":book_id});
+    modelPage.present();
+  }
+  toArticalDetail(article_id){
+    const modelPage=this.modalCtrl.create(ArticledetailPage,{"article_id":article_id});
+    modelPage.present();
+  }
+  toTopicDetail(topic_id){
+    console.log(topic_id)
+    const modelPage=this.modalCtrl.create(TopicdetailPage,{"topic_id":topic_id});
+    modelPage.present();
+  }
 }

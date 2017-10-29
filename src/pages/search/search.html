@@ -4,7 +4,7 @@
     <ion-grid>
       <ion-row>
         <ion-col col-6>
-          <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: red;"></ion-icon>
+          <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: dodgerblue;"></ion-icon>
           <!--<span class="confirmtip">确认订单信息</span>-->
         </ion-col>
         <!--<ion-col col-6 style="text-align: right" >-->
@@ -36,8 +36,8 @@
   <div [ngSwitch]="search">
     <ion-list *ngSwitchCase="'books'">
       <!--<div>-->
-        <h1 style="text-align: center;" *ngIf="!_books">抱歉！</h1>
-        <h1 style="text-align: center;" *ngIf="!_books">未找到相关书籍</h1>
+        <h1  style="padding-left: 137px;width: 100%;margin-top:20px" *ngIf="!_books">抱歉！</h1>
+        <h1  style="padding-left: 73px;width: 100%;margin-top:-10px" *ngIf="!_books">未找到相关书籍</h1>
         <div *ngIf="_books">
           <!--下面是组件----------------------------------------------------------------------->
           <div class="col-md-6" *ngFor="let book of _books">
@@ -59,8 +59,8 @@
     </ion-list>
     <!-------------------------------------------------------------------------------------------------->
     <ion-list *ngSwitchCase="'articles'">
-      <h1 style="text-align: center;" *ngIf="!_articles">抱歉！</h1>
-      <h1 style="text-align: center;" *ngIf="!_articles">未找到相关文章</h1>
+      <h1 style="text-align: center;width: 100%;margin-top:20px" *ngIf="!_articles">抱歉！</h1>
+      <h1 style="text-align: center;width: 100% ;margin-top:-10px" *ngIf="!_articles">未找到相关文章</h1>
       <div *ngIf="_articles">
 
         <div class="articleItem"  *ngFor="let article of _articles">
@@ -101,8 +101,8 @@
     <!------------------------------------------------------------->
     <ion-list *ngSwitchCase="'topic'">
       <ion-list>
-        <h1 style="text-align: center;" *ngIf="!_topics">抱歉！</h1>
-        <h1 style="text-align: center;" *ngIf="!_topics">未找到相关话题</h1>
+        <h1 style="text-align: center;width: 100%;margin-top:20px" *ngIf="!_topics">抱歉！</h1>
+        <h1 style="text-align: center;width: 100%;margin-top:-10px" *ngIf="!_topics">未找到相关话题</h1>
         <ion-item  *ngFor="let topic of _topics">
           <ion-thumbnail item-start>
             <img src="http://101.132.127.138:3000/topicimages/{{topic?.topic_img}}" (click)="toTdetail(topic?.topic_id)">

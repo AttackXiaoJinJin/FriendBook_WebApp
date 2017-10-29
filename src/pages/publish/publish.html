@@ -1,11 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      发表文章
-    </ion-title>
+    <ion-title>发表文章</ion-title>
+    <span class="tishi" (click)="toChoose()">{{tishi}}</span>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="pubcontent">
+    <!--选择标题-->
+    <input type="text" placeholder="无标题文章" name="articleTitle" [(ngModel)]="article_title">
+    <!--富文本框放footer里-->
+    <!--<app-publish #publish (onPostData)="PostData($event)"></app-publish>-->
+    <!--<div id="editorElem" #publish (onPostData)="PostData($event)">-->
+    <textarea id="editorElem" name="pubart" [(ngModel)]="articleContent" rows="20" placeholder="请输入文章内容">
+    </textarea>
+  </div>
 </ion-content>
+
+
+
+
+
+
+
+

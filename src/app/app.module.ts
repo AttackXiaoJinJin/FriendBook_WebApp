@@ -61,7 +61,6 @@ import { CommentsService } from '../providers/comments.service';
 import { RecommentsService } from '../providers/recomments.service';
 import { UsersService } from '../providers/users.service';
 import { ReceiveService } from '../providers/receive.service';
-import { TopicService } from '../providers/topic.service';
 import {GlobalPropertyService} from "../providers/global-property.service";
 
 
@@ -69,6 +68,8 @@ import {GlobalPropertyService} from "../providers/global-property.service";
 //管道
 import { FindbookPipe } from '../pipes/findbook.pipe';
 import { StringSlicePipe} from "../pipes/string-slice.pipe";
+import {ChoosePage} from "../pages/choose/choose";
+
 
 
 @NgModule({
@@ -114,6 +115,8 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     ArtrecomComponent,
     AddressShowComponent,
     TopicitemComponent,
+    ChoosePage,
+    PublishPage,
   ],
   imports: [
     BrowserModule,
@@ -161,7 +164,9 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     AddressAddPage,
     AddressAddcityPage,
     CommentItemComponent,
-    ReCommentItemComponent
+    ReCommentItemComponent,
+    PublishPage,
+    ChoosePage,
   ],
   providers: [
     StatusBar,
@@ -174,10 +179,9 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     ReceiveService,
     GlobalPropertyService,
     TopicsServerProvider,
-    TopicService,
+    BooksService,
     OrdersService,
     BeautysService,
-    BooksService
   ]
 })
 export class AppModule {}
