@@ -37,7 +37,6 @@ export class PersonCenterPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PersonCenterPage');
     this.storage.ready().then(() => {
       this.storage.get('user_id').then((val) => {
         if(val){

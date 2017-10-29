@@ -2,6 +2,7 @@
 import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import {PersondetailPage} from "../../pages/persondetail/persondetail"
+import {ArticledetailPage} from "../../pages/articledetail/articledetail";
 
 @Component({
   selector: 'article',
@@ -16,15 +17,18 @@ export class ArticleComponent {
     public navParams: NavParams,
     public modalCtrl: ModalController,
   ) {
-    console.log('Hello ArticleComponent Component');
 
   }
+  toArticleDetail(e,article_id){
+    if(e.target.className=="touxiangimg"){
 
+    }else{
+      let modelPage=this.modalCtrl.create(ArticledetailPage,{"article_id":article_id});
+      modelPage.present();
+    }
+  }
   togetuserid(id){
-
     let modelPage=this.modalCtrl.create(PersondetailPage,{"user_id":id});
-       modelPage.present();
-
+    modelPage.present();
   }
-
 }
