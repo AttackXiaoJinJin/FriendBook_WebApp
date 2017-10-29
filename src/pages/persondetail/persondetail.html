@@ -75,7 +75,6 @@
                </ul>
 
                </div>
-
              </div>
              <div class="self_right">
                <img src="http://101.132.127.138:3000/articleimages/{{article?.article_img}}" alt="">
@@ -93,8 +92,8 @@
 
           <span class="name_time">{{article?.user_name}}&nbsp;&nbsp;&nbsp;{{article?.article_time}}</span>
           <br>
-          <br>
-          <span class="title" >{{article?.article_title}}</span>
+
+          <p class="title" >{{article?.article_title}}</p>
           <br>
           <p class="content" [innerHtml]="article?.article_content | stringSlice:60"></p>
           <div class="bottom">
@@ -114,6 +113,4 @@
 
     </ion-list>
   </div>
-
-
 </ion-content>

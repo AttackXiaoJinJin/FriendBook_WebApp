@@ -49,6 +49,7 @@ export class BookdetailPage {
     this.commentForm = formBuilder.group({
       comment_centent: ['', Validators.compose([Validators.required])],
     });
+    // 把_com_centent的内容用comm_centent的规则监控
     this._com_centent = this.commentForm.controls['comment_centent'];
   }
 
@@ -67,7 +68,7 @@ export class BookdetailPage {
         this.beauty_if = false;
       }else {
         this.beauty_if = true;
-        this._beautys = result[0];
+        this._beautys = result[0];//美言佳句
       }
     });
     this.getcomment(bookid);
@@ -145,6 +146,7 @@ export class BookdetailPage {
   getcomment(book){
     this.CommentsService.getBookComments(book,result=> {
       if (result.statusCode || !result[0].length) {
+
       } else {
         this._comments = result[0];
       }

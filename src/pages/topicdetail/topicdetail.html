@@ -15,8 +15,6 @@
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content >
 
   <div class="top">
@@ -28,7 +26,9 @@
         <span>{{ _topic?.article_num}}篇文章 | {{_topic?.attent_num}}人关注</span>
       </div>
     </div>
-    <!--<span>{{_topic?.topic_content}}</span>-->
+     <div class="alert" (click)="doAlert()" >
+       {{_topic?.topic_content}}
+     </div>
     <div class="right">
       <a (click)="ifLoginClick()"><button class="btn1">投稿</button></a>
       <button class="btn2" (click)="attentopic(_topic.topic_id)">{{atten_if?'取消关注':'+关注'}}</button>

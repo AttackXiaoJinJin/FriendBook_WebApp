@@ -13,5 +13,9 @@ page-topics span, page-topics .button-inner, page-topics .public {
   color: black;
   font-size: 16px;
   font-weight: 300; }
+page-topics .topic_bottom {
+  font-size: 16px;
+  text-align: center;
+  width: 100%; }
 
 /*# sourceMappingURL=topics.css.map */

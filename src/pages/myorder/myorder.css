@@ -1,15 +1,10 @@
-page-myorder * {
-  margin: 0;
-  padding: 0; }
-page-myorder .scroll-content {
-  margin-top: 18px !important; }
 page-myorder table {
   margin-top: 15px;
   border: 1px solid #e8e8e8;
-  text-align: center; }
-page-myorder .title {
-  height: 40px;
-  line-height: 40px;
+  text-align: center;
+  width: 100%; }
+page-myorder .title_table {
+  height: 50px;
   border-bottom: 1px solid #e8e8e8;
   background: #f7f7f7;
   padding: 0 10px;
@@ -18,7 +13,8 @@ page-myorder .title {
 page-myorder .title p {
   font-size: 13px;
   height: 16px;
-  line-height: 16px; }
+  line-height: 25px;
+  margin: 0 auto; }
 page-myorder .content1 {
   width: 375px;
   height: 100px;

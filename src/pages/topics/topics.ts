@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController,ToastController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
-import {TopicdetailPage} from "../topicdetail/topicdetail";
-
+import {Storage} from "@ionic/storage";
 
 @IonicPage()
 @Component({
@@ -15,40 +14,35 @@ export class TopicsPage {
 
     topics:any;
     items = [];
-    num:number=0
+  pageNum:number = 0;
+  pageSize:number = 10;
+  noMore:boolean = false;
     constructor(
      public navCtrl: NavController,
      public navParams: NavParams,
      public modalCtrl: ModalController,
      public topicSer:TopicsServerProvider,
      public platform: Platform,
+     private storage:Storage,
+     private toastCtrl: ToastController,
      public actionSheetCtrl: ActionSheetController
   ) {
 
   }
-  // ionViewWillEnter(){
-  //   let that=this;
-  //   let str = '{"user_id":'+18+'}';
-  //   let user_id= JSON.parse(str);
-  //   this.topicSer.getAlltopics().then(function (result) {
-  //     that.topics=result[0];
-  //     that.items=that.topics.slice(0,4);
-  //     // console.log(that.topics);
-  //   })
-  // }
 
   ionViewDidLoad() {
 
    let that=this;
 
-    let str = '{"user_id":'+18+'}';
-    let user_id= JSON.parse(str);
-    // this.topicSer.getAlltopics().then(function (result) {
     this.topicSer.getAlltopics(function (result) {
-      that.topics=result[0];
-      // console.log(that.topics);
-    })
 
+      if (result ){
+            that.topics=result[0];
+            // that.items=that.topics.slice(that.num,that.num+10);
+            that.items =that.topics.slice(that.pageNum * that.pageSize,(that.pageNum+1) * that.pageSize);
+            that.pageNum = that.pageNum+1;
+          }
+        })
   }
 
   presentActionSheet() {
@@ -60,9 +54,8 @@ export class TopicsPage {
           handler: () => {
             let that=this;
             that.topicSer.getMarticletopic(function (result) {
-              that.topics = result[0];
+              that.items = result[0];
 
-              // that._pages = Math.ceil(that._Marticle.length / that._pagesize);
             });
           }
         },{
@@ -70,7 +63,7 @@ export class TopicsPage {
           handler: () => {
             let that=this;
             that.topicSer.getMattentopic(function (result) {
-              that.topics= result[0];
+              that.items= result[0];
             });
           }
         },{
@@ -85,25 +78,28 @@ export class TopicsPage {
     actionSheet.present();
   }
 
-  // doInfinite(infiniteScroll) {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       let item= {
-  //         "id": 13,
-  //         "name": "前端开发",
-  //         "salary": "15k-30k",
-  //         "education": "本科",
-  //         "publish_date": "2017-06-24T01:12:30.000Z",
-  //         "years_working": "经验3-5年",
-  //         "city_name": "杭州市",
-  //         "company_name": "创意网",
-  //         "profession_name": "移动互联网"
-  //       };
-  //       this.items.push(item);
-  //       infiniteScroll.enable(false);
-  //       resolve();
-  //     }, 500);
-  //   })
-  //
-  // }
+  doInfinite(infiniteScroll){
+    console.log('Begin async operation');
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        // console.log(this.topics);
+        this.items.push(...this.topics.slice(this.pageNum * this.pageSize,(this.pageNum+1) * this.pageSize));
+        this.pageNum = this.pageNum+1;
+        if((this.topics.length / this.pageSize) <= this.pageNum -1){
+           this.noMore=true;
+          infiniteScroll.enable(false);
+        }
+        resolve();
+      }, 500);
+    })
+  }
+
+  alert_tip(){
+    let toast = this.toastCtrl.create({
+      message: '服务器异常',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
 }

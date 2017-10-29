@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ToastController ,ModalController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { UsersService } from '../../providers/users.service';
 import { TopicService } from '../../providers/topic.service';
+import {TopicdetailPage} from "../topicdetail/topicdetail"
+
 /**
  * Generated class for the AttentopicPage page.
  *
@@ -24,6 +26,7 @@ export class AttentopicPage {
     public viewCtrl: ViewController,
     private storage:Storage,
     private userSer:UsersService,
+    public modalCtrl: ModalController,
     private TopicService:TopicService,
     private toastCtrl: ToastController,
   ) {
@@ -76,5 +79,11 @@ export class AttentopicPage {
   }
   back(){
     this.viewCtrl.dismiss();
+  }
+
+  totopicdetail(topic_id){
+    let modelPage=this.modalCtrl.create(TopicdetailPage,{"topic_id":topic_id});
+    modelPage.present();
+
   }
 }

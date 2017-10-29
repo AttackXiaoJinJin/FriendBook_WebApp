@@ -33,7 +33,6 @@ export class PersondetailPage {
   }
 
   ionViewDidLoad() {
-
     let that=this;
     let id=this.navParams.get('user_id');
     let str ='{"user_id":'+id+'}';
@@ -41,9 +40,9 @@ export class PersondetailPage {
     that.userSer.getBaseById(user,function (result) {
       that._porsonal=result[0];
     })
-    that.userSer.showuserput(user,function (result) {
-      that._articles=result;
-      console.log(that._articles);
+    that.userSer.showuserput(id+'',function (result) {
+      console.log(result);
+        that._articles=result;
     })
     that.userSer.showuserputcoll(user,function (result) {
       that._Hotarticles=result;

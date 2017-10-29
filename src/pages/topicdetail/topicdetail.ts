@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController,ToastController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
 import {Storage} from "@ionic/storage";
 import {TopicsPage} from "../topics/topics";
-
+import {AlertController} from "ionic-angular";
 @IonicPage()
 @Component({
   selector: 'page-topicdetail',
@@ -25,6 +25,7 @@ export class TopicdetailPage {
               public navParams: NavParams,
               public topicSer:TopicsServerProvider,
               public viewCtrl:ViewController,
+              public alerCtrl: AlertController,
               private storage:Storage
     ) {
         this.isAndroid = platform.is('android');
@@ -34,11 +35,7 @@ export class TopicdetailPage {
     let id=this.navParams.get('topic_id');
     this.viewCtrl.dismiss({"topic_id":id,"atten_if":this.atten_if});
   }
-  ionViewWillEnter(){
-    // set a key/value
-    this.storage.set('user_id', '18');
 
-  }
   ionViewDidLoad() {
     let that=this;
     let id=this.navParams.get('topic_id');
@@ -97,21 +94,23 @@ export class TopicdetailPage {
           // console.log(topicatten);
           if(!this.atten_if){
             //加关注
-            that._topic.attent_num+=1;
+
             that.topicSer.insertatten(topicatten,function (result) {
               if(result.statusCode==69){
                 //插入话题成功
                 that.atten_if=true;
+                that._topic.attent_num+=1;
               }
               // else
                 // that.router.navigate(['/**']);
             })
           }
           else {
-            that._topic.attent_num-=1;
+
             that.topicSer.deleteattent(topicatten,function (result) {
               if(result.statusCode==71){ //删除话题成功
                 that.atten_if=false;
+                that._topic.attent_num-=1;
               }
               else {
                 // that.router.navigate(['/**']);
@@ -124,5 +123,11 @@ export class TopicdetailPage {
       })
     });
   }
-
+       doAlert() {
+    let alert = this.alerCtrl.create({
+      title:this._topic.topic_name,
+      message: this._topic.topic_content,
+    });
+    alert.present()
+  }
 }

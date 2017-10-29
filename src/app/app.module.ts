@@ -114,7 +114,6 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     ArtrecomComponent,
     AddressShowComponent,
     TopicitemComponent,
-    ArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,8 +122,6 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     HttpClientModule,
     FormsModule,
     HttpModule,
-
-    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -177,10 +174,10 @@ import { StringSlicePipe} from "../pipes/string-slice.pipe";
     ReceiveService,
     GlobalPropertyService,
     TopicsServerProvider,
-    BooksService,
+    TopicService,
     OrdersService,
     BeautysService,
-    TopicService
+    BooksService
   ]
 })
 export class AppModule {}

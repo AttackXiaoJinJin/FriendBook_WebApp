@@ -24,11 +24,10 @@ export class MyApp {
           if(val){
             this.rootPage = TabsPage;
           }else{
-            this.rootPage = LoginPage;
+            // this.rootPage = LoginPage;
           }
         })
       });
-
       statusBar.styleDefault();
       splashScreen.hide();
     });

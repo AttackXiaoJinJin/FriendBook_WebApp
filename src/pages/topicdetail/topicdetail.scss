@@ -1,7 +1,7 @@
 @charset "UTF-8";
 page-topicdetail{
 .top{
-  height: 170px;
+  height: 200px;
   width: 100%;
   padding: 10px;
   border-bottom: solid 1px gray;
@@ -18,11 +18,23 @@ img{
   bottom:60px ;
   font-size: 20px;
 }
+  .txt span{
+    font-size: 17px;
+  }
 .topic{
 
   height: 100px;
   display: block;
 }
+  .top .alert{
+    height: 22px;
+    width: 80%;
+    margin-left: 30px;
+    margin-bottom: 13px;
+    font-size: 16px;
+    color: black;
+    overflow: hidden;
+  }
 .right{
   margin-left: 20px;
 
