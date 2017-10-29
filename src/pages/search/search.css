@@ -1,42 +1,103 @@
-/*
-Error: Invalid GBK character "\xE4"
-        on line 2 of search.scss
+page-search .booklist_bookitem {
+  width: 310px;
+  height: 160px;
+  margin-bottom: 30px; }
+page-search .bookicon {
+  width: 100px;
+  height: 150px;
+  float: left;
+  box-shadow: 0 1px 4px rgba(40, 40, 40, 0.6); }
+page-search .bookicon:hover {
+  box-shadow: 0 0 6px rgba(40, 40, 40, 0.6);
+  cursor: pointer; }
+page-search .book_content {
+  margin-left: 134px; }
+page-search .book_content a {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  height: 50px;
+  color: #555;
+  overflow: hidden;
+  font-weight: bold; }
+page-search .book_content a:hover {
+  text-decoration: none;
+  color: #ea6f5a !important; }
+page-search .book_content p.author {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+page-search .book_content p {
+  margin-top: 0px;
+  margin-bottom: 10px; }
+page-search .book_content p.summary {
+  font-size: 13px;
+  line-height: 18px;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0px;
+  color: #999; }
+page-search [col-4] {
+  padding: 25px !important; }
+page-search .articleItem {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8; }
+page-search .author .icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px; }
+page-search .author .icon img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 50%; }
+page-search .author .name {
+  color: #000;
+  display: inline-block;
+  padding: 0 5px; }
+page-search .author .name:hover {
+  text-decoration: none; }
+page-search .author span {
+  color: #969696; }
+page-search .author {
+  margin-bottom: 7px; }
+page-search .articleItem .title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5; }
+page-search .articleItem p {
+  color: #333;
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 24px; }
+page-search .meta a {
+  margin-right: 10px;
+  padding: 2px 6px;
+  color: #ea6f5a !important;
+  border: 1px solid #ea6f5a;
+  border-radius: 3px; }
+page-search .meta a:hover {
+  text-decoration: none;
+  background: #fef7f5; }
+page-search .meta span {
+  margin-right: 10px;
+  color: #b4b4b4; }
+page-search .meta span:before {
+  margin-right: 5px; }
+page-search .btn_atten {
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: #4ab93b !important; }
+page-search img {
+  border-radius: 10px; }
+page-search span, page-search .button-inner, page-search .public {
+  width: 100% !important;
+  color: black;
+  font-size: 16px;
+  font-weight: 300; }
 
-1: @charset "";
-2: //---------------------书籍------------------
-3: .booklist_bookitem{
-4:   width: 310px;
-5:   height: 160px;
-6:   margin-bottom: 30px;
-7: }
-
-Backtrace:
-search.scss:2
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1048:in `rescue in block in find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1045:in `block in find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each_with_index'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:778:in `rescue in check_sass_encoding'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:774:in `check_sass_encoding'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:444:in `check_encoding!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:400:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/bin/scss:13:in `<top (required)>'
-C:/Ruby24-x64/bin/scss:23:in `load'
-C:/Ruby24-x64/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE4\"\A         on line 2 of search.scss\A \A 1: @charset \"\";\A 2: //---------------------书籍------------------\A 3: .booklist_bookitem{\A 4:   width: 310px;\A 5:   height: 160px;\A 6:   margin-bottom: 30px;\A 7: }"; }
+/*# sourceMappingURL=search.css.map */

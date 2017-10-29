@@ -1,8 +1,8 @@
 import { Component,Input } from '@angular/core';
 import {UsersService} from "../../providers/users.service"
 @Component({
-  selector: 'article',
-  templateUrl: 'article.html',
+  selector: 'pagearticle',
+  templateUrl: 'pagearticle.html',
   providers:[UsersService]
 
 })

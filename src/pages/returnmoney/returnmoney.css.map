@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACE,4BAAW;EAET,WAAW,EAAE,IAAI;EACjB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;AAEZ,uBAAM;EACJ,UAAU,EAAE,eAAe",
+"mappings": "AAEE,4BAAW;EAET,WAAW,EAAE,IAAI;EACjB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;AAEZ,uBAAM;EACJ,UAAU,EAAE,eAAe",
 "sources": ["returnmoney.scss"],
 "names": [],
 "file": "returnmoney.css"

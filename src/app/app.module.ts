@@ -27,7 +27,6 @@ import {ComponentsModule} from "../components/components.module";
 import {TopicsServerProvider} from "../providers/topics-server";
 import {ArticlesService} from "../providers/articles.service";
 import {RecommentsService} from "../providers/recomments.service";
-import {PipesModule} from "../pipes/pipes.module";
 import {RegistPage} from "../pages/regist/regist";
 import {NotfindPage} from "../pages/notfind/notfind";
 import {MycollectPage} from "../pages/mycollect/mycollect";
@@ -50,7 +49,6 @@ import {UsersService} from "../providers/users.service";
 
 import {CommentsService} from "../providers/comments.service"
 import {FormsModule} from "@angular/forms"
-//管道
 import {ArticleCommentComponent} from "../components/artcom/artcom";
 import {ArtrecomComponent} from "../components/artrecom/artrecom";
 import {BooksService} from "../providers/books.service";
@@ -102,12 +100,8 @@ import {IonicStorageModule} from "@ionic/storage";
     HttpClientModule,
     FormsModule,
     HttpModule,
-    PipesModule,
-    PipesModule,
+
     HttpClientModule,
-    HttpModule,
-    FormsModule,
-    // ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

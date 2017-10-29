@@ -1,3 +1,5 @@
+@charset "UTF-8";
+page-notfind{
 @keyframes floating {
   0% {
     transform: translate3d(0, 0, 0);
@@ -117,4 +119,5 @@ body {
   margin-left: auto;
   border-radius: 50%;
   animation: floatingShadow 3s ease-in-out infinite;
+}
 }

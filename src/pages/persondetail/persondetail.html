@@ -55,7 +55,7 @@
   <div [ngSwitch]="other">
     <ion-list *ngSwitchCase="'他的文章'">
 
-        <!--<article [_article]="article" *ngFor="let article of _articles"></article>-->
+        <!--<pagearticle [_article]="pagearticle" *ngFor="let pagearticle of _articles"></pagearticle>-->
 
          <div class="self" *ngFor="let article of _articles" >
              <div class="self_left">
@@ -86,7 +86,7 @@
 
     <ion-list *ngSwitchCase="'他的热门'">
 
-        <!--<article [_article]="article" *ngFor="let article of _Hotarticles"></article>-->
+        <!--<pagearticle [_article]="pagearticle" *ngFor="let pagearticle of _Hotarticles"></pagearticle>-->
 
       <div class="self" *ngFor="let article of _Hotarticles" >
         <div class="self_left">

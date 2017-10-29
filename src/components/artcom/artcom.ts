@@ -81,7 +81,8 @@ export class ArticleCommentComponent implements OnInit {
   recomment(){
     let that=this;
     that.RecommentsService.getartrecoms(
-      that._comment.articlecom_id+'').then( (result)=> {
+      // that._comment.articlecom_id+'').then( (result)=> {
+      that._comment.articlecom_id+'',function(result) {
       //如果返回错误状态码并且返回结果为null
       if (result.statusCode || !result.length) {
         //则没有回复
@@ -101,7 +102,8 @@ export class ArticleCommentComponent implements OnInit {
       //插入成功
       if (result.statusCode == 121) {
         that.recontent='';
-        that.RecommentsService.getartrecoms( that._comment.articlecom_id+'').then( (result)=> {
+        // that.RecommentsService.getartrecoms( that._comment.articlecom_id+'').then( (result)=> {
+        that.RecommentsService.getartrecoms( that._comment.articlecom_id+'',function(result) {
           if (result.statusCode || !result.length) {
             that.if_recom = false;
           } else {

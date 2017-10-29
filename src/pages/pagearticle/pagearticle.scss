@@ -1,3 +1,5 @@
+@charset "UTF-8";
+page-articledetail{
 //下面是文章样式
 .middle-middle-article{
   width: 255px;
@@ -39,7 +41,7 @@
 a.glyphicon{
   margin-right: 5px;
 }
-//.article-middle p{
+//.pagearticle-middle p{
 //  display: block;
 //  width: 100px;
 //  height: 100px;
@@ -129,4 +131,5 @@ art-list .img{
   top: 2px;
   left: 79px;
   color: #ccc;
+}
 }

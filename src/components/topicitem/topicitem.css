@@ -1,12 +1,14 @@
-topicitem .btn_atten {
+.btn_atten {
   border-radius: 8px;
   width: 80px;
   height: 30px;
   color: white;
   background-color: #4ab93b !important; }
-topicitem img {
+
+img {
   border-radius: 10px; }
-topicitem span, topicitem .button-inner, topicitem .public {
+
+span, .button-inner, .public {
   width: 100% !important;
   color: black;
   font-size: 16px;

@@ -1,20 +1,21 @@
 /*
 Error: Invalid GBK character "\xE5"
-        on line 5 of artrecom.scss
+        on line 6 of artrecom.scss
 
-1: app-artrecom {
-2:   a{
-3:     text-decoration: none;
-4:   }
-5:   /*弹出的回复框*\/
-6:   .sub_comment_list {
-7:     /*margin-top: 20px;*\/
-8:     padding: 0 0 0 30px;
-9: 
-10:   }
+1: @charset "";
+2: app-artrecom {
+3:   a{
+4:     text-decoration: none;
+5:   }
+6:   /*弹出的回复框*\/
+7:   .sub_comment_list {
+8:     /*margin-top: 20px;*\/
+9:     padding: 0 0 0 30px;
+10: 
+11:   }
 
 Backtrace:
-artrecom.scss:5
+artrecom.scss:6
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1048:in `rescue in block in find_encoding_error'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1045:in `block in find_encoding_error'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each'
@@ -41,4 +42,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE5\"\A         on line 5 of artrecom.scss\A \A 1: app-artrecom {\A 2:   a{\A 3:     text-decoration: none;\A 4:   }\A 5:   /*弹出的回复框*/\A 6:   .sub_comment_list {\A 7:     /*margin-top: 20px;*/\A 8:     padding: 0 0 0 30px;\A 9: \A 10:   }"; }
+  content: "Error: Invalid GBK character \"\xE5\"\A         on line 6 of artrecom.scss\A \A 1: @charset \"\";\A 2: app-artrecom {\A 3:   a{\A 4:     text-decoration: none;\A 5:   }\A 6:   /*弹出的回复框*/\A 7:   .sub_comment_list {\A 8:     /*margin-top: 20px;*/\A 9:     padding: 0 0 0 30px;\A 10: \A 11:   }"; }
