@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ArticlesService {
 
-  url: string = 'http://101.132.127.138:3000/pagearticle';
+  url: string = 'http://101.132.127.138:3000/article';
 
   constructor(private http: HttpClient,) {
 
