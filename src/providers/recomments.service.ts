@@ -15,7 +15,6 @@ export class RecommentsService {
     this.http.post(this.url+'/showrecom',{bookcom_id:bookcom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -28,7 +27,6 @@ export class RecommentsService {
     this.http.post(this.url+'/insertrecom',{user_id:user_id,recom_content:recom_content,bookcom_id:bookcom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -41,7 +39,6 @@ export class RecommentsService {
     this.http.post(this.url+'/userbknum',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -56,7 +53,6 @@ export class RecommentsService {
     this.http.post(this.url+'/showartrecom',{articlecom_id: articlecom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -69,7 +65,6 @@ export class RecommentsService {
     this.http.post(this.url+'/insertartrecom',{user_id:user_id,recom_content:recom_content,artcom_id:artcom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -82,13 +77,10 @@ export class RecommentsService {
     this.http.post(this.url+'/userartnum',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
       },
       function (error) {
         console.log(error.message);
       }
     );
   }
-
-
 }

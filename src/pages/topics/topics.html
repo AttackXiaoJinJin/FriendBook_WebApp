@@ -7,9 +7,8 @@
     <ion-grid>
       <ion-row>
         <ion-col col-1>
-          <ion-icon style="font-size: 30px;" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
         </ion-col>
-        <ion-col col-10 style="font-size: 20px;">话题列表</ion-col>
+        <ion-col col-10><ion-title>话题列表</ion-title></ion-col>
         <ion-col  col-1  class="action-sheets-basic-page">
          <span class="list" (click)="presentActionSheet()"><ion-icon  style="font-size: 30px;" name="list" ></ion-icon></span>
         </ion-col>
@@ -21,13 +20,9 @@
 
 
 <ion-content padding>
-<span   *ngFor="let topic of topics">
-  <topicitem [_topic]="topic"></topicitem>
-</span>
-  <!--&lt;!&ndash;下拉加载&ndash;&gt;-->
-  <!--<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">-->
-    <!--<ion-infinite-scroll-content-->
-      <!--loadingSpinner="bubbles"-->
-      <!--loadingText="Loading more data..."></ion-infinite-scroll-content>-->
-  <!--</ion-infinite-scroll>-->
+  <ion-list>
+    <ng-container *ngFor="let topic of topics">
+      <topicitem [_topic]="topic" ></topicitem>
+    </ng-container>
+  </ion-list>
 </ion-content>

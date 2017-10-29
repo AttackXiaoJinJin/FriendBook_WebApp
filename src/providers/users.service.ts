@@ -82,8 +82,9 @@ export class UsersService {
       }
     );
   }
-  getUserArticles(user,callback){
-    this.http.post(this.url+'/userarticle',user).subscribe(
+  getUserArticles(user_id,callback){
+    // this.http.post(this.url+'/userarticle',user).subscribe(
+    this.http.post(this.url+'/userarticle',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
       },

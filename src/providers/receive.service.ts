@@ -22,7 +22,7 @@ export class ReceiveService {
   showAddress(user_id,callback){
   // showAddress(address,callback){
   //   this.http.post(this.url+'/showreceive',address).subscribe(
-    this.http.post(this.url+'/showreceive',{user_id:user_id}).subscribe(
+    this.http.post(this.url+'/showreceive',user_id).subscribe(
       function (result) {
         callback(result);
       },

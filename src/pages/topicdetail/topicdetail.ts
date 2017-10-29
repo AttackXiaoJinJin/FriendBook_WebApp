@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 import { Platform } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
 import {Storage} from "@ionic/storage";
-import {TopicsPage} from "../topics/topics";
+
 
 @IonicPage()
 @Component({

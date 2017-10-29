@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { UsersService } from '../../services/users.service';
-import { TopicService } from '../../services/topic.service';
+import { UsersService } from '../../providers/users.service';
+import { TopicService } from '../../providers/topic.service';
 /**
  * Generated class for the AttentopicPage page.
  *

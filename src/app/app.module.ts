@@ -50,18 +50,18 @@ import {ArticleCommentComponent} from "../components/artcom/artcom";
 import {ArtrecomComponent} from "../components/artrecom/artrecom";
 import {AddressShowComponent} from "../components/address-show/address-show.component";
 
-//services
+//providers
 import {HttpClientModule} from '@angular/common/http';
 import {TopicsServerProvider} from "../providers/topics-server";
 import {ArticlesService} from "../providers/articles.service";
 import {OrdersService} from "../providers/orders.service";
-import { BooksService } from '../services/books.service';
-import { BeautysService } from '../services/beauty.service';
-import { CommentsService } from '../services/comments.service';
-import { RecommentsService } from '../services/recomments.service';
-import { UsersService } from '../services/users.service';
-import { ReceiveService } from '../services/receive.service';
-import { TopicService } from '../services/topic.service';
+import { BooksService } from '../providers/books.service';
+import { BeautysService } from '../providers/beauty.service';
+import { CommentsService } from '../providers/comments.service';
+import { RecommentsService } from '../providers/recomments.service';
+import { UsersService } from '../providers/users.service';
+import { ReceiveService } from '../providers/receive.service';
+import { TopicService } from '../providers/topic.service';
 import {GlobalPropertyService} from "../providers/global-property.service";
 
 

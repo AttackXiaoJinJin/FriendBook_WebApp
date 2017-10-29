@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import { RecommentsService } from '../../services/recomments.service';
-import { CommentsService } from '../../services/comments.service';
+import { RecommentsService } from '../../providers/recomments.service';
+import { CommentsService } from '../../providers/comments.service';
 /**
  * Generated class for the CommentItemComponent component.
  *

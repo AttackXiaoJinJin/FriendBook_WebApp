@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import {UsersService} from "../../providers/users.service";
 import {Storage} from "@ionic/storage";
 
@@ -15,38 +15,29 @@ export class MyarticlePage {
               public navParams: NavParams,
               private userSer: UsersService,
               private storage:Storage,
+              public viewCtrl: ViewController,
               ) {
   }
 
   ionViewDidLoad() {
-    //判断是否登录
-    // if(!this.storage.get('user_id')){
-    //     this.toLogin()
-    // }else{
-    //   this.userId=this.storage.get('user_id')
-    // }
-    this.userId=6
-    this.myPublish(this.userId)
-  }
-
-  //去登录
-  toLogin(){
-    // let modelPage=this.modalCtrl.create(LoginPage);
-    // modelPage.present();
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        this.userId = val;
+        this.myPublish(this.userId);
+      })
+    });
   }
 
   //发表文章列表
   myPublish(userId){
-    let that=this
-    console.log("aaaaa")
     // this.userSer.showuserput(userId+'').then((result)=> {
-    this.userSer.showuserput(userId+'',function(result) {
-      console.log(result)
+    this.userSer.showuserput(userId+'',result=> {
       if(!result.statusCode) {
-        console.log(result)
-        that.colarts = result;
+        this.colarts = result;
       }
     });
   }
-
+  back(){
+    this.viewCtrl.dismiss();
+  }
 }

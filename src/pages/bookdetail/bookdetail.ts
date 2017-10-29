@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
-import { BooksService } from '../../services/books.service';
-import { BeautysService } from '../../services/beauty.service';
-import { CommentsService } from '../../services/comments.service';
-import { RecommentsService } from '../../services/recomments.service';
+import { BooksService } from '../../providers/books.service';
+import { BeautysService } from '../../providers/beauty.service';
+import { CommentsService } from '../../providers/comments.service';
+import { RecommentsService } from '../../providers/recomments.service';
 import { Storage } from '@ionic/storage';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 declare var $:any;

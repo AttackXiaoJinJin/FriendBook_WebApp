@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RecommentsService} from "../../providers/recomments.service";
 import {CommentsService} from "../../providers/comments.service";
 import {Storage} from "@ionic/storage";
@@ -8,10 +8,10 @@ import {Storage} from "@ionic/storage";
   templateUrl: './artcom.html',
   providers:[CommentsService,RecommentsService]
 })
-export class ArticleCommentComponent implements OnInit {
+export class ArticleCommentComponent {
 
   @Input() _comment: any;
-  @Output() login_if = new EventEmitter();
+  @Output("reartcomment") reartcomment = new EventEmitter<number>();
   like_num:any;
   like_if:boolean=false;
   //==============
@@ -34,7 +34,7 @@ export class ArticleCommentComponent implements OnInit {
     this.like_num=this._comment.like_num;
     this.answer="inner_comment hide";
     //获取回复
-    this.recomment();
+    this.getrecomment();
   }
 
   articlecomlike(){
@@ -42,43 +42,21 @@ export class ArticleCommentComponent implements OnInit {
       var articlecom_id=this._comment.articlecom_id;
       // console.log(this._comment.articlecom_id+"该评论的id==============");
       let that=this;
-      that.comSer.articleComLike(articlecom_id+'').then((result)=> {
+      that.comSer.articleComLike(articlecom_id+'',(result)=> {
         if (result.statusCode==35) {
           that.like_if = true;
           that.like_num+=1;
-
         }else {
         }
       });
     }
   }
 
-  togetuserid(user_id){
-    // this.router.navigate(['/personaldetail',user_id]);
-  }
-
-  //是否显示anser区域
-  showAnswer(){
-    //先判断是否登录
-    if(this.storage.get('user_id')) {
-      if (this.if_show) {
-        this.answer = "inner_comment hide";
-        this.if_show = false;
-      } else {
-        this.answer = "inner_comment";
-        this.if_show = true;
-      }
-    }else{
-      this.login_if.emit(true);
-    }
-  }
-//==============取消按钮
-  closeAnswer(){
-    this.answer = "inner_comment hide";
-    this.if_show = false;
+  reArtComment(bookcom_id){
+    this.reartcomment.emit(bookcom_id);
   }
 //======================获取回复
-  recomment(){
+  getrecomment(){
     let that=this;
     that.RecommentsService.getartrecoms(
       // that._comment.articlecom_id+'').then( (result)=> {
@@ -90,32 +68,7 @@ export class ArticleCommentComponent implements OnInit {
       }else {
         that.if_recom=true;
         that.recomments=result;
-        // console.log(result)
       }
     });
   }
-//======================添加回复
-  addrecom() {
-    let that = this;
-    that.userid=this.storage.get('user_id');
-    that.RecommentsService.addartrecoms(that.userid+'',that.recontent+'',that._comment.articlecom_id+'',function (result) {
-      //插入成功
-      if (result.statusCode == 121) {
-        that.recontent='';
-        // that.RecommentsService.getartrecoms( that._comment.articlecom_id+'').then( (result)=> {
-        that.RecommentsService.getartrecoms( that._comment.articlecom_id+'',function(result) {
-          if (result.statusCode || !result.length) {
-            that.if_recom = false;
-          } else {
-            that.if_recom = true;
-            that.recomments = result;
-          }
-        });
-      } else {
-        console.log('失败');
-      }
-    });
-  }
-
-
 }

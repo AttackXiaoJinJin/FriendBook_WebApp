@@ -73,7 +73,7 @@
                     <img  src="http://101.132.127.138:3000/userhead/{{article?.user_head}}" alt="">
                   </a>
                   <a (click)="togetuserid(article?.user_id)" class="name">{{article?.user_name}}</a>
-                  <span>{{article?.article_time}}</span>
+                  <span>{{article?.article_time |stringSlice:10}}</span>
                 </div>
                 <a  (click)="toarticle(article?.article_id)" class="title">{{article?.article_title}}</a>
                 <p  [innerHtml]="article?.article_content | stringSlice:50"></p>
@@ -87,7 +87,7 @@
               </ion-col>
 
           <ion-col col-4>
-            <img src="http://101.132.127.138:3000/articleimages/{{article?.article_img}}" alt="" width="100%" height="200px">
+            <img class="article_img" src="http://101.132.127.138:3000/articleimages/{{article?.article_img}}" alt="" >
           </ion-col>
 
           <div style="clear: both"></div>

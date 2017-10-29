@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../providers/users.service';
 import {BookdetailPage} from "../bookdetail/bookdetail";
 /**
  * Generated class for the LovebookPage page.
@@ -28,7 +28,6 @@ export class LovebookPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LovebookPage');
     this.storage.ready().then(() => {
       this.storage.get('user_id').then((val) => {
         this.getLoveBooks(val)
