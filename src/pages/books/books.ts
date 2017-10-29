@@ -3,6 +3,7 @@ import { NavController,ModalController } from 'ionic-angular';
 import {MySlidePage} from "../my-slide/my-slide";
 import { BooksService } from '../../providers/books.service';
 import {BookdetailPage} from "../bookdetail/bookdetail";
+import {TopicdetailPage} from "../topicdetail/topicdetail"
 @Component({
   selector: 'page-books',
   templateUrl: 'books.html',
@@ -46,4 +47,5 @@ export class BooksPage {
     const modelPage=this.modalCtrl.create(BookdetailPage,{"book_id":book_id});
     modelPage.present();
   }
+
 }
