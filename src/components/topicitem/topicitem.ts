@@ -1,5 +1,5 @@
 import { Component,Input} from '@angular/core';
-import { IonicPage, NavController, NavParams,ModalController,ToastController } from 'ionic-angular';
+import {  NavController, NavParams,ModalController} from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
 import {TopicdetailPage} from "../../pages/topicdetail/topicdetail"
 import { Platform} from 'ionic-angular';
@@ -29,7 +29,6 @@ export class TopicitemComponent {
     public topicSer:TopicsServerProvider,
     public platform: Platform,
     private storage:Storage,
-    private toastCtrl: ToastController,
 
   ) {
   }
