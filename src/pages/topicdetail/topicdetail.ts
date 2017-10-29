@@ -36,7 +36,9 @@ export class TopicdetailPage {
   }
   ionViewWillEnter(){
     // set a key/value
-    this.storage.set('user_id', '18');
+    //this.storage.set('user_id', '18');
+
+
 
   }
   ionViewDidLoad() {

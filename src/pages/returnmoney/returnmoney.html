@@ -1,9 +1,4 @@
-<!--
-  Generated template for the ReturnmoneyPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -37,7 +32,7 @@
   <div class="returnmoney">
     <table>
     <td width="120"><h3>退款金额:</h3></td>
-    <td style="color: red ;font-size: 17px">￥45</td>
+    <td style="color: red ;font-size: 17px">￥{{(_refund?.book_price*_refund?.order_num).toFixed(2)}}</td>
     </table>
   </div>
   <div class="returntime">
@@ -47,5 +42,5 @@
       </table>
   </div>
 
-  <button ion-button color="danger" style="width: 100%">提交</button>
+  <button ion-button color="danger" style="width: 100%" (click)="cancel()" >提交</button>
 </ion-content>

@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RecommentsService} from "../../providers/recomments.service";
 import {CommentsService} from "../../providers/comments.service";
 import {Storage} from "@ionic/storage";
+import {LoginPage} from "../../pages/login/login";
+import {ModalController} from "ionic-angular";
 
 @Component({
   selector: 'app-article-comment',
@@ -18,6 +20,7 @@ export class ArticleCommentComponent {
   answer:any;
   if_show:boolean=false;
   if_recom: boolean;
+  islogin:any=false
   recomments:any;
   //登录的用户的id
   userid:any;
@@ -26,11 +29,25 @@ export class ArticleCommentComponent {
   constructor(
     private comSer:CommentsService,
     private RecommentsService:RecommentsService,
-    private storage:Storage
+    private storage:Storage,
+    public modalCtrl:ModalController,
+
   ) { }
 
-  ngOnInit() {
-    this.storage.set("user_id",6)
+  ngOnInit()  {
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        console.log(val)
+        if(val){
+          this.userid = val;
+          this.islogin=true
+        }else{
+          this.islogin=false
+        }
+
+      })
+    });
+    console.log(this.islogin+"这是评论是否登录")
     this.like_num=this._comment.like_num;
     this.answer="inner_comment hide";
     //获取回复
@@ -38,7 +55,8 @@ export class ArticleCommentComponent {
   }
 
   articlecomlike(){
-    if(this.storage.get('user_id') && !this.like_if){
+    if(this.islogin){
+    if(!this.like_if){
       var articlecom_id=this._comment.articlecom_id;
       // console.log(this._comment.articlecom_id+"该评论的id==============");
       let that=this;
@@ -50,8 +68,12 @@ export class ArticleCommentComponent {
         }
       });
     }
-  }
-
+  }else{
+      //=====跳到登录页面
+      const modelPage=this.modalCtrl.create(LoginPage);
+      modelPage.present();
+    }
+}
   reArtComment(bookcom_id){
     this.reartcomment.emit(bookcom_id);
   }

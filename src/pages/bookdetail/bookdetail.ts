@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController, ToastController, ModalController} from 'ionic-angular';
 import { BooksService } from '../../providers/books.service';
 import { BeautysService } from '../../providers/beauty.service';
 import { Storage } from '@ionic/storage';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {CommentsService} from "../../providers/comments.service";
 import {RecommentsService} from "../../providers/recomments.service";
+import {LoginPage} from "../login/login";
+import {PayPage} from "../pay/pay";
 declare var $:any;
 /**
  * Generated class for the BookdetailPage page.
@@ -34,6 +36,7 @@ export class BookdetailPage {
   _com_centent:any;
   recomment_input:any = false;
   _bookcom_id:any;
+  islogin:any=false
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -44,7 +47,9 @@ export class BookdetailPage {
     public RecommentsService:RecommentsService,
     private storage:Storage,
     private toastCtrl: ToastController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public modalCtrl:ModalController,
+
   ) {
     this.commentForm = formBuilder.group({
       comment_centent: ['', Validators.compose([Validators.required])],
@@ -79,6 +84,20 @@ export class BookdetailPage {
     });
   }
 
+  ionViewDidEnter(){
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        if(val){
+          this.user_id = val;
+          this.islogin=true
+        }else{
+          this.islogin=false
+        }
+      })
+    });
+  }
+
+
   //返回
   back(){
     this.viewCtrl.dismiss();
@@ -88,6 +107,7 @@ export class BookdetailPage {
 
   //判断是否喜欢过
   showlove(userid){
+
     let str2 = '{"book_id":'+ this.book_id +',"user_id":'+userid+'}';
     let booklove = JSON.parse(str2);
     this.BooksService.showlove(booklove,result=> {
@@ -97,11 +117,13 @@ export class BookdetailPage {
         this.love_if=false;
       }
     });
+
   }
 
 
   //喜欢书
   lovebook(){
+  if(this.islogin){
     let str = '{"book_id":'+ this.book_id +',"user_id":'+this.user_id+'}';
     let booklove = JSON.parse(str);
     //喜欢书
@@ -122,6 +144,11 @@ export class BookdetailPage {
         }
       });
     }
+
+  }else{
+    this.navCtrl.push(LoginPage)
+  }
+
   }
 
   focusComment(e){
@@ -151,7 +178,7 @@ export class BookdetailPage {
     });
   }
   comment(){
-    if(this._bookcomment){
+    if(this._bookcomment && this.islogin){
       let str = '{"book_id":'+ this.book_id +',"user_id":'+this.user_id+',"bookcom_content":"'+this._bookcomment+'"}';
       let bookcomment = JSON.parse(str);
       if(this.recomment_input){
@@ -181,6 +208,8 @@ export class BookdetailPage {
           }
         });
       }
+    }else if(!this.islogin){
+      this.navCtrl.push(LoginPage)
     }
   }
   ReComment(bookcom_id){
@@ -196,4 +225,21 @@ export class BookdetailPage {
     });
     toast.present();
   }
+
+  tobuy(){
+    if(this.islogin){
+      // const modelPage=this.modalCtrl.create(PayPage,{"book_id":book_id});
+      // const modelPage=this.modalCtrl.create(PayPage,{"book_id":this.book_id});
+      // const modelPage=this.modalCtrl.create(PayPage,{"bookId":this.book_id});
+      // console.log(this.book_id+"bookdetail")
+      // modelPage.present();
+      this.navCtrl.push(PayPage,{"book_id":this.book_id})
+    }else{
+      this.navCtrl.push(LoginPage)
+    }
+
+
+
+  }
+
 }

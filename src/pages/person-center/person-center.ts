@@ -41,12 +41,28 @@ export class PersonCenterPage {
           this.islogin=true
         }else{
           this.islogin=false
-          const modelPage=this.modalCtrl.create(LoginPage);
-          modelPage.present();
+          this.navCtrl.push(LoginPage)
+          // const modelPage=this.modalCtrl.create(LoginPage);
+          // modelPage.present();
         }
       })
     });
   }
+  ionViewDidEnter(){
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        if(val){
+          this.user_id = val;
+          this.getBaseInformation(val);
+          this.islogin=true
+        }else{
+          this.islogin=false
+          this.navCtrl.push(LoginPage)
+        }
+      })
+    });
+  }
+
 
   //获取基本信息
   getBaseInformation(userid){
@@ -70,8 +86,16 @@ export class PersonCenterPage {
 
   //ToSetting
   toSetting(){
-    const modelPage=this.modalCtrl.create(SettingPage);
-    modelPage.present();
+    // const modelPage=this.modalCtrl.create(SettingPage);
+    // modelPage.present();
+    this.navCtrl.parent.select(0)
+    this.storage.ready().then(()=>{
+      // this.storage.remove('isLogin');
+      this.storage.remove('user_id');
+      // this.viewCtrl.dismiss();
+      // this.navCtrl.push(PersonCenterPage)
+    });
+
   }
   // =========================================================ToSetting
 

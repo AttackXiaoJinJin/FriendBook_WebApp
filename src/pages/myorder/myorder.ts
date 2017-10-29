@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import {OrdersService} from "../../providers/orders.service";
 import {Storage} from "@ionic/storage";
+import {ReturnmoneyPage} from "../returnmoney/returnmoney";
 
 @IonicPage()
 @Component({
@@ -39,5 +40,11 @@ export class MyorderPage {
   }
   back(){
     this.viewCtrl.dismiss();
+    // this.navCtrl.parent.select(4)
   }
+
+  returnMoney(order_id){
+    this.navCtrl.push(ReturnmoneyPage,{"order_id":order_id})
+  }
+
 }
