@@ -74,7 +74,7 @@
           </div>
 
         <div  class="article-middle" >
-          <h6><a class="biaotia">{{colart.article_title}}</a></h6>
+          <h6><a class="biaotia" (click)="toArticalDetail(colart.article_id)">{{colart.article_title}}</a></h6>
           <!--//显示文章内容，管道stringSlice截取前100个字符-->
           <p class="showarticle" [innerHtml]="colart.article_content | stringSlice:60">
           </p>

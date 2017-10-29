@@ -274,8 +274,7 @@ export class HomePage {
   }
 
   moreTopics(){
-    let modelPage=this.modalCtrl.create(TopicsPage);
-    modelPage.present();
+    this.navCtrl.parent.select(3)
   }
   toMoreBooks(){
    this.navCtrl.parent.select(1)
