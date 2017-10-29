@@ -32,9 +32,7 @@ export class MyarticlePage {
   myPublish(userId){
     // this.userSer.showuserput(userId+'').then((result)=> {
     this.userSer.showuserput(userId+'',result=> {
-      console.log(result);
       if(!result.statusCode) {
-        console.log(result);
         this.colarts = result;
       }
     });

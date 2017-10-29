@@ -60,11 +60,9 @@ export class ReplyPage {
     let that=this;
     // that.userSer.getuserartrecoms(userId+'').then((result)=> {
     that.userSer.getuserartrecoms(userId+'',function(result) {
-      console.log(result)
-      console.log(result.statusCode)
       if(!result.statusCode) {
-        that.artrecomments = result
-        console.log(that.artrecomments)
+        that.artrecomments = result;
+        // console.log(that.artrecomments)
       }
     });
   }

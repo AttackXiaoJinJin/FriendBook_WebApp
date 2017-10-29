@@ -20,13 +20,9 @@
 
 
 <ion-content padding>
-<span   *ngFor="let topic of topics">
-  <topicitem [_topic]="topic"></topicitem>
-</span>
-  <!--&lt;!&ndash;下拉加载&ndash;&gt;-->
-  <!--<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">-->
-    <!--<ion-infinite-scroll-content-->
-      <!--loadingSpinner="bubbles"-->
-      <!--loadingText="Loading more data..."></ion-infinite-scroll-content>-->
-  <!--</ion-infinite-scroll>-->
+  <ion-list>
+    <ng-container *ngFor="let topic of topics">
+      <topicitem [_topic]="topic" ></topicitem>
+    </ng-container>
+  </ion-list>
 </ion-content>

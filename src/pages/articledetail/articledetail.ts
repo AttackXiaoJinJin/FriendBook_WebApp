@@ -1,10 +1,10 @@
-
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import {ArticlesService} from "../../providers/articles.service"
 import {CommentsService} from "../../providers/comments.service";
+import {RecommentsService} from "../../providers/recomments.service";
 import {Storage} from "@ionic/storage";
-// import { Router } from '@angular/router';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 declare var $:any;
 @IonicPage()
 @Component({
@@ -24,235 +24,153 @@ export class ArticledetailPage {
   comment_if: boolean;
   collectNum:any
   collect_if:any
-  className:any;
-  collectName:any;
-  like_num:any;
-  like_if=false;
-  _comment:any;
-  answer:any;
   if_show:boolean=false;
   if_recom: boolean;
   recomments:any;
-  //登录的用户的id
-  userid:any;
   //回复内容
   recontent:any;
 
+  //form表单验证
+  commentForm: FormGroup;
+  _com_centent:any;
+
+  _arecom_id:any;
+  recomment_input:boolean = false;
   constructor(
     public navCtrl: NavController,
+    public viewCtrl: ViewController,
     public navParams: NavParams,
     public articlesSer:ArticlesService,
     private CommentsService:CommentsService,
-    private storage:Storage
-    ) {
+    private RecommentsService:RecommentsService,
+    private storage:Storage,
+    private toastCtrl: ToastController,
+    private formBuilder: FormBuilder
+  ) {
+    this.commentForm = formBuilder.group({
+      comment_centent: ['', Validators.compose([Validators.required])],
+    });
+    this._com_centent = this.commentForm.controls['comment_centent'];
   }
 
   ionViewDidLoad() {
-    this.storage.set('user_id',6)
-    this.artid=2
-    this.getartdetail(this.artid)
-    this.getComments(this.artid)
-    let that=this
-    this.userId= this.storage.get('user_id')
-    console.log(JSON.stringify(this.userId)+"idddd")
-
-    //显示收藏数
-    this.showCollectNum(that);
-    //===============显示收藏
-    this.showIfCollect(that);
-
+    this.artid=this.navParams.get('article_id');
+    this.getartdetail();
+    this.getComments();
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        this.userId = val;
+        this.showIfCollect(val);
+      })
+    });
   }
 
-  getartdetail(art_id){
-    let that=this
-    this.articlesSer.getArticleDetail(art_id+'',(result)=>{
-      if(result[0][0].statusCode){
-        //console.log(result[0][0].statusCode+"这是statusCode");
-        // ==========404
-
+  getartdetail(){
+    this.articlesSer.getArticleDetail(this.artid+'',(result)=>{
+      if(result.statusCode){
+        this.alert_tip()
       }else {
-        that.article=result[0][0];
-        // console.log(that.article);
-        $(".articledetail").html((that.article).article_content);
-        // $(".articledetail")[0].html((that.article).article_content);
-
+        this.article=result[0][0];
+        $(".articledetail").html((this.article).article_content);
       }
     })
   }
 
   //========获取评论
-  getComments(articleId){
-    let that=this
-    that.CommentsService.getArticleComments(articleId+'',(result)=> {
+  getComments(){
+    this.CommentsService.getArticleComments(this.artid+'',(result)=> {
       //console.log(JSON.stringify(result)+"这是文章评论");
       //如果返回错误状态码并且返回结果为null
       if (result.statusCode || !result.length) {
-        // if (result.statusCode) {
-        //则没有评论
-        that.comment_if=false;
+        this.comment_if=false;
       }else {
-        that.comment_if=true;
-        that.comments = result[0];
-        // console.log(JSON.stringify(result[0])+"这是文章======评论");
+        this.comment_if=true;
+        this.comments = result[0];
       }
     });
   }
 
   //显示是否收藏
-  showIfCollect(that){
-    if(this.storage.get('user_id')) {
-      that.articlesSer.showcollect(that.userid + '',
-        that.artid + '').then((result)=> {
-        //45表示已收藏
-        if (result.statusCode == 45) {
-          that.collect_if = true;
-          that.className = "btn collect_btn active";
-          that.collectName='已收藏'
-        } else {
-          that.collect_if = false;
-          that.className = "btn collect_btn";
-          that.collectName='收藏'
-        }
-      });
-    }else{
-      that.className = "btn collect_btn";
-      that.collectName='收藏'
-    }
-  }
-
-  //显示收藏数
-  showCollectNum(that){
-    that.articlesSer.showcollnum(that.artid + '').then(
-      (result)=> {
-      if (result.statusCode == 95) {
-        that.collectNum=0+'';
+  showIfCollect(userid){
+    this.articlesSer.showcollect(userid + '',this.artid + '',(result)=> {
+      //45表示已收藏
+      if (result.statusCode == 45) {
+        this.collect_if = true;
       } else {
-        that.collectNum=result[0].coll_num;
-        // console.log(+"这是收藏的代号！！")
+        this.collect_if = false;
       }
     });
   }
-
-  //封装未登录的操作
-  // unlogin(that){
-    // console.log("用户未登录！！！！！！！！！！");
-    //让模态框显示在用户的该位置
-    // that.scroll_top = window.scrollY*1.1+"px";
-    // that.full_height=document.body.offsetHeight +"px";
-    //弹出模态框
-    // that.modal_if =true;
-  // }
-
-  // 关闭模态框
-  // close(){
-  //   this.modal_if = false;
-  // }
-
-  //去登录界面
-  // toLogin(){
-  //   this.router.navigate(['/login']);
-  // }
-
   //评论该文章
   artcomment(){
-    //如果用户已登录
-    if(this.storage.get('user_id')){
-      //从route获取文章id
-      // this.artid = this.artid
-      let that=this;
-      //从sessionStorage中获取用户id
-      that.userId=this.storage.get('user_id');
-      //添加评论
-      that.CommentsService.addArticleComments(that.articlecomment+'',that.artid+'',that.userId+'',(result)=> {
-        //当评论成功后
-        // console.log(result.statusCode+"============这是新插评论");
-        if (result.statusCode==25) {
-          //评论成功后将评论框中的内容清空
-          that.articlecomment='';
-          that.CommentsService.getArticleComments(that.artid+'',(result)=> {
-            //console.log(result.length);
-            if (result.statusCode || !result.length) {
-              that.comment_if=false;
-            }else {
-              that.comment_if=true;
-              that.comments = result[0];
-            }
-          });
-        }else {
-          console.log('失败');
+    if(this.recomment_input){
+      this.RecommentsService.addartrecoms(this.userId+'',this.articlecomment+'',this._arecom_id+'',result=> {
+        //插入成功
+        if (result.statusCode == 121) {
+          this.articlecomment='';
+          this.recomment_input = false;
+          this.getComments();
+        } else {
+          this.alert_tip()
         }
       });
-    }else{
-      let that=this;
-      // this.unlogin(that);
+    }else {
+      this.CommentsService.addArticleComments(this.articlecomment+'',this.artid+'',this.userId+'',(result)=> {
+        if (result.statusCode==25) {
+          //评论成功后将评论框中的内容清空
+          this.articlecomment='';
+          this.getComments();
+        }else {
+          this.alert_tip();
+        }
+      });
     }
   }
 
   //改变收藏状态
-  changeBg(){
-    //如果用户已登录
-    if(this.storage.get('user_id')) {
-      let that = this;
-      //点击收藏
-      if (that.collectName == '收藏') {
-        //console.log("这是未收藏显示");
-        console.log(that.userId)
-        console.log(that.artid)
-        that.articlesSer.insertcoll(that.userId + '', that.artid + '',(result)=> {
-            console.log(result)
-          //收藏成功
-          // console.log(result.statusCode+"这是状态码");
-      //     if (result.statusCode == 48) {
-      //       that.showCollectNum(that);
-      //       that.className = "btn collect_btn active";
-      //       that.collectName = '已收藏'
-      //     }
-      //   });
-      // }else if(that.collectName == '已收藏'){
-      //   //点击删除
-      //   that.articlesSer.deletecoll(
-      //     that.userId + '', this.artid + '').then(
-      //       (result)=> {
-      //     //取消收藏
-      //     if (result.statusCode ==50) {
-      //       that.showCollectNum(that);
-      //       that.className = "btn collect_btn";
-      //       that.collectName = '收藏'
-      //     }
-        });
-      }
+  CollectArticle(){
+    if(!this.collect_if){
+      this.articlesSer.insertcoll(this.userId + '', this.artid + '',result=> {
+        if (result.statusCode==48) {
+          this.collect_if=true;
+        }else {
+          this.alert_tip();
+        }
+      });
+    }else{//取消收藏
+      this.articlesSer.deletecoll(this.userId + '', this.artid + '',result=>{
+        if (result.statusCode==50) {
+          this.collect_if=false;
+        }else {
+          this.alert_tip();
+        }
+      });
+    }
+  }
+  ReArtComment(arecom_id){
+    this._arecom_id = arecom_id;
+    this.recomment_input = true;
+    $('#artcomment_input')[0].focus();
+  }
+  blurComment(e){
+    if(e.target.nodeName.toLocaleLowerCase()=="a"&&e.target.innerHTML=="回复"){
+
     }else{
-      let that=this;
-      // this.unlogin(that);
+      this.recomment_input = false;
     }
   }
 
-  //跳转到个人空间
-  // togetuserid(userid){
-    // console.log("000");
-    // this.router.navigate(['/personaldetail',userid]);
-  // }
+  //返回
+  back(){
+    this.viewCtrl.dismiss();
+  }
 
-  //点赞
-  // articlecomlike(articlecom_id,comment){
-  //
-  //   // console.log(this)
-  //   // console.log(articlecom_id)
-  //   if(this.storage.get('user_id') && !this.like_if){
-  //     // let articlecom_id=this.comment.articlecom_id;
-  //     // console.log(this._comment.articlecom_id+"该评论的id==============");
-  //     let that=this;
-  //     that.CommentsService.articleComLike(articlecom_id+'').then(
-  //       (result)=> {
-  //       if (result.statusCode==35) {
-  //         that.like_if = true;
-  //         comment.like_num+=1;
-  //         console.log(that)
-  //         // this.color="this.like_if?'red':'#b4b4b4'"
-  //       }else {
-  //       }
-  //     });
-  //   }
-  // }
-
+  alert_tip(){
+    let toast = this.toastCtrl.create({
+      message: '服务器异常',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
 }
