@@ -11,12 +11,7 @@ import {MyarticlePage} from "../myarticle/myarticle";
 import {MycollectPage} from "../mycollect/mycollect";
 import {MyorderPage} from "../myorder/myorder";
 import {ReplyPage} from "../reply/reply";
-/**
- * Generated class for the PersonCenterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {RegistPage} from "../regist/regist";
 
 @IonicPage()
 @Component({
@@ -26,6 +21,7 @@ import {ReplyPage} from "../reply/reply";
 export class PersonCenterPage {
   user_id:any;
   _user:any;
+  islogin:any
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -42,7 +38,9 @@ export class PersonCenterPage {
         if(val){
           this.user_id = val;
           this.getBaseInformation(val);
+          this.islogin=true
         }else{
+          this.islogin=false
           const modelPage=this.modalCtrl.create(LoginPage);
           modelPage.present();
         }
@@ -132,4 +130,16 @@ export class PersonCenterPage {
     modelPage.present();
   }
   // =========================================================ToOrder
+
+  toLogin(){
+     const modelPage=this.modalCtrl.create(LoginPage);
+     modelPage.present();
+  }
+  //注册
+  toRegist(){
+    let modelPage=this.modalCtrl.create(RegistPage);
+    modelPage.present();
+  }
+
+
 }

@@ -19,15 +19,15 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      this.storage.ready().then(() => {
-        this.storage.get('user_id').then((val) => {
-          if(val){
-            this.rootPage = TabsPage;
-          }else{
-            this.rootPage = LoginPage;
-          }
-        })
-      });
+      // this.storage.ready().then(() => {
+      //   this.storage.get('user_id').then((val) => {
+      //     if(val){
+      //       this.rootPage = TabsPage;
+      //     }else{
+      //       this.rootPage = LoginPage;
+      //     }
+      //   })
+      // });
 
       statusBar.styleDefault();
       splashScreen.hide();

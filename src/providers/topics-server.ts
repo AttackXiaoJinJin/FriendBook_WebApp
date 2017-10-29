@@ -12,6 +12,19 @@ export class TopicsServerProvider {
     console.log('Hello TopicsServerProvider Provider');
   }
 
+  alltopics(callback){
+    let params = new HttpParams().set('myParam', 'myValue');
+    this.HttpClient.post(this.url+'/alltopics',{params:params}).subscribe(
+      function (result) {
+        callback(result);
+
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
   //获取全部话题
   // getAlltopics():Promise<any>{
   getAlltopics(callback){

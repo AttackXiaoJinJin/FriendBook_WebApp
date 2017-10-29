@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
-import {TopicdetailPage} from "../topicdetail/topicdetail";
 
 
 @IonicPage()

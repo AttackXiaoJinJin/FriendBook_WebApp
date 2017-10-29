@@ -4,15 +4,7 @@ import { TabsPage } from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-
 import 'rxjs/add/operator/toPromise';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-login',
@@ -44,7 +36,7 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    // console.log('ionViewDidLoad LoginPage');
   }
 
   login(user) {
@@ -73,4 +65,10 @@ export class LoginPage {
       }
     });
   }
+
+  back(){
+    this.navCtrl.pop();
+  }
+
+
 }

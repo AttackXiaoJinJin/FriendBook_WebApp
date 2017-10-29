@@ -1,45 +1,207 @@
-/*
-Error: Invalid GBK character "\xE8"
-        on line 99 of articledetail.scss
+@charset "UTF-8";
+page-articledetail {
+  /*=============================================*/
+  /*=======================点击收藏*/
+  /*收藏按钮====================*/
+  /*点击收藏后。。。。。。。。*/
+  /*===========================================*/
+  /*分享按钮=============================*/ }
+  page-articledetail .toolbar-content-ios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px; }
+    page-articledetail .toolbar-content-ios input {
+      width: 260px;
+      height: 30px;
+      outline: 0;
+      box-sizing: border-box;
+      border: 1px solid #8d8d8d;
+      border-radius: 15px;
+      padding: 0 15px; }
+    page-articledetail .toolbar-content-ios i {
+      font-size: 20px; }
+    page-articledetail .toolbar-content-ios .comment_btn {
+      min-width: 62px;
+      background-color: #488aff;
+      color: #fff;
+      height: 30px;
+      outline: 0;
+      border-radius: 5px; }
+  page-articledetail ul {
+    list-style: none;
+    padding: 0; }
+  page-articledetail .top {
+    width: 100%;
+    height: 160px; }
+  page-articledetail .tittle {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 5px; }
+  page-articledetail .userhead {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%; }
+  page-articledetail .head {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%; }
+  page-articledetail .topleft {
+    float: left;
+    width: 70%;
+    height: 60px;
+    padding: 5px;
+    display: block; }
+    page-articledetail .topleft span {
+      color: lightgray; }
+  page-articledetail .topright {
+    float: right;
+    width: 30%;
+    height: 60px;
+    padding: 5px;
+    display: block; }
+  page-articledetail .username {
+    position: absolute;
+    top: 100px;
+    left: 65px; }
+  page-articledetail .pubtime {
+    position: absolute;
+    top: 120px;
+    left: 65px;
+    color: lightgray; }
+  page-articledetail .articledetail {
+    padding: 5px; }
+  page-articledetail .share {
+    float: right;
+    display: block; }
+  page-articledetail .share span {
+    margin: 0 10px; }
+  page-articledetail .lovenum {
+    font-size: 15px;
+    border: 1px solid red;
+    position: absolute;
+    top: 5px; }
+  page-articledetail .comment {
+    margin-top: 15px;
+    margin-bottom: 100px; }
+  page-articledetail .comment h3 {
+    padding: 10px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e7e7e7; }
+  page-articledetail .articlecomment {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    outline: 0px !important;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none; }
+  page-articledetail .count {
+    position: relative;
+    font-size: 17px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    padding-top: 20px; }
+  page-articledetail .count .left {
+    vertical-align: middle; }
+  page-articledetail .count .pull-right {
+    float: right; }
+  page-articledetail .count .pull-right a {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+    display: inline-block; }
+  page-articledetail .count .pull-right a:hover {
+    color: #2f2f2f; }
+  page-articledetail .sort li {
+    width: 80px; }
+  page-articledetail .sort li a {
+    color: #969696; }
+  page-articledetail .sort li a:hover {
+    color: black;
+    text-decoration: none; }
+  page-articledetail .meta-bottom {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #bfbfbf; }
+  page-articledetail .meta-bottom .collect {
+    display: inline-block; }
+  page-articledetail .meta-bottom .collect:hover {
+    background-color: rgba(236, 97, 73, 0.05);
+    border-radius: 40px; }
+  page-articledetail .meta-bottom .collect .collect_btn {
+    padding: 13px 0 15px;
+    font-size: 0;
+    border: 1px solid #ea6f5a;
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    line-height: 1.42857;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  page-articledetail .meta-bottom .collect .collect_btn.active {
+    background-color: #ea6f5a; }
+  page-articledetail .meta-bottom .collect .collect_btn.active .aixin > a {
+    color: #fff; }
+  page-articledetail .meta-bottom .collect .collect_btn.active .aixin_num > a {
+    color: #fff; }
+  page-articledetail .meta-bottom .collect .collect_btn.active .aixin_num {
+    font-size: 18px;
+    border-left: 1px solid white;
+    display: inline-block;
+    padding: 0 15px; }
+  page-articledetail .meta-bottom .collect .collect_btn .aixin {
+    font-size: 19px;
+    display: inline-block; }
+  page-articledetail .meta-bottom .collect .collect_btn .aixin a {
+    color: #ea6f5a;
+    padding: 18px 15px 18px 30px; }
+  page-articledetail .meta-bottom .collect .collect_btn .aixin a i {
+    margin-right: 5px;
+    font-size: 21px; }
+  page-articledetail .iconfont {
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px; }
+  page-articledetail .meta-bottom .collect .collect_btn .aixin_num {
+    font-size: 18px;
+    border-left: 1px solid rgba(236, 97, 73, 0.4);
+    display: inline-block;
+    padding: 0 15px; }
+  page-articledetail .meta-bottom .collect .collect_btn .aixin_num a {
+    /*border-left: 1px solid rgba(236,97,73,.4);*/
+    font-size: 18px;
+    color: #ea6f5a; }
+  page-articledetail .meta-bottom .share {
+    float: right;
+    margin-top: 6px; }
+  page-articledetail .meta-bottom .share .share-circle {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+    vertical-align: middle;
+    display: inline-block; }
+  page-articledetail .meta-bottom .share .share-circle i {
+    /*margin-top: 10px;*/
+    font-size: 24px;
+    line-height: 2; }
 
-94:     top: 5px;
-95: 
-96:   }
-97: 
-98:   //===========chen
-99:   //评论框
-100:   .comment {
-101:     margin-top: 15px;
-102:     margin-bottom: 100px;
-103:   }
-104: 
-
-Backtrace:
-articledetail.scss:99
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1048:in `rescue in block in find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1045:in `block in find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `each_with_index'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:1044:in `find_encoding_error'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/util.rb:772:in `check_sass_encoding'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:444:in `check_encoding!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:400:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.2/bin/scss:13:in `<top (required)>'
-C:/Ruby24-x64/bin/scss:23:in `load'
-C:/Ruby24-x64/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE8\"\A         on line 99 of articledetail.scss\A \A 94:     top: 5px;\A 95: \A 96:   }\A 97: \A 98:   //===========chen\A 99:   //评论框\A 100:   .comment {\A 101:     margin-top: 15px;\A 102:     margin-bottom: 100px;\A 103:   }\A 104: "; }
+/*# sourceMappingURL=articledetail.css.map */

@@ -1,3 +1,48 @@
-
+page-person-center .basic_information {
+  width: calc(100% + 32px);
+  height: 200px;
+  background: url("../../assets/imgs/defaultbannar.jpg") 0 0 no-repeat;
+  margin: -16px -16px 0px -16px;
+  color: #f2f2f2; }
+  page-person-center .basic_information img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 45px; }
+  page-person-center .basic_information h3 {
+    margin-top: 45px !important; }
+page-person-center .icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: calc(100% + 32px);
+  height: 80px;
+  margin: 0 -16px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 16px;
+  padding-top: 16px; }
+  page-person-center .icon div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 32px; }
+    page-person-center .icon div p {
+      margin-top: 8px;
+      color: #2d2d2d; }
+page-person-center .lists {
+  margin: 10px -16px !important;
+  border-color: #f2f2f2; }
+page-person-center .login {
+  position: absolute;
+  left: 64px;
+  top: 65px;
+  font-size: 21px; }
+page-person-center .regist {
+  position: absolute;
+  left: 175px;
+  top: 65px;
+  /* border: 1px white solid; */
+  font-size: 21px; }
 
 /*# sourceMappingURL=person-center.css.map */

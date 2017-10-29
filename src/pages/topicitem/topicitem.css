@@ -6,10 +6,5 @@ topicitem .btn_atten {
   background-color: #4ab93b !important; }
 topicitem img {
   border-radius: 10px; }
-topicitem span, topicitem .button-inner, topicitem .public {
-  width: 100% !important;
-  color: black;
-  font-size: 16px;
-  font-weight: 300; }
 
 /*# sourceMappingURL=topicitem.css.map */

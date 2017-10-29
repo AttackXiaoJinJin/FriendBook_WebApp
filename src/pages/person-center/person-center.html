@@ -1,22 +1,31 @@
-<!--
-  Generated template for the PersonCenterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-
-
 <ion-content padding style="background-color: #f8f8f8;">
-  <ion-row class="basic_information">
+
+  <ion-row class="basic_information" *ngIf="islogin">
     <ion-col col-3 style="text-align: center;">
       <img src="http://101.132.127.138:3000/userhead/{{_user?.user_head}}" alt="">
     </ion-col>
     <ion-col col-9>
+      <!--登录后显示-->
       <h3>{{_user?.user_name}}</h3>
       <p>{{_user?.user_introduction | stringSlice:50}}</p>
     </ion-col>
   </ion-row>
+  <!--未登录显示-->
+  <ion-row class="basic_information" *ngIf="!islogin">
+    <ion-col col-3 style="text-align: center;">
+      <img src="http://101.132.127.138:3000/userhead/boy.jpg" alt="">
+    </ion-col>
+    <ion-col col-9>
+
+      <div>
+        <span class="login" (click)="toLogin()">登录</span>
+        <span class="regist" (click)="toRegist()">注册</span>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+
   <ion-row class="icon">
     <div (click)="toLove()">
       <i class="fa fa-heart-o fa-lg" style="color: #ffc539"></i>

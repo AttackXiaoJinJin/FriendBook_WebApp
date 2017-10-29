@@ -1,0 +1,16 @@
+page-lovebook .card-background-page ion-card {
+  position: relative;
+  text-align: center; }
+page-lovebook .card-background-page .card-ios {
+  margin: 5px;
+  width: auto; }
+page-lovebook .card-background-page .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px 0; }
+
+/*# sourceMappingURL=lovebook.css.map */

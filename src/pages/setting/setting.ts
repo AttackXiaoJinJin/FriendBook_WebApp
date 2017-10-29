@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { LoginPage } from '../login/login';
+import {PersonCenterPage} from "../person-center/person-center";
 /**
  * Generated class for the SettingPage page.
  *
@@ -34,10 +35,12 @@ export class SettingPage {
 
   login_out(){
     this.storage.ready().then(()=>{
-      this.storage.remove('isLogin');
+      // this.storage.remove('isLogin');
+      this.storage.remove('user_id');
+      this.viewCtrl.dismiss();
+      this.navCtrl.push(PersonCenterPage)
     });
 
-    this.viewCtrl.dismiss();
-    this.navCtrl.push(LoginPage)
+
   }
 }

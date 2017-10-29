@@ -31,6 +31,20 @@ export class ReceiveService {
       }
     );
   }
+
+  /*
+  *   showAddress(address,callback){
+    this.http.post(this.url+'/showreceive',address).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+  * */
+
   delAddress(address,callback){
     this.http.post(this.url+'/deletereceive',address).subscribe(
       function (result) {

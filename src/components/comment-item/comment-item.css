@@ -1,0 +1,23 @@
+.comment {
+  margin-top: 20px; }
+  .comment img {
+    width: 53px;
+    height: 53px;
+    border: 1px solid #e7e7e7;
+    border-radius: 50%; }
+  .comment .comment_container {
+    padding-left: 5px;
+    margin-top: 0; }
+    .comment .comment_container .comment_user {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin-top: 0; }
+      .comment .comment_container .comment_user i {
+        font-size: 16px; }
+    .comment .comment_container .recomments {
+      background-color: #f5f5f5; }
+  .comment a {
+    text-decoration: none; }
+
+/*# sourceMappingURL=comment-item.css.map */

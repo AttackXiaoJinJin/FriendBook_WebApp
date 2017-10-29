@@ -2,13 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { UsersService } from '../../providers/users.service';
-import { TopicService } from '../../providers/topic.service';
-/**
- * Generated class for the AttentopicPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {TopicsServerProvider} from "../../providers/topics-server";
+import {LoginPage} from "../login/login";
 
 @IonicPage()
 @Component({
@@ -18,13 +13,14 @@ import { TopicService } from '../../providers/topic.service';
 export class AttentopicPage {
   user_id:any;
   _topics:any;
+  islogin:any=false
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     private storage:Storage,
     private userSer:UsersService,
-    private TopicService:TopicService,
+    private TopicService:TopicsServerProvider,
     private toastCtrl: ToastController,
   ) {
   }
@@ -33,8 +29,14 @@ export class AttentopicPage {
     console.log('ionViewDidLoad AttentopicPage');
     this.storage.ready().then(() => {
       this.storage.get('user_id').then((val) => {
+        if(val){
+          this.islogin=true
         this.user_id = val;
         this.getAtten(val)
+      }else{
+          this.islogin=false
+        }
+
       })
     });
   }

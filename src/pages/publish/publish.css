@@ -1,3 +1,38 @@
-
+@charset "UTF-8";
+page-publish {
+  /*以上by陈*/ }
+  page-publish #editorElem {
+    width: 100%;
+    margin: 0 auto; }
+  page-publish .content {
+    width: 100%;
+    height: 662px;
+    display: flex;
+    flex-direction: row; }
+  page-publish .tishi {
+    position: absolute;
+    top: 12px;
+    left: 246px; }
+  page-publish input {
+    height: 70px;
+    line-height: 70px;
+    font-size: 26px;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    padding: 0 20px; }
+  page-publish .btn {
+    height: 120px;
+    width: 100%; }
+  page-publish .btn button {
+    margin-top: 40px;
+    font-size: 20px;
+    color: #ea6f5a;
+    border: solid 1px #ea6f5a;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 200px;
+    outline: 0px; }
 
 /*# sourceMappingURL=publish.css.map */

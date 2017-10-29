@@ -1,0 +1,87 @@
+@charset "UTF-8";
+page-choose {
+  .tishi{
+    position: absolute;
+    top: 12px;
+    left: 246px;
+  }
+
+  .back{
+    font-size: 30px !important;
+    color: red;
+
+  }
+  .select_back{
+    height: 283px;
+    width: 100%;
+    position: relative;
+    padding:0 20px;
+  }
+
+  #newUpload{
+    width: calc(100% - 40px);
+    height: 240px;
+    background-color: red;
+    position: absolute;
+    top: 43px;
+    left: 20px;
+    display: block;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  #preview{
+    width: 100%;
+    height: 240px;
+    background-color: red;
+  }
+  #preview img{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+  }
+
+  .art_img{
+    font-size: 18px;
+    color: #222;
+    font-weight: bolder;
+    margin-left: 33%;
+  }
+
+  .btn_pub{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btn_pub .btn{
+    width: 200px;
+    height: 40px;
+    line-height: 24px;
+    margin: 8px 15px 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #ea6f5a;
+    cursor: pointer;
+    outline:0
+  }
+
+  label{
+    color: black;
+    margin-left: 25px;
+  }
+  .select_topic{
+    margin-left: 31%;
+    width: 160px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+  }
+  .select_topic select{
+    padding: 3px 5px;
+  }
+
+
+
+}
