@@ -1,7 +1,9 @@
 @charset "UTF-8";
 page-regist{
 
-
+  ion-content{
+    height: 669px !important;
+  }
 /**{margin: 0;padding: 0}*/
 /*body{*/
 /*overflow: hidden;*/
@@ -15,6 +17,11 @@ page-regist{
   align-items: center;
   flex-direction: column;
 }
+  .arrow-back{
+    position: absolute;
+    left: 0px;
+    top: 0;
+  }
 //@media screen and (min-width: 1370px){
 //  .background{
 //    height: 918px;
@@ -40,7 +47,6 @@ page-regist{
   /*background: rgba(0,0,0,0.6);*/
   padding: 0px 50px;
   border-radius: 5px;
-  margin-top: 10px;
 }
 .form-horizontal{
   //padding-top: 3px;

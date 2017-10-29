@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>person-center</ion-title>
+    <ion-title>书籍列表</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <page-my-slide (slideClick)="onSlideClick($event)" [slides]="pageSlides" [pageNumber]="6" class="slide-nav"></page-my-slide>
+  <ion-grid>
+    <ion-row class="card-background-page">
+      <ion-col col-4 *ngFor="let book of _books | findbook:pageContent">
+        <ion-card>
+          <img src="http://101.132.127.138:3000/bookimages/{{book?.book_img}}" (click)="toBookDetail(book?.book_id)"/>
+          <div class="card-subtitle">{{book?.book_name}}</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

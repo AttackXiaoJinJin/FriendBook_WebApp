@@ -42,11 +42,10 @@ export class ArticleCommentComponent implements OnInit {
       var articlecom_id=this._comment.articlecom_id;
       // console.log(this._comment.articlecom_id+"该评论的id==============");
       let that=this;
-      that.comSer.articleComLike(articlecom_id+'').then((result)=> {
+      that.comSer.articleComLike(articlecom_id+'',(result)=> {
         if (result.statusCode==35) {
           that.like_if = true;
           that.like_num+=1;
-
         }else {
         }
       });

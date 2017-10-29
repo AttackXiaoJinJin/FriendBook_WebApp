@@ -11,6 +11,7 @@ import {MyorderPage} from "../myorder/myorder";
 import {ReplyPage} from "../reply/reply";
 import {SearchPage} from "../search/search";
 
+
 declare var $:any;
 
 @Component({
@@ -229,11 +230,17 @@ export class HomePage {
 //   }
 // }
   toSearch(){
-    let modelPage=this.modalCtrl.create(SearchPage);
-    modelPage.present();
+    // console.log(this._search)
+    if(this._search) {
+      let modelPage = this.modalCtrl.create(SearchPage,{"searchCon":this._search});
+      modelPage.present();
+      this._search=""
+    }
   }
 
-
+  moreTopics(){
+    this.navCtrl.parent.select(3)
+  }
 
 
 

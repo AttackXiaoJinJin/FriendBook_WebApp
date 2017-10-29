@@ -181,6 +181,12 @@ export class RegistPage{
     modelPage.present();
   }
 
+  back(){
+    this.navCtrl.pop();
+    // this.navCtrl.push(TabsPage);
+    // this.viewCtrl.dismiss({"newName":"lzhan"});
+
+  }
 
 
 }

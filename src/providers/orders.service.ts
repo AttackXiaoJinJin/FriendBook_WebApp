@@ -21,8 +21,10 @@ export class OrdersService {
   }
 
 //============添加订单
-  addOrder(order,callback){
-    this.http.post(this.url+'/addorder',order).subscribe(
+  addOrder(book_id,user_id,order_num,order_bianhao,receive_name,receive_address,receive_phone,callback){
+  // addOrder(order,callback){
+  //   this.http.post(this.url+'/addorder',order).subscribe(
+    this.http.post(this.url+'/addorder',{book_id:book_id,user_id:user_id,order_num:order_num,order_bianhao:order_bianhao,receive_name:receive_name,receive_address:receive_address,receive_phone:receive_phone}).subscribe(
       function (result) {
         callback(result);
       },

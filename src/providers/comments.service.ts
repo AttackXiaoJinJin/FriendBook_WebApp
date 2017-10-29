@@ -33,10 +33,10 @@ export class CommentsService {
   }
 
   //================给书评论点赞
-  bookComLike(bookcomment):Promise<any>{
-    return this.http.post(this.url+'/bookcomlike',bookcomment).toPromise().then(
+  bookComLike(bookcomment,callback){
+    this.http.post(this.url+'/bookcomlike',bookcomment).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -45,12 +45,10 @@ export class CommentsService {
   }
 
   //===============显示文章评论
-  getArticleComments(article_id):Promise<any>{
-    return this.http.post(this.url+'/showarticlecoms',
-      {article_id: article_id}).toPromise().then(
+  getArticleComments(article_id,callback){
+    this.http.post(this.url+'/showarticlecoms',{article_id: article_id}).subscribe(
       function (result) {
-        // console.log(JSON.stringify(result)+"这是文章评论")
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -59,11 +57,11 @@ export class CommentsService {
   }
 
   //=================评论文章
-  addArticleComments(art_content,art_id,user_id):Promise<any>{
-    return this.http.post(this.url+'/articlecoms',
-      {articlecom_content:art_content,article_id:art_id,user_id:user_id}).toPromise().then(
+  addArticleComments(art_content,art_id,user_id,callback){
+
+    this.http.post(this.url+'/articlecoms',{articlecom_content:art_content,article_id:art_id,user_id:user_id}).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);
@@ -73,11 +71,10 @@ export class CommentsService {
 
 
   //================给文章评论点赞
-  articleComLike(articlecom_id):Promise<any>{
-    return this.http.post(this.url+'/articlecomlike',
-      {articlecom_id:articlecom_id}).toPromise().then(
+  articleComLike(articlecom_id,callback){
+    this.http.post(this.url+'/articlecomlike',{articlecom_id:articlecom_id}).subscribe(
       function (result) {
-        return(result);
+        callback(result);
       },
       function (error) {
         console.log(error.message);

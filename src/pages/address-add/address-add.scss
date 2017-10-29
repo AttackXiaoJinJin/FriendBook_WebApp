@@ -1,0 +1,27 @@
+page-address-add {
+  .lists{
+    margin: -16px -16px 20px -16px!important;
+    border-color: #f2f2f2;
+  }
+  button{
+    border-radius: 5px !important;
+  }
+  span{
+    display: inline-block;
+    width: 80px;
+  }
+  input{
+    border: 0;
+    outline: 0;
+  }
+  .city .label-ios{
+    display: flex!important;
+    justify-content: space-between!important;
+    margin-right: 0px!important;
+  }
+  textarea{
+    width: 100%;
+    border: 0;
+    resize: none;
+  }
+}

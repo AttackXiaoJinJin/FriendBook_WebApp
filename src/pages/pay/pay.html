@@ -7,9 +7,6 @@
           <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: red;"></ion-icon>
           <span class="confirmtip">确认订单信息</span>
         </ion-col>
-        <!--<ion-col col-6 style="text-align: right" >-->
-          <!--<ion-icon name="more"></ion-icon>-->
-        <!--</ion-col>-->
       </ion-row>
     </ion-grid>
   </ion-navbar>
@@ -19,31 +16,16 @@
 
 <ion-content>
 <div class="addressbc">
-  <p class="addresstext">收货地址</p>
   <div class="addaddress">
-    <!--<div class="newaddress">-->
-      <!--<ion-icon name="ios-add-circle-outline" class="ios-add-circle-outline" (click)="toAddaddress()"></ion-icon>-->
-      <!--<p class="newaddresstext">新建地址</p>-->
-    <!--</div>-->
     <ion-item>
-      <ion-label>address</ion-label>
-      <ion-select [(ngModel)]="_address">
-        <!--(checkAddress)="checkAddress(address?.receive_id)"-->
-        <ion-option  *ngFor="let address of _addresses" (click)="checkAddress(address?.receive_id)">
-          <app-address-show [_address]="address" (checkAddress)="checkAddress(address?.receive_id)" (click)="checkAddress(address?.receive_id)"></app-address-show>
-        </ion-option>
-      </ion-select>
+      <button ion-button block  (click)="showCheckbox()">请选择收货地址</button>
     </ion-item>
-
     <div class="content">
-      <ion-item> 收货人：{{_user?.user_name}} {{_user?.user_phone}}</ion-item>
-      <!--<ion-item>江苏省苏州市吴中区林泉街567号</ion-item>-->
-      <ion-item>{{checked_address}}</ion-item>
-      <!--<i class="fa fa-trash-o fa-2x"></i>-->
+      <ion-item>收货人: {{receiveName}}&nbsp;联系电话: {{receivePhone}}</ion-item>
+      <ion-item>收货地址: {{receiveAddress}}</ion-item>
     </div>
   </div>
 </div>
-  <!--<div class="buydetail" *ngFor="let item of items">-->
   <div class="buydetail">
     <p class="boostore">友书书店</p>
     <div class="bookdetail">
@@ -80,12 +62,10 @@
     <div class="confirm">
       <div class="confirmleft">
         <span>应付￥{{(_book?.book_price*order_num).toFixed(2)}}</span>
-
       </div>
       <div class="confirmright">
         <button ion-button color="danger" (click)="tobuy()">购买</button>
       </div>
-
     </div>
 
   </div>

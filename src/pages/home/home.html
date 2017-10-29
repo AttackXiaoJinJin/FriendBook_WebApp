@@ -1,19 +1,29 @@
 <ion-header>
-  <ion-navbar color="light">
-      <ion-row>
-        <ion-searchbar col-11 class="ion-search" (ionInput)="getItems($event)"></ion-searchbar>
-        <ion-icon col-1 name="contact" class="login" (click)="toSearch()"></ion-icon>
+  <!--<div class="top">-->
+      <!--<ion-row>-->
+        <!--<ion-searchbar col-11 class="ion-search"  (click)="toSearch()" (ionInput)="getItems($event)"></ion-searchbar>-->
+        <!--<ion-icon col-1 name="contact" class="login" ></ion-icon>-->
 
-      </ion-row>
+      <!--</ion-row>-->
+    <!------------------------->
+  <ion-navbar color="light">
+  <!--<div class="search">-->
+    <input type="text" name="search" class="searchtxt" placeholder="发现新鲜事" [(ngModel)]="_search" maxlength="20">
+    <img class="search_btn" src="../../assets/imgs/search.png" width="30px" (click)="toSearch()">
+    <ion-icon col-1 name="contact" class="login" ></ion-icon>
+  <!--</div>-->
   </ion-navbar>
 
+    <!------------------------->
+  <!--</div>-->
 
-  <button (click)="toRegist()">转到注册页面</button>
-  <button (click)="toMyCollect()">转到我的收藏文章页面</button>
-  <button (click)="toMyPublish()">转到我发表的文章页面</button>
-  <button (click)="toMyOrder()">转到我的订单页面</button>
-  <button (click)="toReply()">转到@我的页面</button>
-  <button (click)="toSearch()">转到搜索页面</button>
+
+  <!--<button (click)="toRegist()">转到注册页面</button>-->
+  <!--<button (click)="toMyCollect()">转到我的收藏文章页面</button>-->
+  <!--<button (click)="toMyPublish()">转到我发表的文章页面</button>-->
+  <!--<button (click)="toMyOrder()">转到我的订单页面</button>-->
+  <!--<button (click)="toReply()">转到@我的页面</button>-->
+  <!--<button (click)="toSearch()">转到搜索页面</button>-->
 </ion-header>
 
 <ion-content>
@@ -47,8 +57,9 @@
   </div>
 
   <!--==============文章-->
-  <div class="tuijian-txt"><span class="tuijian-txt1">推荐文章</span><span class="tuijian-txt2">更多文章
-     <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
+  <div class="tuijian-txt"><span class="tuijian-txt1">推荐文章</span>
+    <!--<span class="tuijian-txt2">更多文章<ion-icon name="ios-arrow-forward-outline"></ion-icon></span>-->
+  </div>
   <div class="art-list" *ngFor="let colart of colarts">
     <!--文章列表-->
     <div class="middle-middle-article">
@@ -79,7 +90,7 @@
   <!--============================================-->
 <!--推荐话题===========================-->
   <div class="topic-list">
-    <div class="tuijian-txt"><span class="tuijian-txt1">推荐话题</span><span class="tuijian-txt2">更多话题
+    <div class="tuijian-txt"><span class="tuijian-txt1">推荐话题</span><span class="tuijian-txt2" (click)="moreTopics()">更多话题
       <ion-icon name="ios-arrow-forward-outline"></ion-icon></span>
     </div>
     <!--==============循环两个话题-->
@@ -94,8 +105,9 @@
   </div>
 <!--============================topic-->
   <!--==============文章-->
-  <div class="tuijian-txt"><span class="tuijian-txt1">热门文章</span><span class="tuijian-txt2">更多文章
-     <ion-icon name="ios-arrow-forward-outline"></ion-icon></span></div>
+  <div class="tuijian-txt"><span class="tuijian-txt1">热门文章</span>
+    <!--<span class="tuijian-txt2">更多文章<ion-icon name="ios-arrow-forward-outline"></ion-icon></span>-->
+  </div>
   <div class="art-list" *ngFor="let comart of comarts">
     <!--文章列表-->
     <div class="middle-middle-article">
