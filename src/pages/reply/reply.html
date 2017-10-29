@@ -1,6 +1,7 @@
 
 <ion-header>
   <ion-navbar>
+    <ion-icon name="arrow-back" (click)="back()" style="font-size: 30px !important; color: #488aff;"></ion-icon>
     <ion-title>@ 我 的</ion-title>
   </ion-navbar>
 </ion-header>
@@ -19,7 +20,7 @@
   </div>
 
   <!--下面的列表-->
-  <div [ngSwitch]="replyme">
+  <div [ngSwitch]="replyme" style="width: 100%;padding: 0 16px;">
     <ion-list *ngSwitchCase="'book'">
       <h1 style="text-align: center;" *ngIf="!bookrecomments">哇哦！</h1>
       <h1 style="text-align: center;" *ngIf="!bookrecomments">没有收到回复呢</h1>

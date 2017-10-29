@@ -65,7 +65,7 @@ export class ArticledetailPage {
 
   getartdetail(art_id){
     let that=this
-    this.articlesSer.getArticleDetail(art_id+'').then((result)=>{
+    this.articlesSer.getArticleDetail(art_id+'',(result)=>{
       if(result[0][0].statusCode){
         //console.log(result[0][0].statusCode+"这是statusCode");
         // ==========404
@@ -83,8 +83,7 @@ export class ArticledetailPage {
   //========获取评论
   getComments(articleId){
     let that=this
-    that.CommentsService.getArticleComments(articleId+'').then(
-      (result)=> {
+    that.CommentsService.getArticleComments(articleId+'',(result)=> {
       //console.log(JSON.stringify(result)+"这是文章评论");
       //如果返回错误状态码并且返回结果为null
       if (result.statusCode || !result.length) {
@@ -164,14 +163,13 @@ export class ArticledetailPage {
       //从sessionStorage中获取用户id
       that.userId=this.storage.get('user_id');
       //添加评论
-      that.CommentsService.addArticleComments(that.articlecomment+'',that.artid+'',that.userId+'').then(
-        (result)=> {
+      that.CommentsService.addArticleComments(that.articlecomment+'',that.artid+'',that.userId+'',(result)=> {
         //当评论成功后
         // console.log(result.statusCode+"============这是新插评论");
         if (result.statusCode==25) {
           //评论成功后将评论框中的内容清空
           that.articlecomment='';
-          that.CommentsService.getArticleComments(that.artid+'').then( (result)=> {
+          that.CommentsService.getArticleComments(that.artid+'',(result)=> {
             //console.log(result.length);
             if (result.statusCode || !result.length) {
               that.comment_if=false;
@@ -200,8 +198,7 @@ export class ArticledetailPage {
         //console.log("这是未收藏显示");
         console.log(that.userId)
         console.log(that.artid)
-        that.articlesSer.insertcoll(that.userId + '', that.artid + '').then(
-          (result)=> {
+        that.articlesSer.insertcoll(that.userId + '', that.artid + '',(result)=> {
             console.log(result)
           //收藏成功
           // console.log(result.statusCode+"这是状态码");

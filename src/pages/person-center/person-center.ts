@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import {UsersService} from '../../services/users.service';
+import {UsersService} from '../../providers/users.service';
 import {LoginPage} from '../login/login';
 import {SettingPage} from "../setting/setting";
 import {AddressPage} from "../address/address";
 import {LovebookPage} from "../lovebook/lovebook";
 import {AttentopicPage} from "../attentopic/attentopic";
+import {MyarticlePage} from "../myarticle/myarticle";
+import {MycollectPage} from "../mycollect/mycollect";
+import {MyorderPage} from "../myorder/myorder";
+import {ReplyPage} from "../reply/reply";
 /**
  * Generated class for the PersonCenterPage page.
  *
@@ -101,7 +105,7 @@ export class PersonCenterPage {
 
   //ToCollect
   toCollect(){
-    const modelPage=this.modalCtrl.create(LovebookPage);
+    const modelPage=this.modalCtrl.create(MycollectPage);
     modelPage.present();
   }
   // =========================================================ToCollect
@@ -109,7 +113,7 @@ export class PersonCenterPage {
 
   //ToMessage
   toMessage(){
-    const modelPage=this.modalCtrl.create(LovebookPage);
+    const modelPage=this.modalCtrl.create(ReplyPage);
     modelPage.present();
   }
   // =========================================================ToMessage
@@ -117,7 +121,7 @@ export class PersonCenterPage {
 
   //ToMyArticle
   toMyArticle(){
-    const modelPage=this.modalCtrl.create(LovebookPage);
+    const modelPage=this.modalCtrl.create(MyarticlePage);
     modelPage.present();
   }
   // =========================================================ToMyArticle
@@ -125,7 +129,7 @@ export class PersonCenterPage {
 
   //ToOrder
   toOrder(){
-    const modelPage=this.modalCtrl.create(LovebookPage);
+    const modelPage=this.modalCtrl.create(MyorderPage);
     modelPage.present();
   }
   // =========================================================ToOrder

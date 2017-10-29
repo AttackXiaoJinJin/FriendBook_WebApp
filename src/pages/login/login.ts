@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController,ToastController,App, ViewController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
-import {UsersService} from '../../services/users.service';
+import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import 'rxjs/add/operator/toPromise';

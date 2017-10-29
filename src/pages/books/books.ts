@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 import {MySlidePage} from "../my-slide/my-slide";
-import { BooksService } from '../../services/books.service';
+import { BooksService } from '../../providers/books.service';
 import {BookdetailPage} from "../bookdetail/bookdetail";
 @Component({
   selector: 'page-books',
