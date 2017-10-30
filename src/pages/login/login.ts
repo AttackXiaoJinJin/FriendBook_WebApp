@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,AlertController,ToastController,App, ViewController } from 'ionic-angular';
+import {
+  NavController, NavParams, AlertController, ToastController, App, ViewController,
+  ModalController
+} from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import 'rxjs/add/operator/toPromise';
+import {RegistPage} from "../regist/regist";
 
 @Component({
   selector: 'page-login',
@@ -24,7 +28,9 @@ export class LoginPage {
     private appCtrl: App,
     private storage:Storage,
     private userSer:UsersService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public modalCtrl:ModalController,
+
   ) {
         this.loginForm = formBuilder.group({
           loginPhone: ['', Validators.compose([Validators.minLength(11), Validators.maxLength(11), Validators.required, Validators.pattern("^(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$")])],
@@ -70,5 +76,11 @@ export class LoginPage {
     this.navCtrl.pop();
   }
 
+  toregist(){
+    // this.viewCtrl.dismiss();
+    // this.navCtrl.push(RegistPage)
+    const modelPage=this.modalCtrl.create(RegistPage);
+    modelPage.present();
+  }
 
 }

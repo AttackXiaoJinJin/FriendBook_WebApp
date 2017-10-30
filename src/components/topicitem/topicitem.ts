@@ -48,14 +48,17 @@ export class TopicitemComponent {
     let that=this;
     let modelPage=this.modalCtrl.create(TopicdetailPage,{"topic_id":id,"atten_if":that.atten_if});
     modelPage.onDidDismiss(data => {
-      if(data.atten_if){ //true
-        that.atten_if=data.atten_if
-       that._topic.attent_num+=1
+      if(data.tougao){
+        this.navCtrl.parent.select(2);
+      }else{
+        if(data.atten_if){ //true
+          that.atten_if=data.atten_if
+          that._topic.attent_num+=1
+        } else {
+          that.atten_if=data.atten_if
+          that._topic.attent_num-=1
+        }
       }
-          else {
-        that.atten_if=data.atten_if
-        that._topic.attent_num-=1
-          }
     });
     modelPage.present();
   }

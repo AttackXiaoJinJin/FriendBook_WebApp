@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 import { Platform } from 'ionic-angular';
 import {TopicsServerProvider} from "../../providers/topics-server"
 import {Storage} from "@ionic/storage";
+import {LoginPage} from "../login/login";
+import {TabsPage} from "../tabs/tabs";
+import {PublishPage} from "../publish/publish";
 
 
 @IonicPage()
@@ -126,5 +129,23 @@ export class TopicdetailPage {
       })
     });
   }
+
+  //发表文章需判断是否登录
+  ifLoginClick(){
+    let that=this
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        if(val){
+
+          this.viewCtrl.dismiss({"tougao":true})
+
+        }else{
+          this.navCtrl.push(LoginPage)
+        }
+      })
+    });
+  }
+
+
 
 }

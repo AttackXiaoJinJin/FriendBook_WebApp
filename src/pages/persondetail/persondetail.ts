@@ -41,7 +41,8 @@ export class PersondetailPage {
     that.userSer.getBaseById(user,function (result) {
       that._porsonal=result[0];
     })
-    that.userSer.showuserput(user,function (result) {
+    // that.userSer.showuserput(user,function (result) {
+    that.userSer.showuserput(id+'',function (result) {
       that._articles=result;
       console.log(that._articles);
     })

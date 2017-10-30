@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {UsersService} from "../../providers/users.service";
 import {HomePage} from "../home/home";
 import {Storage} from "@ionic/storage";
-import {ModalController, NavController} from "ionic-angular";
+import {ModalController, NavController, ViewController} from "ionic-angular";
 import {NotfindPage} from "../notfind/notfind";
 
 @Component({
@@ -32,6 +32,7 @@ export class RegistPage{
     private userSer:UsersService,
     private storage:Storage,
     public modalCtrl:ModalController,
+    public viewCtrl:ViewController
   ) { }
 
   ionViewDidLoad() {
@@ -139,8 +140,10 @@ export class RegistPage{
                   // this.storage.set('token',result.token);
                   console.log(result[0])
                 });
-                that.navCtrl.pop();
-                that.navCtrl.push(HomePage);
+
+                that.viewCtrl.dismiss();
+                // that.navCtrl.pop();
+                // that.navCtrl.push(HomePage);
               }
             });
             break;

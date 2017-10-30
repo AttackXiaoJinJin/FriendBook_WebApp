@@ -33,20 +33,20 @@ export class PersonCenterPage {
   }
 
   ionViewDidLoad() {
-    this.storage.ready().then(() => {
-      this.storage.get('user_id').then((val) => {
-        if(val){
-          this.user_id = val;
-          this.getBaseInformation(val);
-          this.islogin=true
-        }else{
-          this.islogin=false
-          this.navCtrl.push(LoginPage)
-          // const modelPage=this.modalCtrl.create(LoginPage);
-          // modelPage.present();
-        }
-      })
-    });
+    // this.storage.ready().then(() => {
+    //   this.storage.get('user_id').then((val) => {
+    //     if(val){
+    //       this.user_id = val;
+    //       this.getBaseInformation(val);
+    //       this.islogin=true
+    //     }else{
+    //       this.islogin=false
+    //       // this.navCtrl.push(LoginPage)
+    //       // const modelPage=this.modalCtrl.create(LoginPage);
+    //       // modelPage.present();
+    //     }
+    //   })
+    // });
   }
   ionViewDidEnter(){
     this.storage.ready().then(() => {
