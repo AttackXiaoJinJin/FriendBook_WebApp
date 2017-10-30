@@ -8,7 +8,6 @@ import { Storage } from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import 'rxjs/add/operator/toPromise';
-import {RegistPage} from "../regist/regist";
 
 @Component({
   selector: 'page-login',

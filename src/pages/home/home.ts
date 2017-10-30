@@ -17,7 +17,8 @@ import {TopicsPage} from "../topics/topics";
 import {BooksPage} from "../books/books";
 import {BookdetailPage} from "../bookdetail/bookdetail";
 import {ArticledetailPage} from "../articledetail/articledetail";
-import {TopicdetailPage} from "../topicdetail/topicdetail"
+import {TopicdetailPage} from "../topicdetail/topicdetail";
+
 
 
 declare var $:any;
@@ -214,24 +215,21 @@ export class HomePage {
 // }
 // })
 // })
-  toLogin(){
-  this.storage.ready().then(()=>{
-  this.storage.get('user_id').then((val) => {
-    if(val){
-      const modelPage=this.modalCtrl.create(PersonCenterPage);
-      modelPage.present();
-    }else{
-      const modelPage=this.modalCtrl.create(LoginPage);
-      modelPage.present();
-    }
-    })
-})
-  }
+//   toLogin(){
+//   this.storage.ready().then(()=>{
+//   this.storage.get('user_id').then((val) => {
+//     if(val){
+//       const modelPage=this.modalCtrl.create(PersonCenterPage);
+//       modelPage.present();
+//     }else{
+//       const modelPage=this.modalCtrl.create(LoginPage);
+//       modelPage.present();
+//     }
+//     })
+// })
+//   }
   //注册
-  toRegist(){
-    let modelPage=this.modalCtrl.create(RegistPage);
-    modelPage.present();
-  }
+
   //我的收藏
   toMyCollect(){
     let modelPage=this.modalCtrl.create(MycollectPage);
