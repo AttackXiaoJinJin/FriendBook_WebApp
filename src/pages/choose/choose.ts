@@ -38,9 +38,6 @@ export class ChoosePage {
   ) {
   }
 
-
-
-
   ionViewDidLoad() {
     let that=this
     this.formData = new FormData();

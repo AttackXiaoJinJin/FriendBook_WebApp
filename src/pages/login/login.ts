@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,AlertController,ToastController,App, ViewController } from 'ionic-angular';
+import { NavController, ModalController, NavParams,AlertController,ToastController,App, ViewController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {RegistPage} from "../regist/regist"
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -24,6 +25,7 @@ export class LoginPage {
     private appCtrl: App,
     private storage:Storage,
     private userSer:UsersService,
+    public modalCtrl:ModalController,
     private formBuilder: FormBuilder
   ) {
         this.loginForm = formBuilder.group({
@@ -69,6 +71,9 @@ export class LoginPage {
   back(){
     this.navCtrl.pop();
   }
-
+  toRegist(){
+    let modelPage=this.modalCtrl.create(RegistPage);
+    modelPage.present();
+  }
 
 }
