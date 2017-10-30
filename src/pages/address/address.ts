@@ -35,9 +35,7 @@ export class AddressPage {
   }
 
   getAddress(userid){
-    let str = '{"user_id":' + userid + '}';
-    let user_id = JSON.parse(str);
-    this.ReceiveService.showAddress(user_id,result=> {
+    this.ReceiveService.showAddress(userid,result=> {
       if(!result.statusCode) {
         this._address = result;
       }else if(result.statusCode==98){

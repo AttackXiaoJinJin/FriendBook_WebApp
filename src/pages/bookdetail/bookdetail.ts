@@ -61,7 +61,7 @@ export class BookdetailPage {
     this.book_id=this.navParams.get('book_id');
     let str = '{"book_id":'+ this.book_id +'}';
     let bookid = JSON.parse(str);
-    this.BooksService.getBookdetailById(bookid,result=>{
+    this.BooksService.getBookdetailById(this.book_id,result=>{
       if (result.statusCode) {
       }else {
         this._book = result[0];
