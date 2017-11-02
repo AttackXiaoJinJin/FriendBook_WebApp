@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage';
 import { UsersService } from '../../providers/users.service';
 import {TopicsServerProvider} from "../../providers/topics-server";
 import {LoginPage} from "../login/login";
-
+import {TopicdetailPage} from "../topicdetail/topicdetail";
 @IonicPage()
 @Component({
   selector: 'page-attentopic',
@@ -31,11 +31,11 @@ export class AttentopicPage {
     this.storage.ready().then(() => {
       this.storage.get('user_id').then((val) => {
         if(val){
-          this.islogin=true
+          this.islogin=true;
         this.user_id = val;
         this.getAtten(val);
       }else{
-          this.islogin=false
+          this.islogin=false;
         }
 
       })

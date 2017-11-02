@@ -27,11 +27,13 @@ export class CommentItemComponent {
   }
   ngOnInit() {
     this.like_num = this._comment.like_num;
-
     this.RecommentsService.getbkrecoms(this._comment.bookcom_id+'',result=> {
       //如果返回错误状态码并且返回结果为null
-      if (result.statusCode || !result.length) {
-      }else {
+      if (result.statusCode || !result.length) { //没有子评论的时候
+        console.log(result.statusCode);
+      }
+      else {
+        console.log("RRR");
         this._recomments=result;
       }
     });

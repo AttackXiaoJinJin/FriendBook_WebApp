@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { AddressAddPage } from '../address-add/address-add'
-
+import { AddressAddPage } from '../address-add/address-add';
+import {ReceiveService} from "../../providers/receive.service";
 @IonicPage()
 @Component({
   selector: 'page-address',

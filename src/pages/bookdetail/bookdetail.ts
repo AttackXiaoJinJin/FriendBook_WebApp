@@ -85,8 +85,6 @@ export class BookdetailPage {
     this.viewCtrl.dismiss();
   }
 
-
-
   //判断是否喜欢过
   showlove(userid){
     let str2 = '{"book_id":'+ this.book_id +',"user_id":'+userid+'}';
@@ -130,9 +128,9 @@ export class BookdetailPage {
     this.focus_input = true;
   }
   blurComment(e){
+    console.log("heree");
     if(this.focus_input){
       if(e.target.nodeName.toLocaleLowerCase()=="a"&&e.target.innerHTML=="回复"){
-
       }else{
         $('#comment_input').css('width','260px');
         this.focus_input = false;
@@ -186,6 +184,7 @@ export class BookdetailPage {
     }
   }
   ReComment(bookcom_id){
+    console.log("aa");
     this._bookcom_id = bookcom_id;
     this.recomment_input = true;
     $('#comment_input')[0].focus();
