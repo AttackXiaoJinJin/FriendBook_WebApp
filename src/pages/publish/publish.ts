@@ -5,6 +5,9 @@ import {TopicsServerProvider} from "../../providers/topics-server";
 import {GlobalPropertyService} from "../../providers/global-property.service";
 // import * as wangEditor from '../../../src/wangEditor.js'
 import {ChoosePage} from "../choose/choose";
+import {LoginPage} from "../login/login";
+import {Storage} from "@ionic/storage";
+
 
 declare var $:any;
 @Component({
@@ -29,7 +32,10 @@ export class PublishPage {
     private el: ElementRef,
     private renderer: Renderer,
     public modalCtrl: ModalController,
-    ) {
+    private storage:Storage
+
+
+  ) {
 
   }
 
@@ -44,13 +50,22 @@ export class PublishPage {
   // this.router.navigate(['/login']);
   // }
 
-  let that=this;
-  that.userid=6;
+  // let that=this;
+  // that.userid=6;
   // this.formData = new FormData();
 }
 
   ionViewWillEnter() {
-
+    let that=this
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        if(val){
+          that.userid=val
+        }else{
+          this.navCtrl.push(LoginPage)
+        }
+      })
+    });
   }
 
   clickHandle():any {

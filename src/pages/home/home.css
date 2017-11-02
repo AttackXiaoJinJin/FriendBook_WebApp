@@ -3,6 +3,8 @@ page-home .search {
   position: relative;
   width: 100%;
   height: 31px; }
+page-home .scroll-content {
+  height: 607px !important; }
 page-home .searchtxt {
   width: 240px;
   height: 34px;

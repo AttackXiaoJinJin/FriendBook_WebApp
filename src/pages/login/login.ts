@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import 'rxjs/add/operator/toPromise';
+import {RegistPage} from "../regist/regist";
 
 @Component({
   selector: 'page-login',
@@ -44,6 +45,11 @@ export class LoginPage {
     // console.log('ionViewDidLoad LoginPage');
   }
 
+  ionViewWillEnter(){
+
+}
+
+
   login(user) {
     this.userSer.login(user,(result)=> {
       if(result){
@@ -76,9 +82,16 @@ export class LoginPage {
   }
 
   toregist(){
+    let that=this
     // this.viewCtrl.dismiss();
     // this.navCtrl.push(RegistPage)
     const modelPage=this.modalCtrl.create(RegistPage);
+    // modelPage.onDidDismiss(data => {
+    //   if (data.yep) {
+    //     const modelPage=this.modalCtrl.create(TabsPage);
+    //     modelPage.present();
+    //   }
+    // });
     modelPage.present();
   }
 

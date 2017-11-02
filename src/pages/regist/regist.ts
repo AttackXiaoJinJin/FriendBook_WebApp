@@ -5,6 +5,7 @@ import {HomePage} from "../home/home";
 import {Storage} from "@ionic/storage";
 import {ModalController, NavController, ViewController} from "ionic-angular";
 import {NotfindPage} from "../notfind/notfind";
+import {TabsPage} from "../tabs/tabs";
 
 @Component({
   selector: 'page-regist',
@@ -119,12 +120,14 @@ export class RegistPage{
 
 
   toRegist() {
+    console.log(this._qcode);
+    console.log(this._confirm_code);
     if(this._confirm_code==this._qcode){
       this.confirm_res_if=false;
       let that=this;
-      console.log(that._telephone);
-      console.log(that._username);
-      console.log(that._password);
+
+      // console.log(that._username);
+      // console.log(that._password);
       that.userSer.addUser(that._telephone+'',that._username+'',that._password+'',function (result) {
         console.log(result);
         switch (result.statusCode){
@@ -139,6 +142,7 @@ export class RegistPage{
                   that.storage.set('user_id',result[0].user_id);
                   // this.storage.set('token',result.token);
                   console.log(result[0])
+                  // that.viewCtrl.dismiss({"yep":true})
                 });
 
                 that.viewCtrl.dismiss();
@@ -185,9 +189,10 @@ export class RegistPage{
   }
 
   back(){
-    this.navCtrl.pop();
-    // this.navCtrl.push(TabsPage);
-    // this.viewCtrl.dismiss({"newName":"lzhan"});
+    // this.navCtrl.pop();
+
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(TabsPage);
 
   }
 

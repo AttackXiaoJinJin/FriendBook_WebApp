@@ -1,45 +1,38 @@
-.middle-middle-article {
+article .middle-middle-article {
   width: 255px;
   height: 140px;
   /*background-color: goldenrod;*/
   position: relative;
   float: left;
   display: block; }
-
-.thisart {
+article .thisart {
   height: 109px; }
-
-.art-list {
+article .art-list {
   position: relative;
   margin-top: 5px;
   padding-left: 5px;
   height: 180px;
   width: 376px;
   border-bottom: 1px solid #eee; }
-
-.article-top {
+article .article-top {
   width: 750px;
   height: 70px;
   position: relative;
   /*background-color: darkgray;*/ }
-
-.article-top .touxiangimg {
+article .article-top .touxiangimg {
   border-radius: 50%;
   width: 25px;
   height: 25px; }
-
-.article-middle {
+article .article-middle {
   position: absolute;
   width: 260px;
   height: 110px;
   left: 0;
   /* background-color: burlywood; */
   top: 15px; }
-
-a.glyphicon {
+article a.glyphicon {
   margin-right: 5px; }
-
-.article-middle p {
+article .article-middle p {
   display: block;
   width: 260px;
   font-size: 13px;
@@ -47,65 +40,55 @@ a.glyphicon {
   margin-top: 6px;
   padding: 0;
   color: #aaa; }
-
-.article-bottom {
+article .article-bottom {
   width: 750px;
   height: 20px;
   margin-top: 40px; }
-
-.myspan {
+article .myspan {
   border: solid 1px red;
   color: red;
   letter-spacing: 1px;
   margin-right: 15px;
   font-size: 10px;
   padding-left: 2px; }
-
-.span2 {
+article .span2 {
   border: none;
   /*margin-right: 5px;*/
   color: #b4b4b4;
   margin-right: 5px; }
-
-.article-bottom a {
+article .article-bottom a {
   color: lightgrey;
   text-decoration: none;
   margin: 0 10px; }
-
-.span1 {
+article .span1 {
   border: none;
   color: #b4b4b4;
   /*margin: 0 5px;*/ }
-
-.art-list .article_img {
+article .art-list .article_img {
   width: 82px;
   height: 82px;
   top: 30px;
   left: 280px;
   position: absolute; }
-
-.biaotia {
+article .biaotia {
   cursor: pointer;
   width: 100%;
   height: 100%;
   color: black; }
-
-.touxiangimgcss {
+article .touxiangimgcss {
   display: block;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   overflow: hidden;
   float: left; }
-
-.authorcss {
+article .authorcss {
   position: absolute;
   top: 5px;
   left: 30px;
   cursor: pointer;
   color: rgba(34, 34, 34, 0.78); }
-
-.timecss {
+article .timecss {
   position: absolute;
   top: 2px;
   left: 79px;
