@@ -10,7 +10,7 @@
   <!--<div class="search">-->
     <input type="text" name="search" class="searchtxt" placeholder="发现新鲜事" [(ngModel)]="_search" maxlength="20">
     <img class="search_btn" src="../../assets/imgs/search.png" width="30px" (click)="toSearch()">
-    <ion-icon col-1 name="contact" class="login" (click)="toLogin()"  ></ion-icon>
+    <!--<ion-icon col-1 name="contact" class="login" (click)="toLogin()"  ></ion-icon>-->
   <!--</div>-->
   </ion-navbar>
 
@@ -122,7 +122,7 @@
         </div>
 
         <div  class="article-middle" >
-          <h6><a class="biaotia">{{comart.article_title}}</a></h6>
+          <h6><a class="biaotia" (click)="toArticalDetail(comart.article_id)">{{comart.article_title}}</a></h6>
           <!--//显示文章内容，管道stringSlice截取前100个字符-->
           <p class="showarticle" [innerHtml]="comart.article_content | stringSlice:60">
           </p>
@@ -134,7 +134,7 @@
         <span class="span1" aria-hidden="true"><ion-icon name="md-heart" style="font-size: 14px"></ion-icon> {{comart.article_collect}}</span>
       </div>
     </div>
-    <div><img  class="img" src="http://101.132.127.138:3000/articleimages/{{comart.article_img}}"></div>
+    <div><img  class="img" (click)="toArticalDetail(comart.article_id)" src="http://101.132.127.138:3000/articleimages/{{comart.article_img}}"></div>
   </div>
   <!--============================================-->
     </div>

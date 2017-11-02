@@ -34,13 +34,14 @@ export class SettingPage {
   }
 
   login_out(){
+    this.navCtrl.pop()
+      // this.navCtrl.parent.select(0)
     this.storage.ready().then(()=>{
       // this.storage.remove('isLogin');
       this.storage.remove('user_id');
-      this.viewCtrl.dismiss();
-      this.navCtrl.push(PersonCenterPage)
+      // this.viewCtrl.dismiss();
+      // this.navCtrl.push(PersonCenterPage)
     });
-
 
   }
 }

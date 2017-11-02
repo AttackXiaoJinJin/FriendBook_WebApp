@@ -52,8 +52,10 @@ export class UsersService {
       }
     );
   }
-  getMoreById(user,callback){
-    this.http.post(this.url+'/getmorebyid',user).subscribe(
+  getMoreById(user_id,callback){
+  // getMoreById(user,callback){
+  //   this.http.post(this.url+'/getmorebyid',user).subscribe(
+    this.http.post(this.url+'/getmorebyid',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
       },

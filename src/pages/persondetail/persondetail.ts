@@ -41,7 +41,6 @@ export class PersondetailPage {
       that._porsonal=result[0];
     })
     that.userSer.showuserput(id+'',function (result) {
-      console.log(result);
         that._articles=result;
     })
     that.userSer.showuserputcoll(user,function (result) {

@@ -14,14 +14,14 @@
     <app-artrecom [_recomment]="recomment" [mainname]="_comment?.user_name" [mainid]="_comment?.user_id" *ngFor="let recomment of recomments"></app-artrecom>
   </ul>
   <!--===================-->
-  <div ngClass={{answer}}>
-    <form class="new_comment" #artrecomForm="ngForm">
-      <textarea placeholder="请写下你的回复..." name="artrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>
-    </form>
-    <div class="answer_line">
-      <button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom()">发送</button>
-      <a class="cancel" (click)="closeAnswer()">取消</a>
-    </div>
-  </div>
+  <!--<div ngClass={{answer}}>-->
+    <!--<form class="new_comment" #artrecomForm="ngForm">-->
+      <!--<textarea placeholder="请写下你的回复..." name="artrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>-->
+    <!--</form>-->
+    <!--<div class="answer_line">-->
+      <!--<button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom()">发送</button>-->
+      <!--<a class="cancel" (click)="closeAnswer()">取消</a>-->
+    <!--</div>-->
+  <!--</div>-->
   <!--============================-->
 </li>

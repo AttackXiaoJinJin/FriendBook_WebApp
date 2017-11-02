@@ -24,7 +24,9 @@ export class BooksService {
 
   //==============通过id获取书籍详情
   getBookdetailById(book_id,callback){
-    this.http.post(this.url+'/bookdetail',book_id).subscribe(
+  // getBookdetailById(book_id,callback){
+  //   this.http.post(this.url+'/bookdetail',book_id).subscribe(
+    this.http.post(this.url+'/bookdetail',{book_id:book_id}).subscribe(
       function (result) {
         callback(result);
       },

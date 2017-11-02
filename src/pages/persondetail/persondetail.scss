@@ -23,27 +23,27 @@ color: black;
   left: 100px;
   bottom:60px ;
   font-size: 20px;
-}.txt span{
+}
+  .txt span{
   font-size: 17px;
   color: gainsboro;
  }
 .topic{
-
-  height: 100px;
-  display: block;
-}
-.other .bottom{
-  height: 22px;
-  width: 80%;
-  margin-left: 30px;
- font-size: 16px;
-  color: black;
-  overflow: hidden;
-}
-.segment-ios .segment-button.segment-activated {
-  background-color: white !important;
-}
-.segment-ios .segment-button.segment-activated {
+    height: 100px;
+    display: block;
+  }
+  .other .bottom{
+    height: 22px;
+    width: 80%;
+    margin-left: 30px;
+    font-size: 16px;
+    color: black;
+    overflow: hidden;
+  }
+  .segment-ios .segment-button.segment-activated {
+    background-color: white !important;
+  }
+  .segment-ios .segment-button.segment-activated {
 
   color:red !important;
 }

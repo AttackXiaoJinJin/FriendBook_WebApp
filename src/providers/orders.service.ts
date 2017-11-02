@@ -10,7 +10,9 @@ export class OrdersService {
   }
 //通过订单id显示订单详情
   showorderbyid(order_id,callback){
-    this.http.post(this.url+'/showorderbyid',order_id).subscribe(
+  // showorderbyid(order_id,callback){
+  //   this.http.post(this.url+'/showorderbyid',order_id).subscribe(
+    this.http.post(this.url+'/showorderbyid',{order_id:order_id}).subscribe(
       function (result) {
         callback(result)
       },
@@ -46,8 +48,8 @@ export class OrdersService {
       }
     );
   }
-  delOrder(order,callback){
-    this.http.post(this.url+'/deleteorder',order).subscribe(
+  delOrder(order_id,callback){
+    this.http.post(this.url+'/deleteorder',{order_id:order_id}).subscribe(
       function (result) {
         callback(result);
       },

@@ -9,6 +9,7 @@ import {GlobalPropertyService} from "../../providers/global-property.service";
 import { AlertController } from 'ionic-angular';
 import {constructDependencies} from "@angular/core/src/di/reflective_provider";
 import {OrdersService} from "../../providers/orders.service";
+import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -46,23 +47,45 @@ export class PayPage {
     private  glo:GlobalPropertyService,
     public alertCtrl: AlertController,
     public OrdersService:OrdersService,
+    private storage:Storage,
 
     ) {
 
   }
+  // ionViewWillEnter(){
+    // this.storage.ready().then(() => {
+    //   this.storage.get('user_id').then((val) => {
+    //     if(val){
+    //       this.userId = val;
+    //     }
+    //   })
+    // });
+    //
+    // this.book_id =this.navParams.get('book_id');
+  // }
 
   ionViewDidLoad() {
-    // if(!sessionStorage.getItem('user_id')){
-    //   this.router.navigate(['/login']);
-    // }
+  // ionViewWillEnter() {
+    this.book_id=this.navParams.get('book_id');
+    this.storage.ready().then(() => {
+      this.storage.get('user_id').then((val) => {
+        if(val){
+          this.userId = val;
+        }
+      })
+    });
+    console.log(this.book_id)
+    console.log(this.navParams)
+
 
     this.receive_id=0;
-    this.book_id =1;
-    this.userId=6
-    let str = '{"book_id":'+ this.book_id +'}';
-    let book_id = JSON.parse(str);
+
+
+    // let str = '{"book_id":'+ this.book_id +'}';
+    // let book_id = JSON.parse(str);
     let that=this;
-    that.booksSer.getBookdetailById(book_id,function (result) {
+    // that.booksSer.getBookdetailById(book_id,function (result) {
+    that.booksSer.getBookdetailById(that.book_id+'',function (result) {
       // console.log(result);
       if (result.statusCode) {
         // that.router.navigate(['/**']);
@@ -71,13 +94,13 @@ export class PayPage {
         that._book = result[0];
       }
     });
-    str = '{"user_id":' + this.userId + '}';
-    let user_id = JSON.parse(str);
-    that.userSer.getMoreById(user_id, function (result) {
+    // let str = '{"user_id":' + this.userId + '}';
+    // let user_id = JSON.parse(str);
+    that.userSer.getMoreById(that.userId+'', function (result) {
       if(!result.statusCode) {
         that._user = result[0];
       }
-      // console.log(that._user);
+      console.log(that.userId);
     });
 
 
@@ -106,9 +129,7 @@ export class PayPage {
   tobuy(){
     this.createOrderNum()
     let that = this;
-    // let str = '{"book_id":'+ this.book_id +',"user_id":'+this.userId+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+',"receive_name":"'+this.checked_address.receive_name+'","receive_address":"'+this.checked_address.receive_address+'","receive_phone":"'+this.checked_address.receive_phone+'","token":""}';
-    // let order = JSON.parse(str);
-    // that.OrdersService.addOrder(order,function (result) {
+    if(that.receiveAddress && that.receivePhone && that.receiveName && this.book_id && that.order_num && this.order_numbering){
     that.OrdersService.addOrder(this.book_id+'',that.userId+'',that.order_num+'',this.order_numbering+'',that.receiveName+'',that.receiveAddress+'',that.receivePhone+'',function (result) {
       console.log(that.order_num)
       console.log(that.order_numbering)
@@ -122,6 +143,10 @@ export class PayPage {
         alert('请选择地址');
       }
     });
+    }else{
+      alert('请选择地址');
+    }
+
   }
 
   checkAddress(receiveid){
@@ -157,6 +182,7 @@ export class PayPage {
     alert.setTitle('请选择收货地址');
     // this.showaddress()
     // that.ReceiveService.showAddress(that.userId, function (result) {
+    console.log(that.userId+"userIdddd")
     that.ReceiveService.showAddress(that.userId+'', function (result) {
       console.log(result)
       if(!result.statusCode) {

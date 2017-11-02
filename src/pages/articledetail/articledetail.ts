@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController, ToastController, ModalController} from 'ionic-angular';
 import {ArticlesService} from "../../providers/articles.service"
 import {CommentsService} from "../../providers/comments.service";
 import {RecommentsService} from "../../providers/recomments.service";
 import {Storage} from "@ionic/storage";
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {LoginPage} from "../login/login";
 declare var $:any;
 @IonicPage()
 @Component({
@@ -29,7 +30,7 @@ export class ArticledetailPage {
   recomments:any;
   //回复内容
   recontent:any;
-
+  islogin:any=false;
   //form表单验证
   commentForm: FormGroup;
   _com_centent:any;
@@ -45,7 +46,9 @@ export class ArticledetailPage {
     private RecommentsService:RecommentsService,
     private storage:Storage,
     private toastCtrl: ToastController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public modalCtrl:ModalController,
+
   ) {
     this.commentForm = formBuilder.group({
       comment_centent: ['', Validators.compose([Validators.required])],
@@ -59,8 +62,14 @@ export class ArticledetailPage {
     this.getComments();
     this.storage.ready().then(() => {
       this.storage.get('user_id').then((val) => {
-        this.userId = val;
-        this.showIfCollect(val);
+        if(val){
+          this.userId = val;
+          this.showIfCollect(val);
+          this.islogin=true
+        }else{
+          this.islogin=false
+        }
+
       })
     });
   }
@@ -103,6 +112,8 @@ export class ArticledetailPage {
   }
   //评论该文章
   artcomment(){
+    //=====
+    if(this.islogin){
     if(this.recomment_input){
       this.RecommentsService.addartrecoms(this.userId+'',this.articlecomment+'',this._arecom_id+'',result=> {
         //插入成功
@@ -125,10 +136,18 @@ export class ArticledetailPage {
         }
       });
     }
+    }else{
+      //=====跳到登录页面
+      const modelPage=this.modalCtrl.create(LoginPage);
+      modelPage.present();
+    }
+
+
   }
 
   //改变收藏状态
   CollectArticle(){
+    if(this.islogin){
     if(!this.collect_if){
       this.articlesSer.insertcoll(this.userId + '', this.artid + '',result=> {
         if (result.statusCode==48) {
@@ -146,6 +165,13 @@ export class ArticledetailPage {
         }
       });
     }
+    }else{
+      //=====跳到登录页面
+      const modelPage=this.modalCtrl.create(LoginPage);
+      modelPage.present();
+    }
+
+
   }
   ReArtComment(arecom_id){
     this._arecom_id = arecom_id;
